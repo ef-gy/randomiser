@@ -1,0 +1,6114 @@
+{{rommap|game=Pokémon Red and Blue}}
+{{TOC_right}}
+==Bank 0==
+<pre>
+* 0x0000 to 0x003F = Blank Data
+* 0x00C0 to 0x00FF = Blank Data
+* 0x0134 to 0x0144 = The Name of the ROM
+* 0x0144 to 0x0145 = New licensee (Always Nintendo)
+* 0x0146 to 0x---- = says it has SGB Features
+* 0x0147 to 0x---- = indicates Mapper MBC3+RAM+BATTERY
+* 0x0148 to 0x---- = indicates 8MBit ROM Cart.
+* 0x0149 to 0x---- = indicates 32k Save RAM size
+* 0x014A to 0x---- = indicates Non to 0xJapan ROM
+* 0x014B to 0x---- = indicates The Licensee.
+* 0x014C to 0x---- = Header Check
+* 0x014D to 0x014E = indicates The Global Checksum
+* 0x014Dh to 0x--- = change the byte and the 2 after it to 0x200EE9
+* 0x01AE to 0x0390 = Map Header Pointers
+* 0x153B to 0x---- = Bank in which Pokémon Base Stats are stored
+* 0x154F to 0x1550 = Kabutops skeleton Pic Pointers
+* 0x1578 to 0x1579 = Pokémon stats pointer
+* 0x1593 to 0x1594 = Mew's Stats Pointer
+* 0x159C to 0x---- = Bank in which Mew's Base Stats are stored
+
+Text
+* 0x1A55 to 0x1A57 = TM
+* 0x1A58 to 0x1A5F = TRAINER
+* 0x1A60 to 0x1A62 = PC
+* 0x1A63 to 0x1A69 = ROCKET
+* 0x1A6A to 0x1A6E = POKé
+* 0x1A6F to 0x1A71 = ……
+* 0x1A72 to 0x1A78 = Enemy 
+* 0x1A79 to 0x1A7B = PKMN
+
+* 0x1E6E to 0x---- = Pointer to Pic pointer table?
+* 0x2442 to 0x24D5 = Shop Items
+* 0x2442 to 0x2448 = Viridian City Poké Mart
+* 0x2449 to 0x2452 = Pewter City Poké Mart
+* 0x2453 to 0x245C = Cerulean City Poké Mart
+* 0x245D to 0x2460 = Cerulean City Bike Shop
+* 0x2461 to 0x2469 = Vermilion City Poké Mart
+* 0x246A to 0x2475 = Lavender Town Poké Mart
+
+* 0x2476 to 0x24A7 = Celadon Department Store
+  * 0x2476 to 0x2481 = Celadon Department Store 2F:  Trainer's Market  to Left cashier
+  * 0x2482 to 0x248D = Celadon Department Store 2F:  Trainer's Market  to Right cashier
+  * 0x248E to 0x2495 = Celadon Department Store 4F:  Wiseman Gifts
+  * 0x2496 to 0x249F = Celadon Department Store 5F:  Drugstore  to Left cashier
+  * 0x24A0 to 0x24A7 = Celadon Department Store 5F:  Drugstore  to Right Cashier
+
+* 0x24A8 to 0x24B0 = Fuchsia City Poké Mart
+* 0x24B1 to 0x24B8 = 
+* 0x24B9 to 0x24C2 = Cinnabar Island Poké Mart
+* 0x24C3 to 0x24CB = Saffron City Poké Mart
+* 0x24CC to 0x24D5 = Indigo Plateau Poké Mart
+
+* 0x2F97 to 0x2F9D = "CANCEL"
+* 0x2FAE to 0x2FAF = Pokémon Names Pointer
+* 0x303C to 0x3040 = "TM/HM"
+</pre>
+
+==Bank 1==
+
+===Miscellaneous===
+<pre>
+* 0x4080 to 0x4098 = Tile Arrange on Sprites
+* 0x4112 to 0x425B = Mew's Pic
+* 0x425B to 0x4277 = Mew's Stats
+* 0x437F to 0x438F = Copyright tile arranger (Title Screen)
+* 0x4399 to 0x---- = Which Pokémon is displayed first on Intro Screen
+* 0x4554 to 0x4587 = Copyright tile arranger (Intro)
+* 0x4588 to 0x4597 = Which Pokémon are display during intro screen Pokémon rotation
+</pre>
+===Debug Names===
+<pre>
+* 0x45AA to 0x45B0 = Hero's Debug Name
+* 0x45B1 to 0x45B5 = Rival's Debug Name
+</pre>
+===Item Prices===
+<pre>
+* 0x4608 to 0x460A = Master Ball's Price
+* 0x460B to 0x460D = Ultra Ball's Price
+* 0x460E to 0x4610 = Great Ball's Price
+* 0x4611 to 0x4613 = Poké Ball's Price
+* 0x4614 to 0x4616 = Town Map's Price
+* 0x4617 to 0x4619 = Bicycle's Price
+* 0x461A to 0x461C = ?????'s Price
+* 0x461D to 0x461F = Safari Ball's Price
+* 0x4620 to 0x4622 = Pokédex's Price
+* 0x4623 to 0x4625 = Moon Stone's Price
+* 0x4626 to 0x4628 = Antidote's Price
+* 0x4629 to 0x462B = Burn Heal's Price
+* 0x462C to 0x462E = Ice Heal's Price
+* 0x462F to 0x4631 = Awakening's Price
+* 0x4632 to 0x4634 = Parlyz Heal's Price
+* 0x4635 to 0x4637 = Full Restore's Price
+* 0x4638 to 0x463A = Max Potion's Price
+* 0x463B to 0x463D = Hyper Potion's Price
+* 0x463E to 0x4640 = Super Potion's Price
+* 0x4641 to 0x4643 = Super Potion's Price
+* 0x4644 to 0x4646 = Potion's Price
+* 0x4647 to 0x4649 = Boulderbadge's Price
+* 0x464A to 0x464C = Cascadebadge's Price
+* 0x464D to 0x464F = Thunderbadge's Price
+* 0x4650 to 0x4652 = Rainbowbadge's Price
+* 0x4653 to 0x4655 = SoulBadge's Price
+* 0x4656 to 0x4658 = Marshbadge's Price
+* 0x4659 to 0x465B = Volcanobadge's Price
+* 0x465C to 0x465E = Earthbadge's Price
+* 0x465F to 0x4661 = Escape Rope's Price
+* 0x4662 to 0x4664 = Repel's Price
+* 0x4665 to 0x4667 = Old Amber's Price
+* 0x4668 to 0x466A = Fire Stone's Price
+* 0x466B to 0x466D = Thunderstone's Price
+* 0x466E to 0x4670 = Water Stone's Price
+* 0x4671 to 0x4673 = HP Up's Price
+* 0x4674 to 0x4676 = Protein's Price
+* 0x4677 to 0x4679 = Iron's Price
+* 0x467A to 0x467C = Carbos's Price
+* 0x467D to 0x467F = Calcium's Price
+* 0x4680 to 0x4682 = Rare Candy's Price
+* 0x4683 to 0x4685 = Dome Fossil's Price
+* 0x4686 to 0x4688 = Helix Fossil's Price
+* 0x4689 to 0x468B = Secret Key's Price
+* 0x468C to 0x468E = ?????'s Price
+* 0x468F to 0x4691 = Bike Voucher's Price
+* 0x4692 to 0x4694 = X Accuracy's Price
+* 0x4695 to 0x4697 = Leaf Stone's Price
+* 0x4698 to 0x469A = Card Key's Price
+* 0x469B to 0x469D = Nugget's Price
+* 0x469E to 0x46A0 = PP Up (fake)'s Price
+* 0x46A1 to 0x46A3 = Poké Doll's Price
+* 0x46A4 to 0x46A6 = Full Heal's Price
+* 0x46A7 to 0x46A9 = Revive's Price
+* 0x46AA to 0x46AC = Max Revive's Price
+* 0x46AD to 0x46AF = Guard Spec.'s Price
+* 0x46B0 to 0x46B2 = Super Repel's Price
+* 0x46B3 to 0x46B5 = Max Repel's Price
+* 0x46B6 to 0x46B8 = Dire Hit's Price
+* 0x46B9 to 0x46BB = Coin's Price
+* 0x46BC to 0x46BE = Fresh Water's Price
+* 0x46BF to 0x46C1 = Soda Pop's Price
+* 0x46C2 to 0x46C4 = Lemonade's Price
+* 0x46C5 to 0x46C7 = S.S.Ticket's Price
+* 0x46C8 to 0x46CA = Gold Teeth's Price
+* 0x46CB to 0x46CD = X Attack's Price
+* 0x46CE to 0x46D0 = X Defend's Price
+* 0x46D1 to 0x46D3 = X Speed's Price
+* 0x46D4 to 0x46D6 = X Special's Price
+* 0x46D7 to 0x46D9 = Coin Case's Price
+* 0x46DA to 0x46DC = Oak's Parcel's Price
+* 0x46DD to 0x46DF = ItemFinder's Price
+* 0x46E0 to 0x46E2 = Silph Scope's Price
+* 0x46E3 to 0x46E5 = Poké Flute's Price
+* 0x46E6 to 0x46E8 = Lift Key's Price
+* 0x46E9 to 0x46EB = Exp.All's Price
+* 0x46EC to 0x46EE = Old Rod's Price
+* 0x46EF to 0x46F1 = Good Rod's Price
+* 0x46F2 to 0x46F4 = Super Rod's Price
+* 0x46F5 to 0x46F7 = PP Up (real)'s Price
+* 0x46F8 to 0x46FA = Ether's Price
+* 0x46FB to 0x46FD = Max Ether's Price
+* 0x46FE to 0x4700 = Elixer's Price
+* 0x4701 to 0x4703 = B2F's Price
+* 0x4704 to 0x4706 = B1F's Price
+* 0x4707 to 0x4709 = 1F's Price
+* 0x470A to 0x470C = 2F's Price
+* 0x470D to 0x470F = 3F's Price
+* 0x4710 to 0x4712 = 4F's Price
+* 0x4713 to 0x4715 = 5F's Price
+* 0x4716 to 0x4718 = 6F's Price
+* 0x4719 to 0x471B = 7F's Price
+* 0x471C to 0x471E = 8F's Price
+* 0x471F to 0x4721 = 9F's Price
+* 0x4722 to 0x4724 = 10F's Price
+* 0x4725 to 0x4727 = 11F's Price
+* 0x4728 to 0x472A = B4F's Price
+</pre>
+===Item Names===
+<pre>
+* 0x472B to 0x4736 = MASTER BALL
+* 0x4737 to 0x4741 = ULTRA BALL
+* 0x4742 to 0x474C = GREAT BALL
+* 0x474D to 0x4756 = POKé BALL
+* 0x4757 to 0x475F = TOWN MAP
+* 0x4760 to 0x4767 = BICYCLE
+* 0x4768 to 0x476D = ?????
+* 0x476E to 0x4779 = SAFARI BALL
+* 0x477A to 0x4781 = POKéDEX
+* 0x4782 to 0x478C = MOON STONE
+* 0x478D to 0x4795 = ANTIDOTE
+* 0x4796 to 0x479F = BURN HEAL
+* 0x47A0 to 0x47A8 = ICE HEAL
+* 0x47A9 to 0x47B2 = AWAKENING
+* 0x47B3 to 0x47BE = PARLYZ HEAL
+* 0x47BF to 0x47CB = FULL RESTORE
+* 0x47CC to 0x47D6 = MAX POTION
+* 0x47D7 to 0x47E3 = HYPER POTION
+* 0x47E4 to 0x47F0 = SUPER POTION
+* 0x47F1 to 0x47F7 = POTION
+* 0x47F8 to 0x4804 = BOULDERBADGE
+* 0x4805 to 0x4811 = CASCADEBADGE
+* 0x4812 to 0x481E = THUNDERBADGE
+* 0x481F to 0x482B = RAINBOWBADGE
+* 0x482C to 0x4835 = SOULBADGE
+* 0x4836 to 0x4840 = MARSHBADGE
+* 0x4841 to 0x484D = VOLCANOBADGE
+* 0x484E to 0x4858 = EARTHBADGE
+* 0x4859 to 0x4864 = ESCAPE ROPE
+* 0x4865 to 0x486A = REPEL
+* 0x486B to 0x4874 = OLD AMBER
+* 0x4875 to 0x487F = FIRE STONE
+* 0x4880 to 0x488C = THUNDERSTONE
+* 0x488D to 0x4898 = WATER STONE
+* 0x4899 to 0x489E = HP UP
+* 0x489F to 0x48A6 = PROTEIN
+* 0x48A7 to 0x48AB = IRON
+* 0x48AC to 0x48B2 = CARBOS
+* 0x48B3 to 0x48BA = CALCIUM
+* 0x48BB to 0x48C5 = RARE CANDY
+* 0x48C6 to 0x48D1 = DOME FOSSIL
+* 0x48D2 to 0x48DE = HELIX FOSSIL
+* 0x48DF to 0x48E9 = SECRET KEY
+* 0x48EA to 0x48EF = ?????
+* 0x48F0 to 0x48FC = BIKE VOUCHER
+* 0x48FD to 0x4907 = X ACCURACY
+* 0x4908 to 0x4912 = LEAF STONE
+* 0x4913 to 0x491B = CARD KEY
+* 0x491C to 0x4922 = NUGGET
+* 0x4923 to 0x4928 = PP UP (fake)
+* 0x4929 to 0x4932 = POKé DOLL
+* 0x4933 to 0x493C = FULL HEAL
+* 0x493D to 0x4943 = REVIVE
+* 0x4944 to 0x494E = MAX REVIVE
+* 0x494F to 0x495A = GUARD SPEC.
+* 0x495B to 0x4966 = SUPER REPEL
+* 0x4967 to 0x4970 = MAX REPEL
+* 0x4971 to 0x4979 = DIRE HIT
+* 0x497A to 0x497E = COIN
+* 0x497F to 0x498A = FRESH WATER
+* 0x498B to 0x4993 = SODA POP
+* 0x4994 to 0x499C = LEMONADE
+* 0x499D to 0x49A7 = S.S.TICKET
+* 0x49A8 to 0x49B2 = GOLD TEETH
+* 0x49B3 to 0x49BB = X ATTACK
+* 0x49BC to 0x49C4 = X DEFEND
+* 0x49C5 to 0x49CC = X SPEED
+* 0x49CD to 0x49D6 = X SPECIAL
+* 0x49D7 to 0x49E0 = COIN CASE
+* 0x49E1 to 0x49EC = OAK‘s PARCEL
+* 0x49ED to 0x49F7 = ITEMFINDER
+* 0x49F8 to 0x4A03 = SILPH SCOPE
+* 0x4A04 to 0x4A0E = POKé FLUTE
+* 0x4A0F to 0x4A17 = LIFT KEY
+* 0x4A18 to 0x4A1F = EXP.ALL
+* 0x4A20 to 0x4A27 = OLD ROD
+* 0x4A28 to 0x4A30 = GOOD ROD
+* 0x4A31 to 0x4A3A = SUPER ROD
+* 0x4A3B to 0x4A40 = PP UP (real)
+* 0x4A41 to 0x4A46 = ETHER
+* 0x4A47 to 0x4A50 = MAX ETHER
+* 0x4A51 to 0x4A57 = ELIXER
+* 0x4A58 to 0x4A62 = MAX ELIXER
+* 0x4A63 to 0x4A66 = B2F
+* 0x4A67 to 0x4A6A = B1F
+* 0x4A6B to 0x4A6D = 1F
+* 0x4A6E to 0x4A70 = 2F
+* 0x4A71 to 0x4A73 = 3F
+* 0x4A74 to 0x4A76 = 4F
+* 0x4A77 to 0x4A79 = 5F
+* 0x4A7A to 0x4A7C = 6F
+* 0x4A7D to 0x4A7F = 7F
+* 0x4A80 to 0x4A82 = 8F
+* 0x4A83 to 0x4A85 = 9F
+* 0x4A86 to 0x4A89 = 10F
+* 0x4A8A to 0x4A8D = 11F
+* 0x4A8E to 0x4A91 = B4F
+</pre>
+
+===Trading Text===
+<pre>
+* 0x4C28 to 0x4C33 = "Waiting...!"
+* 0x550F to 0x551B = "PLEASE WAIT!"
+* 0x571F to 0x572E = "STATS     TRADE" (Please note that there are 5 spaces between "STATS" and "TRADE")
+* 0x57C0 to 0x57C6 = "CANCEL"
+* 0x5A29 to 0x5A39 = Trade completed!
+* 0x5A3A to 0x5A5A = Too bad! The trade was canceled!
+</pre>
+===File Select Screen===
+<pre>
+* 0x5D7E to 0x5D86 = CONTINUE
+* 0x5D87 to 0x5D8F = NEW GAME
+* 0x5D90 to 0x5D96 = OPTION
+</pre>
+===Cable Club===
+<pre>
+* 0x5D97 to 0x5DA3 = TRADE CENTER
+* 0x5DA4 to 0x5DAD = COLOSSEUM
+* 0x5DAE to 0x5DB4 = CANCEL
+</pre>
+===CONTINUE Menu Text===
+<pre>
+* 0x5E6A to 0x5E70 = PLAYER
+* 0x5E71 to 0x5E7B = BADGES    (Please note that there are 4 spaces after "BADGES")
+* 0x5E7C to 0x5E84 = POKéDEX    (Please note that there are 4 spaces after "POKéDEX")
+* 0x5E85 to 0x5E89 = TIME
+</pre>
+===TEXT SPEED===
+<pre>
+* 0x5FC0 to 0x5FCA = TEXT SPEED
+* 0x5FCB to 0x5FDD =  FAST  MEDIUM SLOW (Please note that there is 1 space before "FAST" and 2 spaces between "FAST" and "MEDIUM"
+</pre>
+===BATTLE ANIMATION===
+<pre>
+* 0x5FDE to 0x5FEE = BATTLE ANIMATION
+* 0x5FEF to 0x5FFC =  ON       OFF (Please note that there is 1 space before "ON" and 7 spaces between "ON" and "OFF"
+</pre>
+===BATTLE STYLE===
+<pre>
+* 0x5FFD to 0x6009 = BATTLE SYTLE
+* 0x600A to 0x6017 =  SHIFT    SET (Please note that there is 1 space before "SHIFT" and 4 spaces between "SHIFT" and "SET"
+</pre>
+
+===Other===
+<pre>
+* 0x6018 to 0x601E = CANCEL
+* 0x6155 to 0x6156 = Pointer to image shown whilst Oak is talking (Default Prof. Oak)
+* 0x6160 to 0x---- =  Oak welcome text header
+* 0x616D to 0x---- = What Pokémon is shown during Oak's introduction (Default Nidorino)
+* 0x618D to 0x618E = Pointer to image of Player in before naming
+* 0x6198 to 0x---- = Your Name Selection Header
+* 0x61A8 to 0x61A9 = Pointer to image of Rival during introduction
+* 0x61B3 to 0x---- = Rival Name Selection Header
+* 0x61C3 to 0x61C4 = Pointer to image of player after naming
+* 0x61D4 to 0x---- =  Your Journey begins text header
+* 0x62BD to 0x---- = Position of Oak during intro
+* 0x6448 to 0x647B = Flying Warp-To-Data Pointers and Maps they are on
+* 0x647C to 0x64C9 = Flying/Dying Warp-To Data
+</pre>
+===Entering a Name Text===
+<pre>
+* 0x679E to 0x67D5 = Lower Case Screen
+* 0x67D6 to 0x680D = Upper Case Screen
+</pre>
+===Your and Rival's Name===
+<pre>
+* 0x693F to 0x6944 = YOUR (Please note that there is 1 space after "YOUR")
+* 0x6945 to 0x694C = RIVAL's (Please note that there is 1 space after "RIVAL's")
+* 0x694D to 0x6952 = NAME?
+* 0x6953 to 0x695C = NICKNAME?
+</pre>
+
+===Other===
+<pre>
+* 0x6AA3 to 0x6B1F = Available Default Names
+* 0x7150 to 0x718E = Options Pointers And other Junk
+</pre>
+===Start Options (In Trade)===
+<pre>
+* 0x718F to 0x7196 = POKéDEX
+* 0x7197 to 0x719E = POKéMON
+* 0x719F to 0x71A3 = ITEM
+* 0x71A4 to 0x71A8 = SAVE
+* 0x71A9 to 0x71AE = RESET
+* 0x71AF to 0x71B3 = EXIT
+* 0x71B4 to 0x71BA = OPTION
+</pre>
+===Shop options===
+<pre>
+* 0x7413 to 0x7416 = BUY
+* 0x7417 to 0x741B = SELL
+* 0x741C to 0x7420 = QUIT
+</pre>
+
+===Other===
+<pre>
+* 0x7421 to 0x---- = ????
+</pre>
+
+==="USE TOSS"===
+<pre>
+* 0x7422 to 0x7425 = USE
+* 0x7426 to 0x742A = TOSS
+</pre>
+
+===Other===
+<pre>
+* 0x743D to 0x7442 = "MONEY"
+</pre>
+
+===Standard Battle===
+<pre>
+* 0x7455 to 0x745D = FIGHT PKMN
+* 0x745E to 0x7467 = ITEM  RUN (Please note that there are 2 spaces between "ITEM" and "RUN")
+</pre>
+===Safari Zone Battle===
+<pre>
+* 0x7468 to 0x7478 = BALL×       BAIT (Please note that there are 7 spaces between "BALL×" and "BAIT")
+* 0x7479 to 0x7488 = THROW ROCK  RUN (Please note that there are 2 spaces between "THROW ROCK" and "RUN")
+</pre>
+===Pokémon Selection (In Battle)===
+<pre>
+* 0x7489 to 0x748F = SWITCH
+* 0x7490 to 0x7495 = STATS
+* 0x7496 to 0x749C = CANCEL
+</pre>
+===Other===
+<pre>
+* 0x749D to 0x74A0 = "Am!"
+</pre>
+===Various Small Text Options===
+<pre>
+* 0x7699 to 0x769B = NO
+* 0x769C to 0x769F = YES
+
+* 0x76A0 to 0x76A3 = YES
+* 0x76A4 to 0x76A6 = NO
+
+* 0x76A7 to 0x76AC = NORTH
+* 0x76AD to 0x76B1 = WEST
+
+* 0x76B2 to 0x76B7 = SOUTH
+* 0x76B8 to 0x76BC = EAST
+
+* 0x76BD to 0x76C2 = NORTH
+* 0x76C3 to 0x76C7 = EAST
+
+* 0x76C8 to 0x76CD = TRADE
+* 0x76CE to 0x76D4 = CANCEL
+
+* 0x76D5 to 0x76D9 = HEAL
+* 0x76DA to 0x76E0 = CANCEL
+</pre>
+===Out-of-Battle Pokémon Options===
+<pre>
+* 0x778D to 0x7790 = CUT
+* 0x7791 to 0x7794 = FLY
+* 0x7795 to 0x---- = 
+* 0x7796 to 0x779A = SURF
+* 0x779B to 0x77A3 = STRENGTH
+* 0x77A4 to 0x77A9 = FLASH
+* 0x77AA to 0x77AD = DIG
+* 0x77AE to 0x77B6 = TELEPORT
+* 0x77B7 to 0x77C1 = SOFTBOILED
+* 0x77C2 to 0x77C7 = STATS
+* 0x77C8 to 0x77CE = SWITCH
+* 0x77CF to 0x77D5 = CANCEL
+</pre>
+===Computer Options===
+<pre>
+* 0x7AF5 to 0x7B02 = WITHDRAW ITEM
+* 0x7B03 to 0x7B0F = DEPOSIT ITEM
+* 0x7B10 to 0x7B19 = TOSS ITEM
+* 0x7B1A to 0x7B21 = LOG OFF
+</pre>
+
+===Other===
+<pre>
+* 0x7C4A to 0x7FFF = Blank Data
+</pre>
+
+==Bank 2==
+
+8000-BFFF Music Data
+
+===Music Pointers===
+
+822E-8236 Pallet Town
+
+8237-823F Pokecenter
+
+8240-8248 Gym
+
+8249-8254 Viridian / Pewter / Saffron
+
+8255-825D Cerulean / Fuchsia
+
+825E-8266 Celedon
+
+8267-826F Cinnibar
+
+8270-827B Vermilion
+
+827C-8287 Lavender
+
+8288-8290 S.S. Anne
+
+8291-8299 Meet Prof. Oak
+
+829A-82A2 Meet Rival
+
+82A3-82AE Guy Walks you to Museum
+
+82AF-82B7 Safari Zone
+
+82B8-82C0 Pokemon get healed
+
+82C1-82CC Routes 1 / 2
+
+82CD-82D8 Routes 24 / 25
+
+82D9-82E4 Routes 3 / 4 / 5 / 6 / 7 / 8 / 9 / 10 / 16 / 17 / 18 / 19 / 20 / 21 / 22
+
+82E5-82F0 Routes 11 / 12 / 13 / 14 / 15
+
+82F1-82FD Route 23 / Indigo Plateau
+
+====Healing====
+
+9BA3-
+
+9BC4-
+
+9BD2-
+
+====Route 1====
+
+9BDE- Channel 0
+
+9CD8- Channel 0
+
+9CF1- Channel 20
+
+9D24- Channel 0
+
+====Route 25====
+
+9DB9-
+
+9E4F-
+
+9E9B-
+
+9F08-
+
+====Routes====
+
+9FAD-
+
+A009-
+
+A07F-
+
+A131-
+
+====Route 12====
+
+A26A-
+
+A304-
+
+A3C4-
+
+A49D-
+
+====Indigo Plateau====
+
+A5F0-
+
+A664-
+
+A6BA-
+
+A70F-
+
+====Pallet Town====
+
+A7c5-
+
+A85F-
+
+A8DE-
+
+====Viridian====
+
+AA76-
+
+AB92-
+
+AC03-
+
+AC80-
+
+====Guy Walks you====
+
+ADAE-
+
+ADF1-
+
+AE6E-
+
+AED1-
+
+====Prof Oak (Meet)====
+
+AF59-
+
+AFA9-
+
+B03D-
+
+====Rival (Meet)====
+
+B120-
+
+B1BB-
+
+B233-
+
+====S.S. Anne====
+
+B3A7-
+
+B419-
+
+B4CB-
+
+====Cerulean====
+
+B504-B568 Channel 1
+
+B569-B63F Channel 2
+
+B640-
+
+====Celadon====
+
+B6C7-
+
+B73A-
+
+B7B5-
+
+====Cinnibar====
+
+B86D-
+
+B8D4-
+
+B93D-
+
+====Vermilion====
+
+B9EB-
+
+BA61-
+
+BAA6-
+
+BB0D-
+
+====Lavender====
+
+BB58-
+
+BB9E-
+
+BBAE-
+
+BC21-
+
+====Safari Zone====
+
+BC2E-
+
+BC6A-
+
+BC94-
+
+====Gyms====
+
+BCBB-
+
+BD6B-
+
+BDFA-
+
+====Pokecenter====
+
+BE56-
+
+BEF9-
+
+BF70-
+
+9BDE-9BDF Speed of Song (All Channels)
+
+
+
+==Bank 3==
+
+<tt>C23D-C334</tt> Indicates which banks maps are in
+
+<tt>C57E-C585 "BALL×× "</tt>
+
+<tt>C7BE-C8DD</tt> Tileset headers (see the Notes for more info)
+
+<tt>CEB9-CEBA</tt> Wild Pokémon Pointer to Data Pointers
+<div class="mw-collapsible mw-collapsed">
+<tt>CEEB-D0DC</tt> Wild Pokémon Data Pointers
+<div class="mw-collapsible-content"><li><tt>CEEB-CEEC</tt></li>
+<li><tt>CEED-CEEE</tt></li>
+<li><tt>CEEF-CEF0</tt></li>
+<li><tt>CEF1-CEF2</tt></li>
+<li><tt>CEF3-CEF4</tt></li>
+<li><tt>CEF5-CEF6</tt></li>
+<li><tt>CEF7-CEF8</tt></li>
+<li><tt>CEF9-CEFA</tt></li>
+<li><tt>CEFB-CEFC</tt></li>
+<li><tt>CEFD-CEFE</tt></li>
+<li><tt>CEFF-CF00</tt></li>
+<li><tt>CF01-CF02</tt></li>
+<li><tt>CF03-CF04</tt> - Route 1</li>
+<li><tt>CF05-CF06</tt> - Route 2</li>
+<li><tt>CF07-CF08</tt> - Route 3</li>
+<li><tt>CF09-CF0A</tt> - Route 4</li>
+<li><tt>CF0B-CF0C</tt> - Route 5</li>
+<li><tt>CF0D-CF0E</tt> - Route 6</li>
+<li><tt>CF0F-CF10</tt> - Route 7</li>
+<li><tt>CF11-CF12</tt> - Route 8</li>
+<li><tt>CF13-CF14</tt> - Route 9</li>
+<li><tt>CF15-CF16</tt> - Route 10</li>
+<li><tt>CF17-CF18</tt> - Route 11</li>
+<li><tt>CF19-CF1A</tt> - Route 12</li>
+<li><tt>CF1B-CF1C</tt> - Route 13</li>
+<li><tt>CF1D-CF1E</tt> - Route 14</li>
+<li><tt>CF1F-CF20</tt> - Route 15</li>
+<li><tt>CF21-CF22</tt> - Route 16</li>
+<li><tt>CF23-CF24</tt> - Route 17</li>
+<li><tt>CF25-CF26</tt> - Route 18</li>
+<li><tt>CF27-CF28</tt> - Route 19</li>
+<li><tt>CF29-CF2A</tt> - Route 20</li>
+<li><tt>CF2B-CF2C</tt> - Route 21</li>
+<li><tt>CF2D-CF2E</tt> - Route 22</li>
+<li><tt>CF2F-CF30</tt> - Route 23</li>
+<li><tt>CF31-CF32</tt> - Route 24</li>
+<li><tt>CF33-CF34</tt> - Route 25</li>
+<li><tt>CF35-CF36</tt></li>
+<li><tt>CF37-CF38</tt></li>
+<li><tt>CF39-CF3A</tt></li>
+<li><tt>CF3B-CF3C</tt></li>
+<li><tt>CF3D-CF3E</tt></li>
+<li><tt>CF3F-CF40</tt></li>
+<li><tt>CF41-CF42</tt></li>
+<li><tt>CF43-CF44</tt></li>
+<li><tt>CF45-CF46</tt></li>
+<li><tt>CF47-CF48</tt></li>
+<li><tt>CF49-CF4A</tt></li>
+<li><tt>CF4B-CF4C</tt></li>
+<li><tt>CF4D-CF4E</tt></li>
+<li><tt>CF4F-CF50</tt></li>
+<li><tt>CF51-CF52</tt> - Viridian Forest</li>
+<li><tt>CF53-CF54</tt></li>
+<li><tt>CF55-CF56</tt></li>
+<li><tt>CF57-CF58</tt></li>
+<li><tt>CF59-CF5A</tt></li>
+<li><tt>CF5B-CF5C</tt></li>
+<li><tt>CF5D-CF5E</tt></li>
+<li><tt>CF5F-CF60</tt></li>
+<li><tt>CF61-CF62</tt> - Mt. Moon 1F</li>
+<li><tt>CF63-CF64</tt> - Mt. Moon B1F</li>
+<li><tt>CF65-CF66</tt> - Mt. Moon B2F</li>
+<li><tt>CF67-CF68</tt></li>
+<li><tt>CF69-CF6A</tt></li>
+<li><tt>CF6B-CF6C</tt></li>
+<li><tt>CF6D-CF6E</tt></li>
+<li><tt>CF6F-CF70</tt></li>
+<li><tt>CF71-CF72</tt></li>
+<li><tt>CF73-CF74</tt></li>
+<li><tt>CF75-CF76</tt></li>
+<li><tt>CF77-CF78</tt></li>
+<li><tt>CF79-CF7A</tt></li>
+<li><tt>CF7B-CF7C</tt></li>
+<li><tt>CF7D-CF7E</tt></li>
+<li><tt>CF7F-CF80</tt></li>
+<li><tt>CF81-CF82</tt></li>
+<li><tt>CF83-CF84</tt></li>
+<li><tt>CF85-CF86</tt></li>
+<li><tt>CF87-CF88</tt></li>
+<li><tt>CF89-CF8A</tt></li>
+<li><tt>CF8B-CF8C</tt></li>
+<li><tt>CF8D-CF8E</tt></li>
+<li><tt>CF8F-CF90</tt> - Rock Tunnel 1F</li>
+<li><tt>CF91-CF92</tt> - Power Plant</li>
+<li><tt>CF93-CF94</tt></li>
+<li><tt>CF95-CF96</tt></li>
+<li><tt>CF97-CF98</tt></li>
+<li><tt>CF99-CF9A</tt></li>
+<li><tt>CF9B-CF9C</tt></li>
+<li><tt>CF9D-CF9E</tt></li>
+<li><tt>CF9F-CFA0</tt></li>
+<li><tt>CFA1-CFA2</tt></li>
+<li><tt>CFA3-CFA4</tt></li>
+<li><tt>CFA5-CFA6</tt></li>
+<li><tt>CFA7-CFA8</tt></li>
+<li><tt>CFA9-CFAA</tt></li>
+<li><tt>CFAB-CFAC</tt></li>
+<li><tt>CFAD-CFAE</tt></li>
+<li><tt>CFAF-CFB0</tt></li>
+<li><tt>CFB1-CFB2</tt></li>
+<li><tt>CFB3-CFB4</tt></li>
+<li><tt>CFB5-CFB6</tt></li>
+<li><tt>CFB7-CFB8</tt></li>
+<li><tt>CFB9-CFBA</tt></li>
+<li><tt>CFBB-CFBC</tt></li>
+<li><tt>CFBD-CFBE</tt></li>
+<li><tt>CFBF-CFC0</tt></li>
+<li><tt>CFC1-CFC2</tt></li>
+<li><tt>CFC3-CFC4</tt> - Victory Road 1F</li>
+<li><tt>CFC5-CFC6</tt></li>
+<li><tt>CFC7-CFC8</tt></li>
+<li><tt>CFC9-CFCA</tt></li>
+<li><tt>CFCB-CFCC</tt></li>
+<li><tt>CFCD-CFCE</tt></li>
+<li><tt>CFCF-CFD0</tt></li>
+<li><tt>CFD1-CFD2</tt></li>
+<li><tt>CFD3-CFD4</tt></li>
+<li><tt>CFD5-CFD6</tt></li>
+<li><tt>CFD7-CFD8</tt></li>
+<li><tt>CFD9-CFDA</tt></li>
+<li><tt>CFDB-CFDC</tt></li>
+<li><tt>CFDD-CFDE</tt></li>
+<li><tt>CFDF-CFE0</tt></li>
+<li><tt>CFE1-CFE2</tt></li>
+<li><tt>CFE3-CFE4</tt></li>
+<li><tt>CFE5-CFE6</tt></li>
+<li><tt>CFE7-CFE8</tt></li>
+<li><tt>CFE9-CFEA</tt></li>
+<li><tt>CFEB-CFEC</tt></li>
+<li><tt>CFED-CFEE</tt></li>
+<li><tt>CFEF-CFF0</tt></li>
+<li><tt>CFF1-CFF2</tt></li>
+<li><tt>CFF3-CFF4</tt></li>
+<li><tt>CFF5-CFF6</tt></li>
+<li><tt>CFF7-CFF8</tt></li>
+<li><tt>CFF9-CFFA</tt></li>
+<li><tt>CFFB-CFFC</tt></li>
+<li><tt>CFFD-CFFE</tt></li>
+<li><tt>CFFF-D000</tt></li>
+<li><tt>D001-D002</tt></li>
+<li><tt>D003-D004</tt></li>
+<li><tt>D005-D006</tt></li>
+<li><tt>D007-D008</tt> - Pokémon Tower 1F?</li>
+<li><tt>D009-D00A</tt> - Pokémon Tower 2F?</li>
+<li><tt>D00B-D00C</tt> - Pokémon Tower 3F</li>
+<li><tt>D00D-D00E</tt> - Pokémon Tower 4F</li>
+<li><tt>D00F-D010</tt> - Pokémon Tower 5F</li>
+<li><tt>D011-D012</tt> - Pokémon Tower 6F</li>
+<li><tt>D013-D014</tt> - Pokémon Tower 7F</li>
+<li><tt>D015-D016</tt></li>
+<li><tt>D017-D018</tt></li>
+<li><tt>D019-D01A</tt></li>
+<li><tt>D01B-D01C</tt></li>
+<li><tt>D01D-D01E</tt></li>
+<li><tt>D01F-D020</tt></li>
+<li><tt>D021-D022</tt></li>
+<li><tt>D023-D024</tt></li>
+<li><tt>D025-D026</tt></li>
+<li><tt>D027-D028</tt></li>
+<li><tt>D029-D02A</tt> - Seafoam Islands B1F</li>
+<li><tt>D02B-D02C</tt> - Seafoam Islands B2F</li>
+<li><tt>D02D-D02E</tt> - Seafoam Islands B3F</li>
+<li><tt>D02F-D030</tt> - Seafoam Islands B4F</li>
+<li><tt>D031-D032</tt></li>
+<li><tt>D033-D034</tt></li>
+<li><tt>D035-D036</tt> - Pokémon Mansion 1F</li>
+<li><tt>D037-D038</tt></li>
+<li><tt>D039-D03A</tt></li>
+<li><tt>D03B-D03C</tt></li>
+<li><tt>D03D-D03E</tt></li>
+<li><tt>D03F-D040</tt></li>
+<li><tt>D041-D042</tt></li>
+<li><tt>D043-D044</tt></li>
+<li><tt>D045-D046</tt></li>
+<li><tt>D047-D048</tt></li>
+<li><tt>D049-D04A</tt></li>
+<li><tt>D04B-D04C</tt></li>
+<li><tt>D04D-D04E</tt></li>
+<li><tt>D04F-D050</tt></li>
+<li><tt>D051-D052</tt></li>
+<li><tt>D053-D054</tt></li>
+<li><tt>D055-D056</tt></li>
+<li><tt>D057-D058</tt></li>
+<li><tt>D059-D05A</tt></li>
+<li><tt>D05B-D05C</tt></li>
+<li><tt>D05D-D05E</tt></li>
+<li><tt>D05F-D060</tt></li>
+<li><tt>D061-D062</tt></li>
+<li><tt>D063-D064</tt></li>
+<li><tt>D065-D066</tt></li>
+<li><tt>D067-D068</tt></li>
+<li><tt>D069-D06A</tt></li>
+<li><tt>D06B-D06C</tt> - Seafoam Islands 1F</li>
+<li><tt>D06D-D06E</tt></li>
+<li><tt>D06F-D070</tt> - Victory Road 2F</li>
+<li><tt>D071-D072</tt></li>
+<li><tt>D073-D074</tt></li>
+<li><tt>D075-D076</tt> - Diglett's Tunnel</li>
+<li><tt>D077-D078</tt> - Victory Road 3F</li>
+<li><tt>D079-D07A</tt></li>
+<li><tt>D07B-D07C</tt></li>
+<li><tt>D07D-D07E</tt></li>
+<li><tt>D07F-D080</tt></li>
+<li><tt>D081-D082</tt></li>
+<li><tt>D083-D084</tt></li>
+<li><tt>D085-D086</tt></li>
+<li><tt>D087-D088</tt></li>
+<li><tt>D089-D08A</tt></li>
+<li><tt>D08B-D08C</tt></li>
+<li><tt>D08D-D08E</tt></li>
+<li><tt>D08F-D090</tt></li>
+<li><tt>D091-D092</tt></li>
+<li><tt>D093-D094</tt></li>
+<li><tt>D095-D096</tt></li>
+<li><tt>D097-D098</tt> - Pokémon Mansion 2F</li>
+<li><tt>D099-D09A</tt> - Pokémon Mansion 3F</li>
+<li><tt>D09B-D09C</tt> - Pokémon Mansion B1F</li>
+<li><tt>D09D-D09E</tt> - Safari Zone - Area 1</li>
+<li><tt>D09F-D0A0</tt> - Safari Zone - Area 2</li>
+<li><tt>D0A1-D0A2</tt> - Safari Zone - Area 3</li>
+<li><tt>D0A3-D0A4</tt> - Safari Zone - Center Area</li>
+<li><tt>D0A5-D0A6</tt></li>
+<li><tt>D0A7-D0A8</tt></li>
+<li><tt>D0A9-D0AA</tt></li>
+<li><tt>D0AB-D0AC</tt></li>
+<li><tt>D0AD-D0AE</tt></li>
+<li><tt>D0AF-D0B0</tt> - Cerulean Cave 2F</li>
+<li><tt>D0B1-D0B2</tt> - Cerulean Cave B1F</li>
+<li><tt>D0B3-D0B4</tt> - Cerulean Cave 1F</li>
+<li><tt>D0B5-D0B6</tt></li>
+<li><tt>D0B7-D0B8</tt></li>
+<li><tt>D0B9-D0BA</tt></li>
+<li><tt>D0BB-D0BC</tt> - Rock Tunnel B1F</li>
+<li><tt>D0BD-D0BE</tt></li>
+<li><tt>D0BF-D0C0</tt></li>
+<li><tt>D0C1-D0C2</tt></li>
+<li><tt>D0C3-D0C4</tt></li>
+<li><tt>D0C5-D0C6</tt></li>
+<li><tt>D0C7-D0C8</tt></li>
+<li><tt>D0C9-D0CA</tt></li>
+<li><tt>D0CB-D0CC</tt></li>
+<li><tt>D0CD-D0CE</tt></li>
+<li><tt>D0CF-D0D0</tt></li>
+<li><tt>D0D1-D0D2</tt></li>
+<li><tt>D0D3-D0D4</tt></li>
+<li><tt>D0D5-D0D6</tt></li>
+<li><tt>D0D7-D0D8</tt></li>
+<li><tt>D0D9-D0DA</tt></li>
+<li><tt>D0DB-D0DC</tt> - (End)</li></div>
+</div>
+<tt>D0DD-D5C6</tt> Wild Pokémon Data
+
+<tt>D5DD-D5DE</tt> Pointer for surf?
+<div class="mw-collapsible mw-collapsed">
+<tt>DAEA-DB00</tt> "You don't have any POKéMON!"
+<div class="mw-collapsible-content"><li><tt>DAEA-DAF7</tt> "You don't have"</li>
+<li><tt>DAF8-DB00</tt> "any POKéMON!"</li></div>
+</div>
+<tt>DCDB-</tt> How much HP Hyper Potion Gives
+
+<tt>DCDF-</tt> How much HP Super Potion Gives
+
+<tt>DCE3-</tt> How much HP Potion Gives
+<div class="mw-collapsible mw-collapsed">
+<tt>DF2E-DF51</tt> Pokémon Status's Text
+<div class="mw-collapsible-content"><tt><li>DF2E-DF34 - HEALTH</li>
+<li>DF35-DF3B - ATTACK</li>
+<li>DF3C-DF43 - DEFENSE</li>
+<li>DF44-DF49 - SPEED</li>
+<li>DF4A-DF51 - SPECIAL</li></tt></div>
+</div>
+
+<tt>E27F-E282</tt> Good Rod Encounters
+
+<div class="mw-collapsible mw-collapsed">
+<tt>EA9E-EE9D</tt> Badges' (& Gym Leaders' Faces) Graphics
+<div class="mw-collapsible-content"><div class="mw-collapsible mw-collapsed"><li><tt>EA9E-EB1D</tt> - Pewter City</li>
+<div class="mw-collapsible-content">
+*<tt>EA9E-EADD</tt> - Brock's Face
+*<tt>EADE-EB1D</tt> - BoulderBadge</div>
+</div>
+<div class="mw-collapsible mw-collapsed"><li><tt>EB1E-EB9D</tt> - Cerulean City</li>
+<div class="mw-collapsible-content">
+*<tt>EB1E-EB5D</tt> - Misty's Face
+*<tt>EB5E-EB9D</tt> - CascadeBadge</div>
+</div>
+<div class="mw-collapsible mw-collapsed"><li><tt>EB9E-EC1D</tt> - Vermilion City</li>
+<div class="mw-collapsible-content">
+*<tt>EB9E-EBDD</tt> - Lt. Surge's Face
+*<tt>EBDE-EC1D</tt> - ThunderBadge</div>
+</div>
+<div class="mw-collapsible mw-collapsed"><li><tt>EC1E-EC9D</tt> - Celadon City</li>
+<div class="mw-collapsible-content">
+*<tt>EC1E-EC5D</tt> - Erika's Face
+*<tt>EC5E-EC9D</tt> - RainbowBadge</div>
+</div>
+<div class="mw-collapsible mw-collapsed"><li><tt>EC9E-ED1D</tt> - Fuchsia City</li>
+<div class="mw-collapsible-content">
+*<tt>EC9E-ECDD</tt> - Koga's Face
+*<tt>ECDE-ED1D</tt> - SoulBadge</div>
+</div>
+<div class="mw-collapsible mw-collapsed"><li><tt>ED1E-ED9D</tt> - Saffron City</li>
+<div class="mw-collapsible-content">
+*<tt>ED1E-ED5D</tt> - Sabrina's Face
+*<tt>ED5E-ED9D</tt> - MarshBadge</div>
+</div>
+<div class="mw-collapsible mw-collapsed"><li><tt>ED9E-EE1D</tt> - Cinnabar Island</li>
+<div class="mw-collapsible-content">
+*<tt>ED9E-EDDD</tt> - Blaine's Face
+*<tt>EDDE-EE1D</tt> - VolcanoBadge</div>
+</div>
+<div class="mw-collapsible mw-collapsed"><li><tt>EE1E-EE9D</tt> - Viridian City</li>
+<div class="mw-collapsible-content">
+*<tt>EE1E-EE5D</tt> - Giovanni's Face
+*<tt>EE5E-EE9D</tt> - EarthBadge</div>
+</div></div></div>
+<tt>FC4A-FFFF</tt> Blank Data
+
+==Bank 4==
+<div class="mw-collapsible mw-collapsed">
+<tt>10000-1137F</tt> Overworld Sprites (some, not all)
+<div class="mw-collapsible-content"><li><tt>10000-1017F</tt> - Lab Aide</li>
+<li><tt>10180-102FF</tt> - Evil Guy?</li>
+<li><tt>10300-1047F</tt> - Swimmer?</li>
+<li><tt>10480-1053F</tt> - Hat Guy</li>
+<li><tt>10540-105FF</tt> - Gym Guy (No Walk)</li>
+<li><tt>10600-106BF</tt> - Old Glasses Guy (No Walk)</li>
+<li><tt>106C0-1077F</tt> - Clerk</li>
+<li><tt>10780-1083F</tt> - Fisherman? (No Walk)</li>
+<li><tt>10840-108FF</tt> - ? (No Walk)</li>
+<li><tt>10900-109BF</tt> - Nurse</li>
+<li><tt>109C0-10A7F</tt> - Cable Club Lady</li>
+<li><tt>10A80-10B3F</tt> - Glasses Guy (No Walk)</li>
+<li><tt>10B40-10BFF</tt> - ? (No Walk)</li>
+<li><tt>10C00-10CBF</tt> - Bald Guy (No Walk)</li>
+<li><tt>10CC0-10D7F</tt> - Hat Guy (No Walk)</li>
+<li><tt>10D80-10EFF</tt> - Fat Guy</li>
+<li><tt>10F00-1107F</tt> - Ninja?</li>
+<li><tt>11080-1113F</tt> - Guard</li>
+<li><tt>11140-1117F</tt> - Pokéball</li>
+<li><tt>11180-111BF</tt> - Fossil</li>
+<li><tt>111C0-111FF</tt> - Boulder</li>
+<li><tt>11200-1123F</tt> - Document Paper</li>
+<li><tt>11240-1127F</tt> - Pokédex</li>
+<li><tt>11280-112BF</tt> - Clipboard</li>
+<li><tt>112C0-112FF</tt> - Snorlax</li>
+<li><tt>11300-1133F</tt> - Coin</li>
+<li><tt>11340-1137F</tt> - Coffee Grandpa</li></div>
+</div>
+<tt>11380-11A7F</tt> Pokémon Logo on Splash/Title Screen
+<div class="mw-collapsible mw-collapsed">
+<tt>11A80-11E7F</tt> Font Graphics
+<div class="mw-collapsible-content"><li><tt>11A80-11A87</tt> - A</li>
+<li><tt>11A88-11A8F</tt> - B</li>
+<li><tt>11A90-11A97</tt> - C</li>
+<li><tt>11A98-11A9F</tt> - D</li>
+<li><tt>11AA0-11AA7</tt> - E</li>
+<li><tt>11AA8-11AAF</tt> - F</li>
+<li><tt>11AB0-11AB7</tt> - G</li>
+<li><tt>11AB8-11ABF</tt> - H</li>
+<li><tt>11AC0-11AC7</tt> - I</li>
+<li><tt>11AC8-11ACF</tt> - J</li>
+<li><tt>11AD0-11AD7</tt> - K</li>
+<li><tt>11AD8-11ADF</tt> - L</li>
+<li><tt>11AE0-11AE7</tt> - M</li>
+<li><tt>11AE8-11AEF</tt> - N</li>
+<li><tt>11AF0-11AF7</tt> - O</li>
+<li><tt>11AF8-11AFF</tt> - P</li>
+<li><tt>11B00-11B07</tt> - Q</li>
+<li><tt>11B08-11B0F</tt> - R</li>
+<li><tt>11B10-11B17</tt> - S</li>
+<li><tt>11B18-11B1F</tt> - T</li>
+<li><tt>11B20-11B27</tt> - U</li>
+<li><tt>11B28-11B2F</tt> - V</li>
+<li><tt>11B30-11B37</tt> - W</li>
+<li><tt>11B38-11B3F</tt> - X</li>
+<li><tt>11B40-11B47</tt> - Y</li>
+<li><tt>11B48-11B4F</tt> - Z</li>
+<li><tt>11B50-11B57</tt> - (</li>
+<li><tt>11B58-11B5F</tt> - )</li>
+<li><tt>11B60-11B67</tt> - :</li>
+<li><tt>11B68-11B6F</tt> - ;</li>
+<li><tt>11B70-11B77</tt> - [</li>
+<li><tt>11B78-11B7F</tt> - ]</li>
+<li><tt>11B80-11B87</tt> - a</li>
+<li><tt>11B88-11B8F</tt> - b</li>
+<li><tt>11B90-11B97</tt> - c</li>
+<li><tt>11B98-11B9F</tt> - d</li>
+<li><tt>11BA0-11BA7</tt> - e</li>
+<li><tt>11BA8-11BAF</tt> - f</li>
+<li><tt>11BB0-11BB7</tt> - g</li>
+<li><tt>11BB8-11BBF</tt> - h</li>
+<li><tt>11BC0-11BC7</tt> - i</li>
+<li><tt>11BC8-11BCF</tt> - j</li>
+<li><tt>11BD0-11BD7</tt> - k</li>
+<li><tt>11BD8-11BDF</tt> - l</li>
+<li><tt>11BE0-11BE7</tt> - m</li>
+<li><tt>11BE8-11BEF</tt> - n</li>
+<li><tt>11BF0-11BF7</tt> - o</li>
+<li><tt>11BF8-11BFF</tt> - p</li>
+<li><tt>11C00-11C07</tt> - q</li>
+<li><tt>11C08-11C0F</tt> - r</li>
+<li><tt>11C10-11C17</tt> - s</li>
+<li><tt>11C18-11C1F</tt> - t</li>
+<li><tt>11C20-11C27</tt> - u</li>
+<li><tt>11C28-11C2F</tt> - v</li>
+<li><tt>11C30-11C37</tt> - w</li>
+<li><tt>11C38-11C3F</tt> - x</li>
+<li><tt>11C40-11C47</tt> - y</li>
+<li><tt>11C48-11C4F</tt> - z</li>
+<li><tt>11C50-11C57</tt> - é</li>
+<li><tt>11C58-11C5F</tt> - 'd</li>
+<li><tt>11C60-11C67</tt> - 'l</li>
+<li><tt>11C68-11C6F</tt> - 's</li>
+<li><tt>11C70-11C77</tt> - 't</li>
+<li><tt>11C78-11C7F</tt> - 'v</li>
+<li><tt>11C80-11C87</tt> - </li>
+<li><tt>11C88-11C8F</tt> - </li>
+<li><tt>11C90-11C97</tt> - </li>
+<li><tt>11C98-11C9F</tt> - </li>
+<li><tt>11CA0-11CA7</tt> - </li>
+<li><tt>11CA8-11CAF</tt> - </li>
+<li><tt>11CB0-11CB7</tt> - </li>
+<li><tt>11CB8-11CBF</tt> - </li>
+<li><tt>11CC0-11CC7</tt> - </li>
+<li><tt>11CC8-11CCF</tt> - </li>
+<li><tt>11CD0-11CD7</tt> - </li>
+<li><tt>11CD8-11CDF</tt> - </li>
+<li><tt>11CE0-11CE7</tt> - </li>
+<li><tt>11CE8-11CEF</tt> - </li>
+<li><tt>11CF0-11CF7</tt> - </li>
+<li><tt>11CF8-11CFF</tt> - </li>
+<li><tt>11D00-11D07</tt> - </li>
+<li><tt>11D08-11D0F</tt> - </li>
+<li><tt>11D10-11D17</tt> - </li>
+<li><tt>11D18-11D1F</tt> - </li>
+<li><tt>11D20-11D27</tt> - </li>
+<li><tt>11D28-11D2F</tt> - </li>
+<li><tt>11D30-11D37</tt> - </li>
+<li><tt>11D38-11D3F</tt> - </li>
+<li><tt>11D40-11D47</tt> - </li>
+<li><tt>11D48-11D4F</tt> - </li>
+<li><tt>11D50-11D57</tt> - </li>
+<li><tt>11D58-11D5F</tt> - </li>
+<li><tt>11D60-11D67</tt> - </li>
+<li><tt>11D68-11D6F</tt> - </li>
+<li><tt>11D70-11D77</tt> - </li>
+<li><tt>11D78-11D7F</tt> - </li>
+<li><tt>11D80-11D87</tt> - '</li>
+<li><tt>11D88-11D8F</tt> - PK</li>
+<li><tt>11D90-11D97</tt> - MN</li>
+<li><tt>11D98-11D9F</tt> - -</li>
+<li><tt>11DA0-11DA7</tt> - 'r</li>
+<li><tt>11DA8-11DAF</tt> - 'm</li>
+<li><tt>11DB0-11DB7</tt> - ?</li>
+<li><tt>11DB8-11DBF</tt> - !</li>
+<li><tt>11DC0-11DC7</tt> - .</li>
+<li><tt>11DC8-11DCF</tt> - </li>
+<li><tt>11DD0-11DD7</tt> - </li>
+<li><tt>11DD8-11DDF</tt> - </li>
+<li><tt>11DE0-11DE7</tt> - </li>
+<li><tt>11DE8-11DEF</tt> - </li>
+<li><tt>11DF0-11DF7</tt> - </li>
+<li><tt>11DF8-11DFF</tt> - </li>
+<li><tt>11E00-11E07</tt> - ¥</li>
+<li><tt>11E08-11E0F</tt> - ×</li>
+<li><tt>11E10-11E17</tt> - .</li>
+<li><tt>11E18-11E1F</tt> - /</li>
+<li><tt>11E20-11E27</tt> - ,</li>
+<li><tt>11E28-11E2F</tt> - </li>
+<li><tt>11E30-11E37</tt> - 0</li>
+<li><tt>11E38-11E3F</tt> - 1</li>
+<li><tt>11E40-11E47</tt> - 2</li>
+<li><tt>11E48-11E4F</tt> - 3</li>
+<li><tt>11E50-11E57</tt> - 4</li>
+<li><tt>11E58-11E5F</tt> - 5</li>
+<li><tt>11E60-11E67</tt> - 6</li>
+<li><tt>11E68-11E6F</tt> - 7</li>
+<li><tt>11E70-11E77</tt> - 8</li>
+<li><tt>11E78-11E7F</tt> - 9</li></div>
+</div>
+<tt>11E80-128D6</tt> Various Graphics
+
+<tt>12AA5-12AC6</tt> Pokemon Status's
+
+<tt>12B3A-12B56</tt> Types of Status's
+
+<tt>12CAF-12CC2</tt> Exp Points, to
+
+<tt>12DA3-12DAF</tt> Able/Notable
+
+<tt>12E06-12E14</tt> (Able/Not Able)?
+
+<tt>1349B-1349C</tt> Pointer to image of player in trainer bio
+
+<tt>13584-1359E</tt> Trainer's Status's Text
+<div class="mw-collapsible mw-collapsed">
+<tt>13773-137A9</tt> TM/HM's Teach
+<div class="mw-collapsible-content"><li><tt>13773 - TM01</tt> (Default <tt>MEGA PUNCH</tt>)</li>
+<li><tt>13774 - TM02</tt> (Default <tt>RAZOR WIND</tt>)</li>
+<li><tt>13775 - TM03</tt> (Default <tt>SWORDS DANCE</tt>)</li>
+<li><tt>13776 - TM04</tt> (Default <tt>WHIRLWIND</tt>)</li>
+<li><tt>13777 - TM05</tt> (Default <tt>MEGA KICK</tt>)</li>
+<li><tt>13778 - TM06</tt> (Default <tt>TOXIC</tt>)</li>
+<li><tt>13779 - TM07</tt> (Default <tt>HORN DRILL</tt>)</li>
+<li><tt>1377A - TM08</tt> (Default <tt>BODY SLAM</tt>)</li>
+<li><tt>1377B - TM09</tt> (Default <tt>TAKE DOWN</tt>)</li>
+<li><tt>1377C - TM10</tt> (Default <tt>DOUBLE-EDGE</tt>)</li>
+<li><tt>1377D - TM11</tt> (Default <tt>BUBBLEBEAM</tt>)</li>
+<li><tt>1377E - TM12</tt> (Default <tt>WATER GUN</tt>)</li>
+<li><tt>1377F - TM13</tt> (Default <tt>ICE BEAM</tt>)</li>
+<li><tt>13780 - TM14</tt> (Default <tt>BLIZZARD</tt>)</li>
+<li><tt>13781 - TM15</tt> (Default <tt>HYPER BEAM</tt>)</li>
+<li><tt>13782 - TM16</tt> (Default <tt>PAY DAY</tt>)</li>
+<li><tt>13783 - TM17</tt> (Default <tt>SUBMISSION</tt>)</li>
+<li><tt>13784 - TM18</tt> (Default <tt>COUNTER</tt>)</li>
+<li><tt>13785 - TM19</tt> (Default <tt>SEISMIC TOSS</tt>)</li>
+<li><tt>13786 - TM20</tt> (Default <tt>RAGE</tt>)</li>
+<li><tt>13787 - TM21</tt> (Default <tt>MEGA DRAIN</tt>)</li>
+<li><tt>13788 - TM22</tt> (Default <tt>SOLARBEAM</tt>)</li>
+<li><tt>13789 - TM23</tt> (Default <tt>DRAGON RAGE</tt>)</li>
+<li><tt>1378A - TM24</tt> (Default <tt>THUNDERBOLT</tt>)</li>
+<li><tt>1378B - TM25</tt> (Default <tt>THUNDER</tt>)</li>
+<li><tt>1378C - TM26</tt> (Default <tt>EARTHQUAKE</tt>)</li>
+<li><tt>1378D - TM27</tt> (Default <tt>FISSURE</tt>)</li>
+<li><tt>1378E - TM28</tt> (Default <tt>DIG</tt>)</li>
+<li><tt>1378F - TM29</tt> (Default <tt>PSYCHIC</tt>)</li>
+<li><tt>13790 - TM30</tt> (Default <tt>TELEPORT</tt>)</li>
+<li><tt>13791 - TM31</tt> (Default <tt>MIMIC</tt>)</li>
+<li><tt>13792 - TM32</tt> (Default <tt>DOUBLE TEAM</tt>)</li>
+<li><tt>13793 - TM33</tt> (Default <tt>REFLECT</tt>)</li>
+<li><tt>13794 - TM34</tt> (Default <tt>BIDE</tt>)</li>
+<li><tt>13795 - TM35</tt> (Default <tt>METRONOME</tt>)</li>
+<li><tt>13796 - TM36</tt> (Default <tt>SELFDESTRUCT</tt>)</li>
+<li><tt>13797 - TM37</tt> (Default <tt>EGG BOMB</tt>)</li>
+<li><tt>13798 - TM38</tt> (Default <tt>FIRE BLAST</tt>)</li>
+<li><tt>13799 - TM39</tt> (Default <tt>SWIFT</tt>)</li>
+<li><tt>1379A - TM40</tt> (Default <tt>SKULL BASH</tt>)</li>
+<li><tt>1379B - TM41</tt> (Default <tt>SOFTBOILED</tt>)</li>
+<li><tt>1379C - TM42</tt> (Default <tt>DREAM EATER</tt>)</li>
+<li><tt>1379D - TM43</tt> (Default <tt>SKY ATTACK</tt>)</li>
+<li><tt>1379E - TM44</tt> (Default <tt>REST</tt>)</li>
+<li><tt>1379F - TM45</tt> (Default <tt>THUNDER WAVE</tt>)</li>
+<li><tt>137A0 - TM46</tt> (Default <tt>PSYWAVE</tt>)</li>
+<li><tt>137A1 - TM47</tt> (Default <tt>EXPLOSION</tt>)</li>
+<li><tt>137A2 - TM48</tt> (Default <tt>ROCK SLIDE</tt>)</li>
+<li><tt>137A3 - TM49</tt> (Default <tt>TRI ATTACK</tt>)</li>
+<li><tt>137A4 - TM50</tt> (Default <tt>SUBSTITUTE</tt>)</li>
+<li><tt>137A5 - HM01</tt> (Default <tt>CUT</tt>)</li>
+<li><tt>137A6 - HM02</tt> (Default <tt>FLY</tt>)</li>
+<li><tt>137A7 - HM03</tt> (Default <tt>SURF</tt>)</li>
+<li><tt>137A8 - HM04</tt> (Default <tt>STRENGTH</tt>)</li>
+<li><tt>137A9 - HM05</tt> (Default <tt>FLASH</tt>)</li></div>
+</div>
+<tt>13853-1386A</tt> Win/Lose/Draw
+
+<tt>13AA0-13FFF</tt> Blank Data
+
+==Bank 5==
+
+<tt>14000-1783F</tt> Sprites
+<div class="mw-collapsible mw-collapsed">
+<tt>17CBD-17D7C</tt> Emotions
+<div class="mw-collapsible-content"><li><tt>17CBD-17CFC</tt> - [!]</li>
+<li><tt>17CFD-17D3C</tt> - [?]</li>
+<li><tt>17D3D-17D7C</tt> - [☺]</li></div>
+</div>
+<tt>17F5F-17FFF</tt> Blank Data
+
+==Bank 6==
+
+$18000 "Celadon City Header"
+
+$18022 "Celadon City Object Data"
+
+$180DF "Celadon City Data"
+
+$182A1 "Pallet Town Header"
+
+$182C3 "Pallet Town Object Data"
+
+$182FD "Pallet Town Data"
+
+$18357 "Viridian City Header"
+
+$18384 "Viridian City Object Data"
+
+$183EC "Viridian City Data"
+
+$18554 "Pewter City Header"
+
+$18577 "Pewter City Object Data"
+
+$185E6 "Pewter City Data"
+
+$1874E "Cerulean City Header"
+
+$18786 "Cerulean City Object Data"
+
+$18830 "Cerulean City Data"
+
+$18998 "Vermilion City Header"
+
+$189BA "Vermilion City Object Data"
+
+$18A3F "Vermilion City Data"
+
+$18BA7 "Fuchsia City Header"
+
+$18BD4 "Fuchsia City Object Data"
+
+$18C86 "Fuchsia City Data"
+
+$18E5B "Pallet Town Script"
+
+$18F88 "Pallet Town Text Pointers"
+
+$18FF1 "Viridian City Script"
+
+$190E4 "Viridian City Text Pointers"
+
+$19237 "Pewter City Script"
+
+$1938B "Pewter City Text Pointers"
+
+$19480 "Cerulean City Script"
+
+$1962D "Cerulean City Text Pointers"
+
+$197A1 "Vermilion City Script"
+
+$1986F "Vermilion City Text Pointers"
+
+$19956 "Celadon City Script"
+
+$19966 "Celadon City Text Pointers"
+
+$19A2B "Fuchsia City Script"
+
+$19A2E "Fuchsia City Text Pointers"
+
+$19B2F "Gary's House Header"
+
+$19B3B "Gary's House Script"
+
+$19B57 "Gary's House Text Pointers"
+
+$19BCE "Gary's House Object Data"
+
+$19BF6 "Gary's House Data"
+
+$19C06 "Vermilion House (3) Header"
+
+$19C12 "Vermilion House (3) Script"
+
+$19C15 "Vermilion House (3) Text Pointers"
+
+$19C25 "Vermilion House (3) Object Data"
+
+$19C3F "Vermilion House (3) Data"
+
+$19C4F "Indigo Plateau Lobby Header"
+
+$19C5B "Indigo Plateau Lobby Script"
+
+$19C7F "Indigo Plateau Lobby Text Pointers"
+
+$19C95 "Indigo Plateau Lobby Object Data"
+
+$19CCF "Indigo Plateau Lobby Data"
+
+$19CFF "Silph Co (4) Header"
+
+$19D0B "Silph Co (4) Script"
+
+$19DA0 "Silph Co (4) Text Pointers"
+
+$19E35 "Silph Co (4) Object Data"
+
+$19EA4 "Silph Co (4) Data"
+
+$19F2B "Silph Co (5) Header"
+
+$19F37 "Silph Co (5) Script"
+
+$19FBC "Silph Co (5) Text Pointers"
+
+$1A08D "Silph Co (5) Object Data"
+
+$1A116 "Silph Co (5) Data"
+
+$1A19D "Silph Co (6) Header"
+
+$1A1A9 "Silph Co (6) Script"
+
+$1A1F6 "Silph Co (6) Text Pointers"
+
+$1A2FB "Silph Co (6) Object Data"
+
+$1A36B "Silph Co (6) Data" 
+
+1A718-1BFFF Blank Data
+
+==Bank 7==
+
+$1C000 "Cinnibar Island Header"
+
+$1C022 "Cinnibar Island Object Data"
+
+$1C069 "Cinnibar Island Data"
+
+$1C0C3 "Route 1 Header"
+
+$1C0E5 "Route 1 Object Data"
+
+$1C0FC "Route 1 Data"
+
+$1C1B0 "Underground Path Entrance (Route 8) Data"
+
+$1C1C0 "Oak's Lab Data"
+
+$1C1DE "Viridian House Data"
+
+$1C1EE "Viridian School Data"
+
+$1C1FE "Cerulean House (Robbed) Data"
+
+$1C20E "Digletts Cave (Route 2) Data"
+
+$1CA19 "Cinnibar Island Script"
+
+$1CA81 "Cinnibar Island Text Pointers"
+
+$1CAAF "Route 1 Script"
+
+$1CAB2 "Route 1 Text Pointers"
+
+$1CB02 "Oak's Lab Header"
+
+$1CB0E "Oak's Lab Script"
+
+$1D082 "Oak's Lab Text Pointers"
+
+$1D40A "Oak's Lab Object Data"
+
+$1D462 "Viridian Mart Header"
+
+$1D46E "Viridian Mart Script"
+
+$1D4E0 "Viridian Mart Text Pointers"
+
+$1D50A "Viridian Mart Object Data"
+
+$1D530 "Viridian Mart Data"
+
+$1D540 "Viridian School Header"
+
+$1D54C "Viridian School Script"
+
+$1D54F "Viridian School Text Pointers"
+
+$1D55D "Viridian School Object Data"
+
+$1D57D "Viridian House Header"
+
+$1D58A "Viridian House Script"
+
+$1D58D "Viridian House Text Pointers"
+
+$1D5BB "Viridian House Object Data"
+
+$1D5E7 "Pewter City House Header"
+
+$1D5F3 "Pewter City House Script"
+
+$1D5F6 "Pewter City House Text Pointers"
+
+$1D616 "Pewter City House Object Data"
+
+$1D63C "Pewter City House Header"
+
+$1D648 "Pewter City House Script"
+
+$1D64B "Pewter City House Text Pointers"
+
+$1D659 "Pewter City House Object Data"
+
+$1D679 "Cerulean House (Robbed) Header"
+
+$1D685 "Cerulean House (Robbed) Script"
+
+$1D689 "Cerulean House (Robbed) Text Pointers"
+
+$1D6BF "Cerulean House (Robbed) Object Data"
+
+$1D6EA "Cerulean House (2) Header"
+
+$1D6F6 "Cerulean House (2) Script"
+
+$1D6F9 "Cerulean House (2) Text Pointers"
+
+$1D710 "Cerulean House (2) Object Data"
+
+$1D730 "Cerulean Bike Shop Header"
+
+$1D73C "Cerulean Bike Shop Script"
+
+$1D73F "Cerulean Bike Shop Text Pointers"
+
+$1D866 "Cerulean Bike Shop Object Data"
+
+$1D88C "Cerulean Bike Shop Data"
+
+$1D89C "Lavender House (1) Header"
+
+$1D8A8 "Lavender House (1) Script"
+
+$1D8AC "Lavender House (1) Text Pointers"
+
+$1D96A "Lavender House (1) Object Data"
+
+$1D9A2 "Lavender House (2) Header"
+
+$1D9AE "Lavender House (2) Script"
+
+$1D9B2 "Lavender House (2) Text Pointers"
+
+$1D9E6 "Lavender House (2) Object Data"
+
+$1DA06 "Name Rater's House Header"
+
+$1DA12 "Name Rater's House Script"
+
+$1DA54 "Name Rater's House Text Pointers"
+
+$1DAD6 "Name Rater's House Object Data"
+
+$1DAF0 "Vermilion House Header"
+
+$1DAFC "Vermilion House Script"
+
+$1DB00 "Vermilion House Text Pointers"
+
+$1DB20 "Vermilion House Object Data"
+
+$1DB46 "Vermilion Dock Header"
+
+$1DB52 "Vermilion Dock Script"
+
+$1DCBF "Vermilion Dock Text Pointers"
+
+$1DCC6 "Vermilion Dock Object Data"
+
+$1DCDA "Vermilion Dock Data"
+
+$1DD2E "Celadon Mansion (5) Header"
+
+$1DD3A "Celadon Mansion (5) Script"
+
+$1DD3D "Celadon Mansion (5) Text Pointers"
+
+$1DD5C "Celadon Mansion (5) Object Data"
+
+$1DD7C "Fuchsia Mart Header"
+
+$1DD88 "Fuchsia Mart Script"
+
+$1DD8B "Fuchsia Mart Text Pointers"
+
+$1DD9B "Fuchsia Mart Object Data"
+
+$1DDC1 "Fuchsia Mart Data"
+
+$1DDD1 "Saffron House (1) Header"
+
+$1DDDD "Saffron House (1) Script"
+
+$1DDE0 "Saffron House (1) Text Pointers"
+
+$1DE04 "Saffron House (1) Object Data"
+
+$1DE30 "Saffron House (2) Header"
+
+$1DE3C "Saffron House (2) Script"
+
+$1DE3F "Saffron House (2) Text Pointers"
+
+$1DE8A "Saffron House (2) Object Data"
+
+$1DEA4 "Digletts Cave (Route 2) Header"
+
+$1DEB0 "Digletts Cave (Route 2) Script"
+
+$1DEB8 "Digletts Cave (Route 2) Text Pointers"
+
+$1DEBF "Digletts Cave (Route 2) Object Data"
+
+$1DEE1 "Route 2 House Header"
+
+$1DEED "Route 2 House Script"
+
+$1DEF0 "Route 2 House Text Pointers"
+
+$1DF07 "Route 2 House Object Data"
+
+$1DF27 "Route 5 Gate Header"
+
+$1DF33 "Route 5 Gate Script"
+
+$1DFA4 "Route 5 Gate Text Pointers"
+
+$1DFFB "Route 5 Gate Object Data"
+
+$1E025 "Route 5 Gate Data"
+
+$1E031 "Route 6 Gate Header"
+
+$1E03D "Route 6 Gate Script"
+
+$1E0B8 "Route 6 Gate Text Pointers"
+
+$1E0BE "Route 6 Gate Object Data"
+
+$1E0E8 "Route 6 Gate Data"
+
+$1E0F4 "Route 7 Gate Header"
+
+$1E100 "Route 7 Gate Script"
+
+$1E17F "Route 7 Gate Text Pointers"
+
+$1E185 "Route 7 Gate Object Data"
+
+$1E1AF "Route 7 Gate Data"
+
+$1E1BB "Route 8 Gate Header"
+
+$1E1C7 "Route 8 Gate Script"
+
+$1E241 "Route 8 Gate Text Pointers"
+
+$1E247 "Route 8 Gate Object Data"
+
+$1E271 "Route 8 Gate Data"
+
+$1E27D "Underground Path Entrance (Route 8) Header"
+
+$1E289 "Underground Path Entrance (Route 8) Script"
+
+$1E291 "Underground Path Entrance (Route 8) Text Pointers"
+
+$1E298 "Underground Path Entrance (Route 8) Object Data"
+
+$1E2BA "Power Plant Header"
+
+$1E2C6 "Power Plant Script"
+
+$1E2DF "Power Plant Text Pointers"
+
+$1E3BF "Power Plant Object Data"
+
+$1E446 "Power Plant Data"
+
+$1E5AE "Diglett's Cave Entrance (Route 11) Header"
+
+$1E5BA "Diglett's Cave Entrance (Route 11) Script"
+
+$1E5C3 "Diglett's Cave Entrance (Route 11) Text Pointers"
+
+$1E5CA "Diglett's Cave Entrance (Route 11) Object Data"
+
+$1E5EC "Route 16 House Header"
+
+$1E5F8 "Route 16 House Script"
+
+$1E5FB "Route 16 House Text Pointers"
+
+$1E657 "Route 16 House Object Data"
+
+$1E677 "Route 22 Gate Header"
+
+$1E683 "Route 22 Gate Script"
+
+$1E6DF "Route 22 Gate Text Pointers"
+
+$1E720 "Route 22 Gate Object Data"
+
+$1E74A "Route 22 Gate Data"
+
+$1E75E "Bill's House Header"
+
+$1E76A "Bill's House Script"
+
+$1E834 "Bill's House Text Pointers"
+
+$1E8DF "Bill's House Object Data"
+
+$1E905 "Bill's House Data" 
+
+1EC84-1ECA9 Bill's Comp Menu
+
+1ECC2-1FFFF Blank Data
+
+==Bank 8==
+
+<tt>20000-2148B</tt> Music Data
+
+===Music Pointers===
+
+<tt>202BE-202C6</tt> Gym Leader Battle
+
+<tt>202C7-202CF</tt> Battle
+
+<tt>202D0-202D8</tt> Wild Pokemon
+
+<tt>202D9-202E1</tt> Final Battle
+
+<tt>202E2-202EA</tt> Defeated Trainer
+
+<tt>202EB-202F3</tt> Defeated Wild Pokemon
+
+<tt>202F4-202FC</tt> Defeated GYM Leader
+
+<tt>2148B-214C0</tt> PC Menu
+
+<tt>216E1-2171A</tt> PC Options (Pokemon)
+<div class="mw-collapsible mw-collapsed">
+<tt>21745-2174A</tt> What <tt>HM</tt>s Teach
+<div class="mw-collapsible-content"><li><tt>21745</tt> - <tt>HM01</tt> (Default <tt>CUT</tt>)</li>
+<li><tt>21746</tt> - <tt>HM02</tt> (Default <tt>FLY</tt>)</li>
+<li><tt>21747</tt> - <tt>HM03</tt> (Default <tt>SURF</tt>)</li>
+<li><tt>21748</tt> - <tt>HM04</tt> (Default <tt>STRENGTH</tt>)</li>
+<li><tt>21749</tt> - <tt>HM05</tt> (Default <tt>FLASH</tt>)</li></div>
+</div>
+<tt>217CB-217E8</tt>- PC Options (Items)
+
+<tt>217E8-23F52</tt> Music Data
+
+<tt>23F52-23FFF</tt> Blank Data
+
+==Bank 9==
+
+<tt>24000-27DAD</tt> Pokemon Picture Data (Set 1)
+<div class="mw-collapsible mw-collapsed">
+<tt>27DAE-27DE3</tt> Type Names Pointers
+<div class="mw-collapsible-content"><tt><li>27DAE-27DAF - NORMAL</li>
+<li>27DB0-27DB1 - FIGHTING</li>
+<li>27DB2-27DB3 - FLYING</li>
+<li>27DB4-27DB5 - POISON</li>
+<li>27DB6-27DB7 - GROUND</li>
+<li>27DB8-27DB9 - ROCK</li>
+<li>27DBA-27DBB - BIRD</li>
+<li>27DBC-27DBD - BUG</li>
+<li>27DBE-27DBF - GHOST</li>
+<li>27DC0-27DC1 - NORMAL</li>
+<li>27DC2-27DC3 - NORMAL</li>
+<li>27DC4-27DC5 - NORMAL</li>
+<li>27DC6-27DC7 - NORMAL</li>
+<li>27DC8-27DC9 - NORMAL</li>
+<li>27DCA-27DCB - NORMAL</li>
+<li>27DCC-27DCD - NORMAL</li>
+<li>27DCE-27DCF - NORMAL</li>
+<li>27DD0-27DD1 - NORMAL</li>
+<li>27DD2-27DD3 - NORMAL</li>
+<li>27DD4-27DD5 - NORMAL</li>
+<li>27DD6-27DD7 - FIRE</li>
+<li>27DD8-27DD9 - WATER</li>
+<li>27DDA-27DDB - GRASS</li>
+<li>27DDC-27DDD - ELECTRIC</li>
+<li>27DDE-27DDF - PSYCHIC</li>
+<li>27DE0-27DE1 - ICE</li>
+<li>27DE2-27DE3 - DRAGON</li></tt></div>
+</div><div class="mw-collapsible mw-collapsed">
+<tt>27DE4-27E49</tt> Type Names
+<div class="mw-collapsible-content"><tt><li>27DE4-27DEA - NORMAL</li>
+<li>27DEB-27DF3 - FIGHTING</li>
+<li>27DF4-27DFA - FLYING</li>
+<li>27DFB-27E01 - POISON</li>
+<li>27E02-27E06 - FIRE</li>
+<li>27E07-27E0C - WATER</li>
+<li>27E0D-27E12 - GRASS</li>
+<li>27E13-27E1B - ELECTRIC</li>
+<li>27E1C-27E23 - PSYCHIC</li>
+<li>27E24-27E27 - ICE</li>
+<li>27E28-27E2E - GROUND</li>
+<li>27E2F-27E33 - ROCK</li>
+<li>27E34-27E38 - BIRD</li>
+<li>27E39-27E3C - BUG</li>
+<li>27E3D-27E42 - GHOST</li>
+<li>27E43-27E49 - DRAGON</li></tt></div>
+</div><div class="mw-collapsible mw-collapsed">
+<tt>27EC2-27F85</tt> Trainers' Names (Incomplete & possibly not used)
+<div class="mw-collapsible-content"><tt><li>27EC2-27ECB - YOUNGSTER</li>
+<li>27ECC-27ED7 - BUG CATCHER</li>
+<li>27ED8-27EDC - LASS</li>
+<li>27EDD-27EE8 - JR.TRAINER♂</li>
+<li>27EE9-27EF4 - JR.TRAINER♀</li>
+<li>27EF5-27EFF - POKéMANIAC</li>
+<li>27F00-27F0A - SUPER NERD</li>
+<li>27F0B-27F12 - BURGLAR</li>
+<li>27F13-27F1B - ENGINEER</li>
+<li>27F1C-27F23 - JUGGLER</li>
+<li>27F24-27F2B - SWIMMER</li>
+<li>27F2C-27F32 - BEAUTY</li>
+<li>27F33-27F39 - ROCKER</li>
+<li>27F3A-27F41 - JUGGLER</li>
+<li>27F42-27F4B - BLACKBELT</li>
+<li>27F4C-27F54 - PROF.OAK</li>
+<li>27F55-27F5A - CHIEF</li>
+<li>27F5B-27F64 - SCIENTIST</li>
+<li>27F65-27F6B - ROCKET</li>
+<li>27F6C-27F78 - COOLTRAINER♂</li>
+<li>27F79-27F85 - COOLTRAINER♀</li></tt></div>
+</div>
+
+==Bank A==
+
+28000-2BEFC Pokemon Picture Data (Set 2)
+
+2BEFC-2BFFF Blank Data
+
+==Bank B==
+
+2C000-2FA53 Pokemon Picture Data (Set 3)
+
+2FB98-2FE18 Trainer Bio Graphics
+
+2FCA0-2FFFF Blank Data
+
+==Bank C==
+
+30000-33F8F Pokemon Picture Data (Set 4)
+
+33F8F-33FFF Blank Data
+
+==Bank D==
+
+34000-37242 Pokemon Picture Data (Set 5)
+
+37679-3768F Various Slot Pointers
+
+37690-3769C Amounts text
+
+376E2-376E3 Cherry Payout
+
+376F0-376F1 Pokemon Payout
+
+376FF-37700 Bar Payout 907E
+
+3771F-37720 7's Payout
+
+378F5-37944 Slot Tile Arranger
+
+37A51-37CA1 Slot Graphics
+
+37B97-37E18 Trainer Bio Graphics
+
+37E88-37FFF Blank Data
+
+==Bank E==
+<div class="mw-collapsible mw-collapsed">
+<tt>38000-383DD</tt> Moves Data
+<div class="mw-collapsible-content"><tt><li>38000-38005 - POUND</li>
+<li>38006-3800B - KARATE CHOP</li>
+<li>3800C-38011 - DOUBLESLAP</li>
+<li>38012-38017 - COMET PUNCH</li>
+<li>38018-3801D - MEGA PUNCH</li>
+<li>3801E-38023 - PAY DAY</li>
+<li>38024-38029 - FIRE PUNCH</li>
+<li>3802A-3802F - ICE PUNCH</li>
+<li>38030-38035 - THUNDERPUNCH</li>
+<li>38036-3803B - SCRATCH</li>
+<li>3803C-38041 - VICEGRIP</li>
+<li>38042-38047 - GUILLOTINE</li>
+<li>38048-3804D - RAZOR WIND</li>
+<li>3804E-38053 - SWORDS DANCE</li>
+<li>38054-38059 - CUT</li>
+<li>3805A-3805F - GUST</li>
+<li>38060-38065 - WING ATTACK</li>
+<li>38066-3806B - WHIRLWIND</li>
+<li>3806C-38071 - FLY</li>
+<li>38072-38077 - BIND</li>
+<li>38078-3807D - SLAM</li>
+<li>3807E-38083 - VINE WHIP</li>
+<li>38084-38089 - STOMP</li>
+<li>3808A-3808F - DOUBLE KICK</li>
+<li>38090-38095 - MEGA KICK</li>
+<li>38096-3809B - JUMP KICK</li>
+<li>3809C-380A1 - ROLLING KICK</li>
+<li>380A2-380A7 - SAND-ATTACK</li>
+<li>380A8-380AD - HEADBUTT</li>
+<li>380AE-380B3 - HORN ATTACK</li>
+<li>380B4-380B9 - FURY ATTACK</li>
+<li>380BA-380BF - HORN DRILL</li>
+<li>380C0-380C5 - TACKLE</li>
+<li>380C6-380CB - BODY SLAM</li>
+<li>380CC-380D1 - WRAP</li>
+<li>380D2-380D7 - TAKE DOWN</li>
+<li>380D8-380DD - THRASH</li>
+<li>380DE-380E3 - DOUBLE-EDGE</li>
+<li>380E4-380E9 - TAIL WHIP</li>
+<li>380EA-380EF - POISON STING</li>
+<li>380F0-380F5 - TWINEEDLE</li>
+<li>380F6-380FB - PIN MISSILE</li>
+<li>380FC-38101 - LEER</li>
+<li>38102-38107 - BITE</li>
+<li>38108-3810D - GROWL</li>
+<li>3810E-38113 - ROAR</li>
+<li>38114-38119 - SING</li>
+<li>3811A-3811F - SUPERSONIC</li>
+<li>38120-38125 - SONICBOOM</li>
+<li>38126-3812B - DISABLE</li>
+<li>3812C-38131 - ACID</li>
+<li>38132-38137 - EMBER</li>
+<li>38138-3813D - FLAMETHROWER</li>
+<li>3813E-38143 - MIST</li>
+<li>38144-38149 - WATER GUN</li>
+<li>3814A-3814F - HYDRO PUMP</li>
+<li>38150-38155 - SURF</li>
+<li>38156-3815B - ICE BEAM</li>
+<li>3815C-38161 - BLIZZARD</li>
+<li>38162-38167 - PSYBEAM</li>
+<li>38168-3816D - BUBBLEBEAM</li>
+<li>3816E-38173 - AURORA BEAM</li>
+<li>38174-38179 - HYPER BEAM</li>
+<li>3817A-3817F - PECK</li>
+<li>38180-38185 - DRILL PECK</li>
+<li>38186-3818B - SUBMISSION</li>
+<li>3818C-38191 - LOW KICK</li>
+<li>38192-38197 - COUNTER</li>
+<li>38198-3819D - SEISMIC TOSS</li>
+<li>3819E-381A3 - STRENGTH</li>
+<li>381A4-381A9 - ABSORB</li>
+<li>381AA-381AF - MEGA DRAIN</li>
+<li>381B0-381B5 - LEECH SEED</li>
+<li>381B6-381BB - GROWTH</li>
+<li>381BC-381C1 - RAZOR LEAF</li>
+<li>381C2-381C7 - SOLARBEAM</li>
+<li>381C8-381CD - POISONPOWDER</li>
+<li>381CE-381D3 - STUN SPORE</li>
+<li>381D4-381D9 - SLEEP POWDER</li>
+<li>381DA-381DF - PETAL DANCE</li>
+<li>381E0-381E5 - STRING SHOT</li>
+<li>381E6-381EB - DRAGON RAGE</li>
+<li>381EC-381F1 - FIRE SPIN</li>
+<li>381F2-381F7 - THUNDERSHOCK</li>
+<li>381F8-381FD - THUNDERBOLT</li>
+<li>381FE-38203 - THUNDER WAVE</li>
+<li>38204-38209 - THUNDER</li>
+<li>3820A-3820F - ROCK THROW</li>
+<li>38210-38215 - EARTHQUAKE</li>
+<li>38216-3821B - FISSURE</li>
+<li>3821C-38221 - DIG</li>
+<li>38222-38227 - TOXIC</li>
+<li>38228-3822D - CONFUSION</li>
+<li>3822E-38233 - PSYCHIC</li>
+<li>38234-38239 - HYPNOSIS</li>
+<li>3823A-3823F - MEDITATE</li>
+<li>38240-38245 - AGILITY</li>
+<li>38246-3824B - QUICK ATTACK</li>
+<li>3824C-38251 - RAGE</li>
+<li>38252-38257 - TELEPORT</li>
+<li>38258-3825D - NIGHT SHADE</li>
+<li>3825E-38263 - MIMIC</li>
+<li>38264-38269 - SCREECH</li>
+<li>3826A-3826F - DOUBLE TEAM</li>
+<li>38270-38275 - RECOVER</li>
+<li>38276-3827B - HARDEN</li>
+<li>3827C-38281 - MINIMIZE</li>
+<li>38282-38287 - SMOKESCREEN</li>
+<li>38288-3828D - CONFUSE RAY</li>
+<li>3828E-38293 - WITHDRAW</li>
+<li>38294-38299 - DEFENSE CURL</li>
+<li>3829A-3829F - BARRIER</li>
+<li>382A0-382A5 - LIGHT SCREEN</li>
+<li>382A6-382AB - HAZE</li>
+<li>382AC-382B1 - REFLECT</li>
+<li>382B2-382B7 - FOCUS ENERGY</li>
+<li>382B8-382BD - BIDE</li>
+<li>382BE-382C3 - METRONOME</li>
+<li>382C4-382C9 - MIRROR MOVE</li>
+<li>382CA-382CF - SELFDESTRUCT</li>
+<li>382D0-382D5 - EGG BOMB</li>
+<li>382D6-382DB - LICK</li>
+<li>382DC-382E1 - SMOG</li>
+<li>382E2-382E7 - SLUDGE</li>
+<li>382E8-382ED - BONE CLUB</li>
+<li>382EE-382F3 - FIRE BLAST</li>
+<li>382F4-382F9 - WATERFALL</li>
+<li>382FA-382FF - CLAMP</li>
+<li>38300-38305 - SWIFT</li>
+<li>38306-3830B - SKULL BASH</li>
+<li>3830C-38311 - SPIKE CANNON</li>
+<li>38312-38317 - CONSTRICT</li>
+<li>38318-3831D - AMNESIA</li>
+<li>3831E-38323 - KINESIS</li>
+<li>38324-38329 - SOFTBOILED</li>
+<li>3832A-3832F - HI JUMP KICK</li>
+<li>38330-38335 - GLARE</li>
+<li>38336-3833B - DREAM EATER</li>
+<li>3833C-38341 - POISON GAS</li>
+<li>38342-38347 - BARRAGE</li>
+<li>38348-3834D - LEECH LIFE</li>
+<li>3834E-38353 - LOVELY KISS</li>
+<li>38354-38359 - SKY ATTACK</li>
+<li>3835A-3835F - TRANSFORM</li>
+<li>38360-38365 - BUBBLE</li>
+<li>38366-3836B - DIZZY PUNCH</li>
+<li>3836C-38371 - SPORE</li>
+<li>38372-38377 - FLASH</li>
+<li>38378-3837D - PSYWAVE</li>
+<li>3837E-38383 - SPLASH</li>
+<li>38384-38389 - ACID ARMOR</li>
+<li>3838A-3838F - CRABHAMMER</li>
+<li>38390-38395 - EXPLOSION</li>
+<li>38396-3839B - FURY SWIPES</li>
+<li>3839C-383A1 - BONEMERANG</li>
+<li>383A2-383A7 - REST</li>
+<li>383A8-383AD - ROCK SLIDE</li>
+<li>383AE-383B3 - HYPER FANG</li>
+<li>383B4-383B9 - SHARPEN</li>
+<li>383BA-383BF - CONVERSION</li>
+<li>383C0-383C5 - TRI ATTACK</li>
+<li>383C6-383CB - SUPER FANG</li>
+<li>383CC-383D1 - SLASH</li>
+<li>383D2-383D7 - SUBSTITUTE</li>
+<li>383D8-383DD - STRUGGLE</li></tt></div>
+</div><div class="mw-collapsible mw-collapsed">
+<tt>383DE-39445</tt> General Pokémon Data
+<div class="mw-collapsible-content"><tt><li>383DE-383F9 - BULBASAUR</li>
+<li>383FA-38415 - IVYSAUR</li>
+<li>38416-38431 - VENUSAUR</li>
+<li>38432-3844D - CHARMANDER</li>
+<li>3844E-38469 - CHARMELEON</li>
+<li>3846A-38485 - CHARIZARD</li>
+<li>38486-384A1 - SQUIRTLE</li>
+<li>384A2-384BD - WARTORTLE</li>
+<li>384BE-384D9 - BLASTOISE</li>
+<li>384DA-384F5 - CATERPIE</li>
+<li>384F6-38511 - METAPOD</li>
+<li>38512-3852D - BUTTERFREE</li>
+<li>3852E-38549 - WEEDLE</li>
+<li>3854A-38565 - KAKUNA</li>
+<li>38566-38581 - BEEDRILL</li>
+<li>38582-3859D - PIDGEY</li>
+<li>3859E-38589 - PIDGEOTTO</li>
+<li>385BA-385D5 - PIDGEOT</li>
+<li>385D6-385F1 - RATTATA</li>
+<li>385F2-3860D - RATICATE</li>
+<li>3860E-38629 - SPEAROW</li>
+<li>3862A-38645 - FEAROW</li>
+<li>38646-38661 - EKANS</li>
+<li>38662-3867D - ARBOK</li>
+<li>3867E-38699 - PIKACHU</li>
+<li>3869A-386B5 - RAICHU</li>
+<li>386B6-386D1 - SANDSHREW</li>
+<li>386D2-386ED - SANDSLASH</li>
+<li>386EE-38709 - NIDORAN F</li>
+<li>3870A-38725 - NIDORINA</li>
+<li>38726-38741 - NIDOQUEEN</li>
+<li>38742-3875D - NIDORAN M</li>
+<li>3875E-38779 - NIDORINO</li>
+<li>3877A-38795 - NIDOKING</li>
+<li>38796-387B1 - CLEFAIRY</li>
+<li>387B2-387CD - CLEFABLE</li>
+<li>387CE-387E9 - VULPIX</li>
+<li>387EA-38805 - NINETALES</li>
+<li>38806-38821 - JIGGLYPUFF</li>
+<li>38822-3883D - WIGGLYTUFF</li>
+<li>3883E-38859 - ZUBAT</li>
+<li>3885A-38875 - GOLBAT</li>
+<li>38876-38891 - ODDISH</li>
+<li>38892-388AD - GLOOM</li>
+<li>388AE-388C9 - VILEPLUME</li>
+<li>388CA-388E5 - PARAS</li>
+<li>388E6-38901 - PARASECT</li>
+<li>38902-3891D - VENONAT</li>
+<li>3891E-38939 - VENOMOTH</li>
+<li>3893A-38955 - DIGLETT</li>
+<li>38956-38971 - DUGTRIO</li>
+<li>38972-3898D - MEOWTH</li>
+<li>3898E-389A9 - PERSIAN</li>
+<li>389AA-389C5 - PSYDUCK</li>
+<li>389C6-389E1 - GOLDUCK</li>
+<li>389E2-389FD - MANKEY</li>
+<li>389FE-38A19 - PRIMEAPE</li>
+<li>38A1A-38A35 - GROWLITHE</li>
+<li>38A36-38A51 - ARCANINE</li>
+<li>38A52-38A6D - POLIWAG</li>
+<li>38A6E-38A89 - POLIWHIRL</li>
+<li>38A8A-38AA5 - POLIWRATH</li>
+<li>38AA6-38AC1 - ABRA</li>
+<li>38AC2-38ADD - KADABRA</li>
+<li>38ADE-38AF9 - ALAKAZAM</li>
+<li>38AFA-38B15 - MACHOP</li>
+<li>38B16-38B31 - MACHOKE</li>
+<li>38B32-38B4D - MACHAMP</li>
+<li>38B4E-38B69 - BELLSPROUT</li>
+<li>38B6A-38B85 - WEEPINBELL</li>
+<li>38B86-38BA1 - VICTREEBEL</li>
+<li>38BA2-38BBD - TENTACOOL</li>
+<li>38BBE-38BD9 - TENTACRUEL</li>
+<li>38BDA-38BF5 - GEODUDE</li>
+<li>38BF6-38c11 - GRAVELER</li>
+<li>38C12-38C2D - GOLEM</li>
+<li>38C2E-38C49 - PONYTA</li>
+<li>38C4A-38C65 - RAPIDASH</li>
+<li>38C66-38C81 - SLOWPOKE</li>
+<li>38C82-38C9D - SLOWBRO</li>
+<li>38C9E-38CB9 - MAGNEMITE</li>
+<li>38CBA-38CD5 - MAGNETON</li>
+<li>38CD6-38CF1 - FARFETCH'D</li>
+<li>38CF2-38D0D - DODUO</li>
+<li>38D0E-38D29 - DODRIO</li>
+<li>38D2A-38D45 - SEEL</li>
+<li>38D46-38D61 - DEWGONG</li>
+<li>38D62-38D7D - GRIMER</li>
+<li>38D7E-38D99 - MUK</li>
+<li>38D9A-38DB5 - SHELLDER</li>
+<li>38DB6-38DD1 - CLOYSTER</li>
+<li>38DD2-38DED - GASTLY</li>
+<li>38DEE-38E09 - HAUNTER</li>
+<li>38E0A-38E25 - GENGAR</li>
+<li>38E26-38E41 - ONIX</li>
+<li>38E42-38E5D - DROWZEE</li>
+<li>38E5E-38E79 - HYPNO</li>
+<li>38E7A-38E95 - KRABBY</li>
+<li>38E96-38EB1 - KINGLER</li>
+<li>38EB2-38ECD - VOLTORB</li>
+<li>38ECE-38EE9 - ELECTRODE</li>
+<li>38EEA-38F05 - EXEGGCUTE</li>
+<li>38F06-38F21 - EXEGGUTOR</li>
+<li>38F22-38F3D - CUBONE</li>
+<li>38F3E-38F59 - MAROWAK</li>
+<li>38F5A-38F75 - HITMONLEE</li>
+<li>38F76-38F91 - HITMONCHAN</li>
+<li>38F92-38FAD - LICKITUNG</li>
+<li>38FAE-38FC9 - KOFFING</li>
+<li>38FCA-38FE5 - WEEZING</li>
+<li>38FE6-39001 - RHYHORN</li>
+<li>39002-3901D - RHYDON</li>
+<li>3901E-39039 - CHANSEY</li>
+<li>3903A-39055 - TANGELA</li>
+<li>39056-39071 - KANGASKHAN</li>
+<li>39072-3908D - HORSEA</li>
+<li>3908E-390A9 - SEADRA</li>
+<li>390AA-390C5 - GOLDEEN</li>
+<li>390C6-390E1 - SEEKING</li>
+<li>390E2-390FD - STARYU</li>
+<li>390FE-39119 - STARMIE</li>
+<li>3911A-39135 - MR.MIME</li>
+<li>39136-39151 - SCYTHER</li>
+<li>39152-3916D - JYNX</li>
+<li>3916E-39189 - ELECTABUZZ</li>
+<li>3918A-391A5 - MAGMAR</li>
+<li>391A6-391C1 - PINSIR</li>
+<li>391C2-391DD - TAUROS</li>
+<li>391DE-391F9 - MAGIKARP</li>
+<li>391FA-39215 - GYARADOS</li>
+<li>39216-39231 - LAPRAS</li>
+<li>39232-3924D - DITTO</li>
+<li>3924E-39269 - EEVEE</li>
+<li>3926A-39285 - VAPOREON</li>
+<li>39286-392A1 - JOLTEON</li>
+<li>392A2-392BD - FLAREON</li>
+<li>392BE-392D9 - PORYGON</li>
+<li>392DA-392F5 - OMANYTE</li>
+<li>392F6-39311 - OMASTAR</li>
+<li>39312-3932D - KABUTO</li>
+<li>3932E-39349 - KABUTOPS</li>
+<li>3934A-39365 - AERODACTYL</li>
+<li>39366-39381 - SNORLAX</li>
+<li>39382-3939D - ARTICUNO</li>
+<li>3939E-393B9 - ZAPDOS</li>
+<li>393BA-393D5 - MOLTRES</li>
+<li>393D6-393F1 - DRATINI</li>
+<li>393F2-3940D - DRAGONAIR</li>
+<li>3940E-39429 - DRAGONITE</li>
+<li>3942A-39445 - MEWTWO</li></tt>
+<li>(MEW's data is in bank 01 at 425B-4276)</li></div>
+</div>
+<tt>39915-399FE</tt> Trainers' Pics Pointers
+<div class="mw-collapsible mw-collapsed">
+<tt>399FF-39B86</tt> Trainers' Names
+<div class="mw-collapsible-content"><tt><li>399FF-39A08 - YOUNGSTER</li>
+<li>39A09-39A14 - BUG CATCHER</li>
+<li>39A15-39A19 - LASS</li>
+<li>39A1A-39A20 - SAILOR </li>
+<li>39A21-39A2C - JR.TRAINER♂</li>
+<li>39A2D-39A38 - JR.TRAINER♀</li>
+<li>39A39-39A43 - POKéMANIAC</li>
+<li>39A44-39A4E - SUPER NERD</li>
+<li>39A4F-39A54 - HIKER</li>
+<li>39A55-39A5A - BIKER</li>
+<li>39A5B-39A62 - BURGLAR</li>
+<li>39A63-39A6B - ENGINEER</li>
+<li>39A6C-39A73 - JUGGLER</li>
+<li>39A74-39A7D - FISHERMAN</li>
+<li>39A7E-39A85 - SWIMMER</li>
+<li>39A86-39A8E - CUE BALL</li>
+<li>39A8F-39A96 - GAMBLER</li>
+<li>39A97-39A9D - BEAUTY</li>
+<li>39A9E-39AA5 - PSYCHIC</li>
+<li>39AA6-39AAC - ROCKER</li>
+<li>39AAD-39AB4 - JUGGLER</li>
+<li>39AB5-39ABA - TAMER</li>
+<li>39ABB-39AC6 - BIRD KEEPER</li>
+<li>39AC7-39AD0 - BLACKBELT</li>
+<li>39AD1-39AD7 - RIVAL1</li>
+<li>39AD8-39AE0 - PROF.OAK</li>
+<li>39AE1-39AE6 - CHIEF</li>
+<li>39AE7-39AF0 - SCIENTIST</li>
+<li>39AF1-39AF9 - GIOVANNI</li>
+<li>39AFA-39B00 - ROCKET</li>
+<li>39B01-39B0D - COOLTRAINER♂</li>
+<li>39B0E-39B1A - COOLTRAINER♀</li>
+<li>39B1B-39B20 - BRUNO</li>
+<li>39B21-39B26 - BROCK</li>
+<li>39B27-39B2C - MISTY</li>
+<li>39B2D-39B35 - LT.SURGE</li>
+<li>39B36-39B3B - ERIKA</li>
+<li>39B3C-39B40 - KOGA</li>
+<li>39B41-39B47 - BLAINE</li>
+<li>39B48-39B4F - SABRINA</li>
+<li>39B50-39B59 - GENTLEMAN</li>
+<li>39B5A-39B60 - RIVAL2</li>
+<li>39B61-39B67 - RIVAL3</li>
+<li>39B68-39B6F - LORELEI</li>
+<li>39B70-39B79 - CHANNELER</li>
+<li>39B7A-39B80 - AGATHA</li>
+<li>39B81-39B86 - LANCE</li></tt></div>
+</div>
+<tt>39D3C-39D98</tt> Trainers' Pokémon Pointers
+
+<tt>39D99-3A1E3</tt> Trainers' Pokémon
+
+<tt>3A1E3-3A1EB</tt> Starting Pokémon Data
+
+<tt>3A97E-3AD0E</tt> Trading Graphics
+<div class="mw-collapsible mw-collapsed">
+<tt>3B05C-3B1D7</tt> Evolution/Attacks Learned Pointers
+<div class="mw-collapsible-content"><li><tt>3B05C-3B05D</tt> - Rhydon</li>
+<li><tt>3B05E-3B05F</tt> - Kangaskhan</li>
+<li><tt>3B060-3B061</tt> - Nidoran M.</li>
+<li><tt>3B062-3B063</tt> - Clefairy</li>
+<li><tt>3B064-3B065</tt> - Spearow</li>
+<li><tt>3B066-3B067</tt> - Voltorb</li>
+<li><tt>3B068-3B069</tt> - Nidoking</li>
+<li><tt>3B06A-3B06B</tt> - Slowbro</li>
+<li><tt>3B06C-3B06D</tt> - Ivysaur</li>
+<li><tt>3B06E-3B06F</tt> - Exeggutor</li>
+<li><tt>3B070-3B071</tt> - Lickitung</li>
+<li><tt>3B072-3B073</tt> - Exeggcute</li>
+<li><tt>3B074-3B075</tt> - Grimer</li>
+<li><tt>3B076-3B077</tt> - Gengar</li>
+<li><tt>3B078-3B079</tt> - Nidoran F.</li>
+<li><tt>3B07A-3B07B</tt> - Nidoqueen</li>
+<li><tt>3B07C-3B07D</tt> - Cubone</li>
+<li><tt>3B07E-3B07F</tt> - Rhyhorn</li>
+<li><tt>3B080-3B081</tt> - Lapras</li>
+<li><tt>3B082-3B083</tt> - Arcanine</li>
+<li><tt>3B084-3B085</tt> - Mew</li>
+<li><tt>3B086-3B087</tt> - Gyardos</li>
+<li><tt>3B088-3B089</tt> - Shellder</li>
+<li><tt>3B08A-3B08B</tt> - Tentacool</li>
+<li><tt>3B08C-3B08D</tt> - Gastly</li>
+<li><tt>3B08E-3B08F</tt> - Scyther</li>
+<li><tt>3B090-3B091</tt> - Staryu</li>
+<li><tt>3B092-3B093</tt> - Blastoise</li>
+<li><tt>3B094-3B095</tt> - Pinsir</li>
+<li><tt>3B096-3B097</tt> - Tangela</li>
+<li><tt>3B098-3B099</tt> - (MissingNo.)</li>
+<li><tt>3B09A-3B09B</tt> - (MissingNo.)</li>
+<li><tt>3B09C-3B09D</tt> - Growlithe</li>
+<li><tt>3B09E-3B09F</tt> - Onix</li>
+<li><tt>3B0A0-3B0A1</tt> - Fearow</li>
+<li><tt>3B0A2-3B0A3</tt> - Pidgey</li>
+<li><tt>3B0A4-3B0A5</tt> - Slowpoke</li>
+<li><tt>3B0A6-3B0A7</tt> - Kadabra</li>
+<li><tt>3B0A8-3B0A9</tt> - Graveler</li>
+<li><tt>3B0AA-3B0AB</tt> - Chansey</li>
+<li><tt>3B0AC-3B0AD</tt> - Machoke</li>
+<li><tt>3B0AE-3B0AF</tt> - Mr. Mime</li>
+<li><tt>3B0B0-3B0B1</tt> - Hitmonlee</li>
+<li><tt>3B0B2-3B0B3</tt> - Hitmonchan</li>
+<li><tt>3B0B4-3B0B5</tt> - Arbok</li>
+<li><tt>3B0B6-3B0B7</tt> - Parasect</li>
+<li><tt>3B0B8-3B0B9</tt> - Psyduck</li>
+<li><tt>3B0BA-3B0BB</tt> - Drowzee</li>
+<li><tt>3B0BC-3B0BD</tt> - Golem</li>
+<li><tt>3B0BE-3B0BF</tt> - (MissingNo.)</li>
+<li><tt>3B0C0-3B0C1</tt> - Magmar</li>
+<li><tt>3B0C2-3B0C3</tt> - (MissingNo.)</li>
+<li><tt>3B0C4-3B0C5</tt> - Electabuzz</li>
+<li><tt>3B0C6-3B0C7</tt> - Magneton</li>
+<li><tt>3B0C8-3B0C9</tt> - Koffing</li>
+<li><tt>3B0CA-3B0CB</tt> - (MissingNo.)</li>
+<li><tt>3B0CC-3B0CD</tt> - Mankey</li>
+<li><tt>3B0CE-3B0CF</tt> - Seel</li>
+<li><tt>3B0D0-3B0D1</tt> - Diglett</li>
+<li><tt>3B0D2-3B0D3</tt> - Tauros</li>
+<li><tt>3B0D4-3B0D5</tt> - (MissingNo.)</li>
+<li><tt>3B0D6-3B0D7</tt> - (MissingNo.)</li>
+<li><tt>3B0D8-3B0D9</tt> - (MissingNo.)</li>
+<li><tt>3B0DA-3B0DB</tt> - Farfetch'd</li>
+<li><tt>3B0DC-3B0DD</tt> - Venonat</li>
+<li><tt>3B0DE-3B0DF</tt> - Dragonite</li>
+<li><tt>3B0E0-3B0E1</tt> - (MissingNo.)</li>
+<li><tt>3B0E2-3B0E3</tt> - (MissingNo.)</li>
+<li><tt>3B0E4-3B0E5</tt> - (MissingNo.)</li>
+<li><tt>3B0E6-3B0E7</tt> - Doduo</li>
+<li><tt>3B0E8-3B0E9</tt> - Poliwag</li>
+<li><tt>3B0EA-3B0EB</tt> - Jynx</li>
+<li><tt>3B0EC-3B0ED</tt> - Moltres</li>
+<li><tt>3B0EE-3B0EF</tt> - Articuno</li>
+<li><tt>3B0F0-3B0F1</tt> - Zapdos</li>
+<li><tt>3B0F2-3B0F3</tt> - Ditto</li>
+<li><tt>3B0F4-3B0F5</tt> - Meowth</li>
+<li><tt>3B0F6-3B0F7</tt> - Krabby</li>
+<li><tt>3B0F8-3B0F9</tt> - (MissingNo.)</li>
+<li><tt>3B0FA-3B0FB</tt> - (MissingNo.)</li>
+<li><tt>3B0FC-3B0FD</tt> - (MissingNo.)</li>
+<li><tt>3B0FE-3B0FF</tt> - Vulpix</li>
+<li><tt>3B100-3B101</tt> - Ninetales</li>
+<li><tt>3B102-3B103</tt> - Pikachu</li>
+<li><tt>3B104-3B105</tt> - Raichu</li>
+<li><tt>3B106-3B107</tt> - (MissingNo.)</li>
+<li><tt>3B108-3B109</tt> - (MissingNo.)</li>
+<li><tt>3B10A-3B10B</tt> - Dratini</li>
+<li><tt>3B10C-3B10D</tt> - Dragonair</li>
+<li><tt>3B10E-3B10F</tt> - Kabuto</li>
+<li><tt>3B110-3B111</tt> - Kabutops</li>
+<li><tt>3B112-3B113</tt> - Horsea</li>
+<li><tt>3B114-3B115</tt> - Seadra</li>
+<li><tt>3B116-3B117</tt> - (MissingNo.)</li>
+<li><tt>3B118-3B119</tt> - (MissingNo.)</li>
+<li><tt>3B11A-3B11B</tt> - Sandshrew</li>
+<li><tt>3B11C-3B11D</tt> - Sandslash</li>
+<li><tt>3B11E-3B11F</tt> - Omanyte</li>
+<li><tt>3B120-3B121</tt> - Omastar</li>
+<li><tt>3B122-3B123</tt> - Jigglypuff</li>
+<li><tt>3B124-3B125</tt> - Wigglytuff</li>
+<li><tt>3B126-3B127</tt> - Eevee</li>
+<li><tt>3B128-3B129</tt> - Flareon</li>
+<li><tt>3B12A-3B12B</tt> - Jolteon</li>
+<li><tt>3B12C-3B12D</tt> - Vaporeon</li>
+<li><tt>3B12E-3B12F</tt> - Machop</li>
+<li><tt>3B130-3B131</tt> - Zubat</li>
+<li><tt>3B132-3B133</tt> - Ekans</li>
+<li><tt>3B134-3B135</tt> - Paras</li>
+<li><tt>3B136-3B137</tt> - Poliwhirl</li>
+<li><tt>3B138-3B139</tt> - Poliwrath</li>
+<li><tt>3B13A-3B13B</tt> - Weedle</li>
+<li><tt>3B13C-3B13D</tt> - Kakuna</li>
+<li><tt>3B13E-3B13F</tt> - Beedrill</li>
+<li><tt>3B140-3B141</tt> - (MissingNo.)</li>
+<li><tt>3B142-3B143</tt> - Dodrio</li>
+<li><tt>3B144-3B145</tt> - Primeape</li>
+<li><tt>3B146-3B147</tt> - Dugtrio</li>
+<li><tt>3B148-3B149</tt> - Venomoth</li>
+<li><tt>3B14A-3B14B</tt> - Dewgong</li>
+<li><tt>3B14C-3B14D</tt> - (MissingNo.)</li>
+<li><tt>3B14E-3B14F</tt> - (MissingNo.)</li>
+<li><tt>3B150-3B151</tt> - Caterpie</li>
+<li><tt>3B152-3B153</tt> - Metapod</li>
+<li><tt>3B154-3B155</tt> - Butterfree</li>
+<li><tt>3B156-3B157</tt> - Machamp</li>
+<li><tt>3B158-3B159</tt> - (MissingNo.)</li>
+<li><tt>3B15A-3B15B</tt> - Golduck</li>
+<li><tt>3B15C-3B15D</tt> - Hypno</li>
+<li><tt>3B15E-3B15F</tt> - Golbat</li>
+<li><tt>3B160-3B161</tt> - Mewtwo</li>
+<li><tt>3B162-3B163</tt> - Snorlax</li>
+<li><tt>3B164-3B165</tt> - Magikarp</li>
+<li><tt>3B166-3B167</tt> - (MissingNo.)</li>
+<li><tt>3B168-3B169</tt> - (MissingNo.)</li>
+<li><tt>3B16A-3B16B</tt> - Muk</li>
+<li><tt>3B16C-3B16D</tt> - (MissingNo.)</li>
+<li><tt>3B16E-3B16F</tt> - Kingler</li>
+<li><tt>3B170-3B171</tt> - Cloyster</li>
+<li><tt>3B172-3B173</tt> - (MissingNo.)</li>
+<li><tt>3B174-3B175</tt> - Electrode</li>
+<li><tt>3B176-3B177</tt> - Clefable</li>
+<li><tt>3B178-3B179</tt> - Weezing</li>
+<li><tt>3B17A-3B17B</tt> - Persian</li>
+<li><tt>3B17C-3B17D</tt> - Marowak</li>
+<li><tt>3B17E-3B17F</tt> - (MissingNo.)</li>
+<li><tt>3B180-3B181</tt> - Haunter</li>
+<li><tt>3B182-3B183</tt> - Abra</li>
+<li><tt>3B184-3B185</tt> - Alakazam</li>
+<li><tt>3B186-3B187</tt> - Pidgeotto</li>
+<li><tt>3B188-3B189</tt> - Pidgeot</li>
+<li><tt>3B18A-3B18B</tt> - Starmie</li>
+<li><tt>3B18C-3B18D</tt> - Bulbasaur</li>
+<li><tt>3B18E-3B18F</tt> - Venusaur</li>
+<li><tt>3B190-3B191</tt> - Tentacruel</li>
+<li><tt>3B192-3B193</tt> - (MissingNo.)</li>
+<li><tt>3B194-3B195</tt> - Goldeen</li>
+<li><tt>3B196-3B197</tt> - Seaking</li>
+<li><tt>3B198-3B199</tt> - (MissingNo.)</li>
+<li><tt>3B19A-3B19B</tt> - (MissingNo.)</li>
+<li><tt>3B19C-3B19D</tt> - (MissingNo.)</li>
+<li><tt>3B19E-3B19F</tt> - (MissingNo.)</li>
+<li><tt>3B1A0-3B1A1</tt> - Ponyta</li>
+<li><tt>3B1A2-3B1A3</tt> - Rapidash</li>
+<li><tt>3B1A4-3B1A5</tt> - Rattata</li>
+<li><tt>3B1A6-3B1A7</tt> - Raticate</li>
+<li><tt>3B1A8-3B1A9</tt> - Nidorino</li>
+<li><tt>3B1AA-3B1AB</tt> - Nidorina</li>
+<li><tt>3B1AC-3B1AD</tt> - Geodude</li>
+<li><tt>3B1AE-3B1AF</tt> - Porygon</li>
+<li><tt>3B1B0-3B1B1</tt> - Aerodactyl</li>
+<li><tt>3B1B2-3B1B3</tt> - (MissingNo.)</li>
+<li><tt>3B1B4-3B1B5</tt> - Magnemite</li>
+<li><tt>3B1B6-3B1B7</tt> - (MissingNo.)</li>
+<li><tt>3B1B8-3B1B9</tt> - (MissingNo.)</li>
+<li><tt>3B1BA-3B1BB</tt> - Charmander</li>
+<li><tt>3B1BC-3B1BD</tt> - Squirtle</li>
+<li><tt>3B1BE-3B1BF</tt> - Charmeleon</li>
+<li><tt>3B1C0-3B1C1</tt> - Wartortle</li>
+<li><tt>3B1C2-3B1C3</tt> - Charizard</li>
+<li><tt>3B1C4-3B1C5</tt> - (MissingNo.)</li>
+<li><tt>3B1C6-3B1C7</tt> - (MissingNo.)</li>
+<li><tt>3B1C8-3B1C9</tt> - (MissingNo.)</li>
+<li><tt>3B1CA-3B1CB</tt> - (MissingNo.)</li>
+<li><tt>3B1CC-3B1CD</tt> - Oddish</li>
+<li><tt>3B1CE-3B1CF</tt> - Gloom</li>
+<li><tt>3B1D0-3B1D1</tt> - Vileplume</li>
+<li><tt>3B1D2-3B1D3</tt> - Bellsprout</li>
+<li><tt>3B1D4-3B1D5</tt> - Weepinbell</li>
+<li><tt>3B1D6-3B1D7</tt> - Victreebel</li></div>
+</div><div class="mw-collapsible mw-collapsed">
+<tt>3B1D8-3B9EB</tt> Pokemon Evolutions & Learned Moves
+<div class="mw-collapsible-content"><div class="mw-collapsible mw-collapsed"><li><tt>3B1D8-3B1E5</tt> - Rhydon</li>
+<div class="mw-collapsible-content">
+*<tt>3B1D8</tt> - Evolution
+*<tt>3B1D9-3B1E5</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B1E6-3B1F1</tt> - Kangaskhan</li>
+<div class="mw-collapsible-content">
+*<tt>3B1E6</tt> - Evolution
+*<tt>3B1E7-3B1F1</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B1F2-3B202</tt> - Nidoran M.</li>
+<div class="mw-collapsible-content">
+*<tt>3B1F2-3B1F5</tt> - Evolution
+*<tt>3B1F6-3B202</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B203-3B214</tt> - Clefairy</li>
+<div class="mw-collapsible-content">
+*<tt>3B203-3B207</tt> - Evolution
+*<tt>3B208-3B214</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B215-3B223</tt> - Spearow</li>
+<div class="mw-collapsible-content">
+*<tt>3B215-3B218</tt> - Evolution
+*<tt>3B219-3B223</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B224-3B232</tt> - Voltorb</li>
+<div class="mw-collapsible-content">
+*<tt>3B224-3B227</tt> - Evolution
+*<tt>3B228-3B232</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B233-3B23A</tt> - Nidoking</li>
+<div class="mw-collapsible-content">
+*<tt>3B233</tt> - Evolution
+*<tt>3B234-3B23A</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B23B-3B24A</tt> - Slowbro</li>
+<div class="mw-collapsible-content">
+*<tt>3B23B</tt> - Evolution
+*<tt>3B23C-3B24A</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B24B-3B25D</tt> - Ivysaur</li>
+<div class="mw-collapsible-content">
+*<tt>3B24B-3B24E</tt> - Evolution
+*<tt>3B24F-3B25D</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B25E-3B261</tt> - Exeggutor</li>
+<div class="mw-collapsible-content">
+*<tt>3B25E</tt> - Evolution
+*<tt>3B25F-3B261</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B262-3B26D</tt> - Lickitung</li>
+<div class="mw-collapsible-content">
+*<tt>3B262</tt> - Evolution
+*<tt>3B263-3B26D</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B26E-3B27F</tt> - Exeggcute</li>
+<div class="mw-collapsible-content">
+*<tt>3B26E-3B272</tt> - Evolution
+*<tt>3B273-3B27F</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B280-3B290</tt> - Grimer</li>
+<div class="mw-collapsible-content">
+*<tt>3B280-3B283</tt> - Evolution
+*<tt>3B284-3B290</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B291-3B296</tt> - Gengar</li>
+<div class="mw-collapsible-content">
+*<tt>3B291</tt> - Evolution
+*<tt>3B292-3B296</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B297-3B2A7</tt> - Nidoran F.</li>
+<div class="mw-collapsible-content">
+*<tt>3B297-3B29A</tt> - Evolution
+*<tt>3B29B-3B2A7</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B2A8-3B2AF</tt> - Nidoqueen</li>
+<div class="mw-collapsible-content">
+*<tt>3B2A8</tt> - Evolution
+*<tt>3B2A9-3B2AF</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B2B0-3B2BE</tt> - Cubone</li>
+<div class="mw-collapsible-content">
+*<tt>3B2B0-3B2B3</tt> - Evolution
+*<tt>3B2B4-3B2BE</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B2BF-3B2CF</tt> - Rhyhorn</li>
+<div class="mw-collapsible-content">
+*<tt>3B2BF-3B2C2</tt> - Evolution
+*<tt>3B2C3-3B2CF</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B2D0-3B2DD</tt> - Lapras</li>
+<div class="mw-collapsible-content">
+*<tt>3B2D0</tt> - Evolution
+*<tt>3B2D1-3B2DD</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B2DE-3B2DF</tt> - Arcanine</li>
+<div class="mw-collapsible-content">
+*<tt>3B2DE</tt> - Evolution
+*<tt>3B2DF</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B2E0-3B2E9</tt> - Mew</li>
+<div class="mw-collapsible-content">
+*<tt>3B2E0</tt> - Evolution
+*<tt>3B2E1-3B2E9</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B2EA-3B2F5</tt> - Gyardos</li>
+<div class="mw-collapsible-content">
+*<tt>3B2EA</tt> - Evolution
+*<tt>3B2EB-3B2F5</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B2F6-3B305</tt> - Shellder</li>
+<div class="mw-collapsible-content">
+*<tt>3B2F6-3B2FA</tt> - Evolution
+*<tt>3B2FB-3B305</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B306-3B31A</tt> - Tentacool</li>
+<div class="mw-collapsible-content">
+*<tt>3B306-3B309</tt> - Evolution
+*<tt>3B30A-3B31A</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B31B-3B323</tt> - Gastly</li>
+<div class="mw-collapsible-content">
+*<tt>3B31B-3B31E</tt> - Evolution
+*<tt>3B31F-3B323</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B324-3B331</tt> - Scyther</li>
+<div class="mw-collapsible-content">
+*<tt>3B324</tt> - Evolution
+*<tt>3B325-3B331</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B332-3B345</tt> - Staryu</li>
+<div class="mw-collapsible-content">
+*<tt>3B332-3B336</tt> - Evolution
+*<tt>3B337-3B345</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B346-3B353</tt> - Blastoise</li>
+<div class="mw-collapsible-content">
+*<tt>3B346</tt> - Evolution
+*<tt>3B347-3B353</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B354-3B361</tt> - Pinsir</li>
+<div class="mw-collapsible-content">
+*<tt>3B354</tt> - Evolution
+*<tt>3B355-3B361</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B362-3B36F</tt> - Tangela</li>
+<div class="mw-collapsible-content">
+*<tt>3B362</tt> - Evolution
+*<tt>3B363-3B36F</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B370-3B371</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B370</tt> - Evolution
+*<tt>3B371</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B372-3B373</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B372</tt> - Evolution
+*<tt>3B373</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B374-3B383</tt> - Growlithe</li>
+<div class="mw-collapsible-content">
+*<tt>3B374-3B378</tt> - Evolution
+*<tt>3B379-3B383</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B384-3B38F</tt> - Onix</li>
+<div class="mw-collapsible-content">
+*<tt>3B384</tt> - Evolution
+*<tt>3B385-3B38F</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B390-3B39B</tt> - Fearow</li>
+<div class="mw-collapsible-content">
+*<tt>3B390</tt> - Evolution
+*<tt>3B391-3B39B</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B39C-3B3AC</tt> - Pidgey</li>
+<div class="mw-collapsible-content">
+*<tt>3B39C-3B39F</tt> - Evolution
+*<tt>3B3A0-3B3AC</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B3AD-3B3BD</tt> - Slowpoke</li>
+<div class="mw-collapsible-content">
+*<tt>3B3AD-3B3B0</tt> - Evolution
+*<tt>3B3B1-3B3BD</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B3BE-3B3CE</tt> - Kadabra</li>
+<div class="mw-collapsible-content">
+*<tt>3B3BE-3B3C1</tt> - Evolution
+*<tt>3B3C2-3B3CE</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B3CF-3B3DF</tt> - Graveler</li>
+<div class="mw-collapsible-content">
+*<tt>3B3CF-3B3D2</tt> - Evolution
+*<tt>3B3D3-3B3DF</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B3E0-3B3ED</tt> - Chansey</li>
+<div class="mw-collapsible-content">
+*<tt>3B3E0</tt> - Evolution
+*<tt>3B3E1-3B3ED</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B3EE-3B3FC</tt> - Machoke</li>
+<div class="mw-collapsible-content">
+*<tt>3B3EE-3B3F1</tt> - Evolution
+*<tt>3B3F2-3B3FC</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B3FD-3B408</tt> - Mr. Mime</li>
+<div class="mw-collapsible-content">
+*<tt>3B3FD</tt> - Evolution
+*<tt>3B3FE-3B408</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B409-3B414</tt> - Hitmonlee</li>
+<div class="mw-collapsible-content">
+*<tt>3B409</tt> - Evolution
+*<tt>3B40A-3B414</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B415-3B420</tt> - Hitmonchan</li>
+<div class="mw-collapsible-content">
+*<tt>3B415</tt> - Evolution
+*<tt>3B416-3B420</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B421-3B42C</tt> - Arbok</li>
+<div class="mw-collapsible-content">
+*<tt>3B421</tt> - Evolution
+*<tt>3B422-3B42C</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B42D-3B438</tt> - Parasect</li>
+<div class="mw-collapsible-content">
+*<tt>3B42D</tt> - Evolution
+*<tt>3B42E-3B438</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B439-3B447</tt> - Psyduck</li>
+<div class="mw-collapsible-content">
+*<tt>3B439-3B43C</tt> - Evolution
+*<tt>3B43D-3B447</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B448-3B458</tt> - Drowzee</li>
+<div class="mw-collapsible-content">
+*<tt>3B448-3B44B</tt> - Evolution
+*<tt>3B44C-3B458</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B459-3B466</tt> - Golem</li>
+<div class="mw-collapsible-content">
+*<tt>3B459</tt> - Evolution
+*<tt>3B45A-3B466</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B467-3B468</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B467</tt> - Evolution
+*<tt>3B468</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B469-3B476</tt> - Magmar</li>
+<div class="mw-collapsible-content">
+*<tt>3B469</tt> - Evolution
+*<tt>3B46A-3B476</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B477-3B478</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B477</tt> - Evolution
+*<tt>3B478</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B479-3B484</tt> - Electabuzz</li>
+<div class="mw-collapsible-content">
+*<tt>3B479</tt> - Evolution
+*<tt>3B47A-3B484</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B485-3B492</tt> - Magneton</li>
+<div class="mw-collapsible-content">
+*<tt>3B485</tt> - Evolution
+*<tt>3B486-3B492</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B493-3B4A1</tt> - Koffing</li>
+<div class="mw-collapsible-content">
+*<tt>3B493-3B496</tt> - Evolution
+*<tt>3B497-3B4A1</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B4A2-3B4A3</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B4A2</tt> - Evolution
+*<tt>3B4A3</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B4A4-3B4B2</tt> - Mankey</li>
+<div class="mw-collapsible-content">
+*<tt>3B4A4-3B4A7</tt> - Evolution
+*<tt>3B4A8-3B4B2</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B4B3-3B4C1</tt> - Seel</li>
+<div class="mw-collapsible-content">
+*<tt>3B4B3-3B4B6</tt> - Evolution
+*<tt>3B4B7-3B4C1</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B4C2-3B4D0</tt> - Diglett</li>
+<div class="mw-collapsible-content">
+*<tt>3B4C2-3B4C5</tt> - Evolution
+*<tt>3B4C6-3B4D0</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B4D1-3B4DC</tt> - Tauros</li>
+<div class="mw-collapsible-content">
+*<tt>3B4D1</tt> - Evolution
+*<tt>3B4D2-3B4DC</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B4DD-3B4DE</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B4DD</tt> - Evolution
+*<tt>3B4DE</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B4DF-3B4E0</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B4DF</tt> - Evolution
+*<tt>3B4E0</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B4E1-3B4E2</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B4E1</tt> - Evolution
+*<tt>3B4E2</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B4E3-3B4EE</tt> - Farfetch'd</li>
+<div class="mw-collapsible-content">
+*<tt>3B4E3</tt> - Evolution
+*<tt>3B4E4-3B4EE</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B4EF-3B4FF</tt> - Venonat</li>
+<div class="mw-collapsible-content">
+*<tt>3B4EF-3B4F2</tt> - Evolution
+*<tt>3B4F3-3B4FF</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B500-3B50B</tt> - Dragonite</li>
+<div class="mw-collapsible-content">
+*<tt>3B500</tt> - Evolution
+*<tt>3B501-3B50B</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B50C-3B50D</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B50C</tt> - Evolution
+*<tt>3B50D</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B50E-3B50F</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B50E</tt> - Evolution
+*<tt>3B50F</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B510-3B511</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B510</tt> - Evolution
+*<tt>3B511</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B512-3B522</tt> - Doduo</li>
+<div class="mw-collapsible-content">
+*<tt>3B512-3B515</tt> - Evolution
+*<tt>3B516-3B522</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B523-3B533</tt> - Poliwag</li>
+<div class="mw-collapsible-content">
+*<tt>3B523-3B526</tt> - Evolution
+*<tt>3B527-3B533</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B534-3B541</tt> - Jynx</li>
+<div class="mw-collapsible-content">
+*<tt>3B534</tt> - Evolution
+*<tt>3B535-3B541</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B542-3B549</tt> - Moltres</li>
+<div class="mw-collapsible-content">
+*<tt>3B542</tt> - Evolution
+*<tt>3B543-3B549</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B54A-3B551</tt> - Articuno</li>
+<div class="mw-collapsible-content">
+*<tt>3B54A</tt> - Evolution
+*<tt>3B54B-3B551</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B552-3B559</tt> - Zapdos</li>
+<div class="mw-collapsible-content">
+*<tt>3B552</tt> - Evolution
+*<tt>3B553-3B559</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B55A-3B55B</tt> - Ditto</li>
+<div class="mw-collapsible-content">
+*<tt>3B55A</tt> - Evolution
+*<tt>3B55B</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B55C-3B56A</tt> - Meowth</li>
+<div class="mw-collapsible-content">
+*<tt>3B55C-3B55F</tt> - Evolution
+*<tt>3B560-3B56A</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B56B-3B579</tt> - Krabby</li>
+<div class="mw-collapsible-content">
+*<tt>3B56B-3B56E</tt> - Evolution
+*<tt>3B56F-3B579</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B57A-3B57B</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B57A</tt> - Evolution
+*<tt>3B57B</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B57C-3B57D</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B57C</tt> - Evolution
+*<tt>3B57D</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B57E-3B57F</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B57E</tt> - Evolution
+*<tt>3B57F</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B580-3B58F</tt> - Vulpix</li>
+<div class="mw-collapsible-content">
+*<tt>3B580-3B584</tt> - Evolution
+*<tt>3B585-3B58F</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B590-3B591</tt> - Ninetales</li>
+<div class="mw-collapsible-content">
+*<tt>3B590</tt> - Evolution
+*<tt>3B591</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B592-3B5A1</tt> - Pikachu</li>
+<div class="mw-collapsible-content">
+*<tt>3B592-3B596</tt> - Evolution
+*<tt>3B597-3B5A1</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B5A2-3B5A3</tt> - Raichu</li>
+<div class="mw-collapsible-content">
+*<tt>3B5A2</tt> - Evolution
+*<tt>3B5A3</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B5A4-3B5A5</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B5A4</tt> - Evolution
+*<tt>3B5A5</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B5A6-3B5A7</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B5A6</tt> - Evolution
+*<tt>3B5A7</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B5A8-3B5B6</tt> - Dratini</li>
+<div class="mw-collapsible-content">
+*<tt>3B5A8-3B5AB</tt> - Evolution
+*<tt>3B5AC-3B5B6</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B5B7-3B5C5</tt> - Dragonair</li>
+<div class="mw-collapsible-content">
+*<tt>3B5B7-3B5BA</tt> - Evolution
+*<tt>3B5BB-3B5C5</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B5C6-3B5D2</tt> - Kabuto</li>
+<div class="mw-collapsible-content">
+*<tt>3B5C6-3B5C9</tt> - Evolution
+*<tt>3B5CA-3B5D2</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B5D3-3B5DC</tt> - Kabutops</li>
+<div class="mw-collapsible-content">
+*<tt>3B5D3</tt> - Evolution
+*<tt>3B5D4-3B5DC</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B5DD-3B5EB</tt> - Horsea</li>
+<div class="mw-collapsible-content">
+*<tt>3B5DD-3B5E0</tt> - Evolution
+*<tt>3B5E1-3B5EB</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B5EC-3B5F7</tt> - Seadra</li>
+<div class="mw-collapsible-content">
+*<tt>3B5EC</tt> - Evolution
+*<tt>3B5ED-3B5F7</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B5F8-3B5F9</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B5F8</tt> - Evolution
+*<tt>3B5F9</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B5FA-3B5FB</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B5FA</tt> - Evolution
+*<tt>3B5FB</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B5FC-3B60A</tt> - Sandshrew</li>
+<div class="mw-collapsible-content">
+*<tt>3B5FC-3B5FF</tt> - Evolution
+*<tt>3B600-3B60A</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B60B-3B616</tt> - Sandslash</li>
+<div class="mw-collapsible-content">
+*<tt>3B60B</tt> - Evolution
+*<tt>3B60C-3B616</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B617-3B623</tt> - Omanyte</li>
+<div class="mw-collapsible-content">
+*<tt>3B617-3B61A</tt> - Evolution
+*<tt>3B61B-3B623</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B624-3B62D</tt> - Omastar</li>
+<div class="mw-collapsible-content">
+*<tt>3B624</tt> - Evolution
+*<tt>3B625-3B62D</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B62E-3B641</tt> - Jigglypuff</li>
+<div class="mw-collapsible-content">
+*<tt>3B62E-3B632</tt> - Evolution
+*<tt>3B633-3B641</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B642-3B643</tt> - Wigglytuff</li>
+<div class="mw-collapsible-content">
+*<tt>3B642</tt> - Evolution
+*<tt>3B643</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B644-3B659</tt> - Eevee</li>
+<div class="mw-collapsible-content">
+*<tt>3B644-3B650</tt> - Evolution
+*<tt>3B651-3B659</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B65A-3B66B</tt> - Flareon</li>
+<div class="mw-collapsible-content">
+*<tt>3B65A</tt> - Evolution
+*<tt>3B65B-3B66B</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B66C-3B67D</tt> - Jolteon</li>
+<div class="mw-collapsible-content">
+*<tt>3B66C</tt> - Evolution
+*<tt>3B66D-3B67D</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B67E-3B68F</tt> - Vaporeon</li>
+<div class="mw-collapsible-content">
+*<tt>3B67E</tt> - Evolution
+*<tt>3B67F-3B68F</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B690-3B69E</tt> - Machop</li>
+<div class="mw-collapsible-content">
+*<tt>3B690-3B693</tt> - Evolution
+*<tt>3B694-3B69E</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B69F-3B6AD</tt> - Zubat</li>
+<div class="mw-collapsible-content">
+*<tt>3B69F-3B6A2</tt> - Evolution
+*<tt>3B6A3-3B6AD</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B6AE-3B6BC</tt> - Ekans</li>
+<div class="mw-collapsible-content">
+*<tt>3B6AE-3B6B1</tt> - Evolution
+*<tt>3B6B2-3B6BC</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B6BD-3B6CB</tt> - Paras</li>
+<div class="mw-collapsible-content">
+*<tt>3B6BD-3B6C0</tt> - Evolution
+*<tt>3B6C1-3B6CB</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B6CC-3B6DD</tt> - Poliwhirl</li>
+<div class="mw-collapsible-content">
+*<tt>3B6CC-3B6D0</tt> - Evolution
+*<tt>3B6D1-3B6DD</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B6DE-3B6E3</tt> - Poliwrath</li>
+<div class="mw-collapsible-content">
+*<tt>3B6DE</tt> - Evolution
+*<tt>3B6DF-3B6E3</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B6E4-3B6E8</tt> - Weedle</li>
+<div class="mw-collapsible-content">
+*<tt>3B6E4-3B6E7</tt> - Evolution
+*<tt>3B6E8</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B6E9-3B6ED</tt> - Kakuna</li>
+<div class="mw-collapsible-content">
+*<tt>3B6E9-3B6EC</tt> - Evolution
+*<tt>3B6ED</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B6EE-3B6FB</tt> - Beedrill</li>
+<div class="mw-collapsible-content">
+*<tt>3B6EE</tt> - Evolution
+*<tt>3B6EF-3B6FB</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B6FC-3B6FD</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B6FC</tt> - Evolution
+*<tt>3B6FD</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B6FE-3B70B</tt> - Dodrio</li>
+<div class="mw-collapsible-content">
+*<tt>3B6FE</tt> - Evolution
+*<tt>3B6FF-3B70B</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B70C-3B717</tt> - Primeape</li>
+<div class="mw-collapsible-content">
+*<tt>3B70C</tt> - Evolution
+*<tt>3B70D-3B717</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B718-3B723</tt> - Dugtrio</li>
+<div class="mw-collapsible-content">
+*<tt>3B718</tt> - Evolution
+*<tt>3B719-3B723</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B724-3B731</tt> - Venomoth</li>
+<div class="mw-collapsible-content">
+*<tt>3B724</tt> - Evolution
+*<tt>3B725-3B731</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B732-3B73D</tt> - Dewgong</li>
+<div class="mw-collapsible-content">
+*<tt>3B732</tt> - Evolution
+*<tt>3B733-3B73D</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B73E-3B73F</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B73E</tt> - Evolution
+*<tt>3B73F</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B740-3B741</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B740</tt> - Evolution
+*<tt>3B741</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B742-3B746</tt> - Caterpie</li>
+<div class="mw-collapsible-content">
+*<tt>3B742-3B745</tt> - Evolution
+*<tt>3B746</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B747-3B74B</tt> - Metapod</li>
+<div class="mw-collapsible-content">
+*<tt>3B747-3B74A</tt> - Evolution
+*<tt>3B74B</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B74C-3B75B</tt> - Butterfree</li>
+<div class="mw-collapsible-content">
+*<tt>3B74C</tt> - Evolution
+*<tt>3B74D-3B75B</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B75C-3B767</tt> - Machamp</li>
+<div class="mw-collapsible-content">
+*<tt>3B75C</tt> - Evolution
+*<tt>3B75D-3B767</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B768-3B769</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B768</tt> - Evolution
+*<tt>3B769</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B76A-3B775</tt> - Golduck</li>
+<div class="mw-collapsible-content">
+*<tt>3B76A</tt> - Evolution
+*<tt>3B76B-3B775</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B776-3B783</tt> - Hypno</li>
+<div class="mw-collapsible-content">
+*<tt>3B776</tt> - Evolution
+*<tt>3B777-3B783</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B784-3B78F</tt> - Golbat</li>
+<div class="mw-collapsible-content">
+*<tt>3B784</tt> - Evolution
+*<tt>3B785-3B78F</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B790-3B79B</tt> - Mewtwo</li>
+<div class="mw-collapsible-content">
+*<tt>3B790</tt> - Evolution
+*<tt>3B791-3B79B</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B79C-3B7A5</tt> - Snorlax</li>
+<div class="mw-collapsible-content">
+*<tt>3B79C</tt> - Evolution
+*<tt>3B79D-3B7A5</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B7A6-3B7AC</tt> - Magikarp</li>
+<div class="mw-collapsible-content">
+*<tt>3B7A6-3B7A9</tt> - Evolution
+*<tt>3B7AA-3B7AC</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B7AD-3B7AE</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B7AD</tt> - Evolution
+*<tt>3B7AE</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B7AF-3B7B0</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B7AF</tt> - Evolution
+*<tt>3B7B0</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B7B1-3B7BE</tt> - Muk</li>
+<div class="mw-collapsible-content">
+*<tt>3B7B1</tt> - Evolution
+*<tt>3B7B2-3B7BE</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B7BF-3B7C0</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B7BF</tt> - Evolution
+*<tt>3B7C0</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B7C1-3B7CC</tt> - Kingler</li>
+<div class="mw-collapsible-content">
+*<tt>3B7C1</tt> - Evolution
+*<tt>3B7C2-3B7CC</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B7CD-3B7D0</tt> - Cloyster</li>
+<div class="mw-collapsible-content">
+*<tt>3B7CD</tt> - Evolution
+*<tt>3B7CE-3B7D0</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B7D1-3B7D2</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B7D1</tt> - Evolution
+*<tt>3B7D2</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B7D3-3B7DE</tt> - Electrode</li>
+<div class="mw-collapsible-content">
+*<tt>3B7D3</tt> - Evolution
+*<tt>3B7D4-3B7DE</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B7DF-3B7E0</tt> - Clefable</li>
+<div class="mw-collapsible-content">
+*<tt>3B7DF</tt> - Evolution
+*<tt>3B7E0</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B7E1-3B7EC</tt> - Weezing</li>
+<div class="mw-collapsible-content">
+*<tt>3B7E1</tt> - Evolution
+*<tt>3B7E2-3B7EC</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B7ED-3B7F8</tt> - Persian</li>
+<div class="mw-collapsible-content">
+*<tt>3B7ED</tt> - Evolution
+*<tt>3B7EE-3B7F8</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B7F9-3B804</tt> - Marowak</li>
+<div class="mw-collapsible-content">
+*<tt>3B7F9</tt> - Evolution
+*<tt>3B7FA-3B804</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B805-3B806</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B805</tt> - Evolution
+*<tt>3B806</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B807-3B80F</tt> - Haunter</li>
+<div class="mw-collapsible-content">
+*<tt>3B807-3B80A</tt> - Evolution
+*<tt>3B80B-3B80F</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B810-3B814</tt> - Abra</li>
+<div class="mw-collapsible-content">
+*<tt>3B810-3B813</tt> - Evolution
+*<tt>3B814</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B815-3B822</tt> - Alakazam</li>
+<div class="mw-collapsible-content">
+*<tt>3B815</tt> - Evolution
+*<tt>3B816-3B822</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B823-3B833</tt> - Pidgeotto</li>
+<div class="mw-collapsible-content">
+*<tt>3B823-3B826</tt> - Evolution
+*<tt>3B827-3B833</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B834-3B841</tt> - Pidgeot</li>
+<div class="mw-collapsible-content">
+*<tt>3B834</tt> - Evolution
+*<tt>3B835-3B841</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B842-3B843</tt> - Starmie</li>
+<div class="mw-collapsible-content">
+*<tt>3B842</tt> - Evolution
+*<tt>3B843</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B844-3B856</tt> - Bulbasaur</li>
+<div class="mw-collapsible-content">
+*<tt>3B844-3B847</tt> - Evolution
+*<tt>3B848-3B856</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B857-3B866</tt> - Venusaur</li>
+<div class="mw-collapsible-content">
+*<tt>3B857</tt> - Evolution
+*<tt>3B858-3B866</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B867-3B878</tt> - Tentacruel</li>
+<div class="mw-collapsible-content">
+*<tt>3B867</tt> - Evolution
+*<tt>3B868-3B878</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B879-3B87A</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B879</tt> - Evolution
+*<tt>3B87A</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B87B-3B88B</tt> - Goldeen</li>
+<div class="mw-collapsible-content">
+*<tt>3B87B-3B87E</tt> - Evolution
+*<tt>3B87F-3B88B</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B88C-3B899</tt> - Seaking</li>
+<div class="mw-collapsible-content">
+*<tt>3B88C</tt> - Evolution
+*<tt>3B88D-3B899</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B89A-3B89B</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B89A</tt> - Evolution
+*<tt>3B89B</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B89C-3B89D</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B89C</tt> - Evolution
+*<tt>3B89D</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B89E-3B89F</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B89E</tt> - Evolution
+*<tt>3B89F</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B8A0-3B8A1</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B8A0</tt> - Evolution
+*<tt>3B8A1</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B8A2-3B8B2</tt> - Ponyta</li>
+<div class="mw-collapsible-content">
+*<tt>3B8A2-3B8A5</tt> - Evolution
+*<tt>3B8A6-3B8B2</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B8B3-3B8C0</tt> - Rapidash</li>
+<div class="mw-collapsible-content">
+*<tt>3B8B3</tt> - Evolution
+*<tt>3B8B4-3B8C0</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B8C1-3B8CD</tt> - Rattata</li>
+<div class="mw-collapsible-content">
+*<tt>3B8C1-3B8C4</tt> - Evolution
+*<tt>3B8C5-3B8CD</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B8CE-3B8D7</tt> - Raticate</li>
+<div class="mw-collapsible-content">
+*<tt>3B8CE</tt> - Evolution
+*<tt>3B8CF-3B8D7</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B8D8-3B8E9</tt> - Nidorino</li>
+<div class="mw-collapsible-content">
+*<tt>3B8D8-3B8DC</tt> - Evolution
+*<tt>3B8DD-3B8E9</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B8EA-3B8FB</tt> - Nidorina</li>
+<div class="mw-collapsible-content">
+*<tt>3B8EA-3B8EE</tt> - Evolution
+*<tt>3B8EF-3B8FB</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B8FC-3B90C</tt> - Geodude</li>
+<div class="mw-collapsible-content">
+*<tt>3B8FC-3B8FF</tt> - Evolution
+*<tt>3B900-3B90C</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B90D-3B916</tt> - Porygon</li>
+<div class="mw-collapsible-content">
+*<tt>3B90D</tt> - Evolution
+*<tt>3B90E-3B916</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B917-3B920</tt> - Aerodactyl</li>
+<div class="mw-collapsible-content">
+*<tt>3B917</tt> - Evolution
+*<tt>3B918-3B920</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B921-3B922</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B921</tt> - Evolution
+*<tt>3B922</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B923-3B933</tt> - Magnemite</li>
+<div class="mw-collapsible-content">
+*<tt>3B923-3B926</tt> - Evolution
+*<tt>3B927-3B933</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B934-3B935</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B934</tt> - Evolution
+*<tt>3B935</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B936-3B937</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B936</tt> - Evolution
+*<tt>3B937</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B938-3B948</tt> - Charmander</li>
+<div class="mw-collapsible-content">
+*<tt>3B938-3B93B</tt> - Evolution
+*<tt>3B93C-3B948</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B949-3B959</tt> - Squirtle</li>
+<div class="mw-collapsible-content">
+*<tt>3B949-3B94C</tt> - Evolution
+*<tt>3B94D-3B959</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B95A-3B96A</tt> - Charmeleon</li>
+<div class="mw-collapsible-content">
+*<tt>3B95A-3B95D</tt> - Evolution
+*<tt>3B95E-3B96A</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B96B-3B97B</tt> - Wartortle</li>
+<div class="mw-collapsible-content">
+*<tt>3B96B-3B96E</tt> - Evolution
+*<tt>3B96F-3B97B</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B97C-3B989</tt> - Charizard</li>
+<div class="mw-collapsible-content">
+*<tt>3B97C</tt> - Evolution
+*<tt>3B97D-3B989</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B98A-3B98B</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B98A</tt> - Evolution
+*<tt>3B98B</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B98C-3B98D</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B98C</tt> - Evolution
+*<tt>3B98D</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B98E-3B98F</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B98E</tt> - Evolution
+*<tt>3B98F</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B990-3B991</tt> - (Missing No.)</li>
+<div class="mw-collapsible-content">
+*<tt>3B990</tt> - Evolution
+*<tt>3B991</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B992-3B9A2</tt> - Oddish</li>
+<div class="mw-collapsible-content">
+*<tt>3B992-3B995</tt> - Evolution
+*<tt>3B996-3B9A2</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B9A3-3B9B3</tt> - Gloom</li>
+<div class="mw-collapsible-content">
+*<tt>3B9A3-3B9A7</tt> - Evolution
+*<tt>3B9A8-3B9B4</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B9B5-3B9BC</tt> - Vileplume</li>
+<div class="mw-collapsible-content">
+*<tt>3B9B5</tt> - Evolution
+*<tt>3B9B6-3B9BC</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B9BD-3B9CF</tt> - Bellsprout</li>
+<div class="mw-collapsible-content">
+*<tt>3B9BD-3B9C0</tt> - Evolution
+*<tt>3B9C1-3B9CF</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B9D0-3B9E3</tt> - Weepinbell</li>
+<div class="mw-collapsible-content">
+*<tt>3B9D0-3B9D4</tt> - Evolution
+*<tt>3B9D5-3B9E3</tt> - Learned Moves</div></div>
+<div class="mw-collapsible mw-collapsed"><li><tt>3B9E4-3B9EB</tt> - Victreebel</li>
+<div class="mw-collapsible-content">
+*<tt>3B9E4</tt> - Evolution
+*<tt>3B9E5-3B9EB</tt> - Learned Moves</div></div></div>
+<tt>3BBE6-3BFFF</tt> Blank Data
+
+==Bank F==
+
+3CF12-3CF19 "Old Man"
+
+3D3B8-3D3C9 "Which Technique?"
+
+3D555-3D55D "Disabled!"
+
+3EC97-3EC98 Pointer to Player's Backsprite
+
+3EC9C-3EC9D Pointer to Old Man's Backsprite
+
+3EF54- How many Pokemon (When it ends it switches to trainers)
+
+3F69F-3F6CA "Attack, etc"
+
+3FBC8-3FFFF Blank Data
+
+==Bank 10==
+
+<tt>40448-4045B</tt> Wt/Ht Text
+
+<tt>4047E-</tt> Pokedex Pointers
+<div class="mw-collapsible mw-collapsed">
+<tt>405FA-40FE4</tt> Kinds of Pokemon Text, Height Values, Weight Values, Pokedex Pointers
+<div class="mw-collapsible-content"><li><tt>405FA-40608</tt> - Rhydon</li>
+<li><tt>40609-40618</tt> - Kangaskhan</li>
+<li><tt>40619-4062C</tt> - Nidoran M</li>
+<li><tt>4062D-4063B</tt> - Clefairy</li>
+<li><tt>4063C-4064E</tt> - Spearow</li>
+<li><tt>4064F-4065C</tt> - Voltorb</li>
+<li><tt>4065D-4066B</tt> - Nidoking</li>
+<li><tt>4066C-4067F</tt> - Slowbro</li>
+<li><tt>40680-4068D</tt> - Ivysaur</li>
+<li><tt>4068E-4069E</tt> - Exeggutor</li>
+<li><tt>4069F-406AF</tt> - Lickitung</li>
+<li><tt>406B0-406BC</tt> - Exeggcute</li>
+<li><tt>406BD-406CC</tt> - Grimer</li>
+<li><tt>406CD-406DC</tt> - Gengar</li>
+<li><tt>406DD-406F0</tt> - Nidoran F</li>
+<li><tt>406F1-406FF</tt> - Nidoqueen</li>
+<li><tt>40700-4070F</tt> - Cubone</li>
+<li><tt>40710-4071F</tt> - Rhyhorn</li>
+<li><tt>40720-40732</tt> - Lapras</li>
+<li><tt>40733-40745</tt> - Arcanine</li>
+<li><tt>40746-40759</tt> - Mew</li>
+<li><tt>4075A-4076C</tt> - Gyardos</li>
+<li><tt>4076D-4077D</tt> - Shellder</li>
+<li><tt>4077E-40790</tt> - Tentacool</li>
+<li><tt>40791-4079D</tt> - Gastly</li>
+<li><tt>4079E-407AD</tt> - Scyther</li>
+<li><tt>407AE-407C0</tt> - Staryu</li>
+<li><tt>407C1-407D3</tt> - Blastoise</li>
+<li><tt>407D4-407E7</tt> - Pinsir</li>
+<li><tt>407E8-407F5</tt> - Tangela</li>
+<li><tt>407F6-40804</tt> - Growlithe</li>
+<li><tt>40805-40818</tt> - Onix</li>
+<li><tt>40819-40826</tt> - Fearow</li>
+<li><tt>40827-40839</tt> - Pidgey</li>
+<li><tt>4083A-40848</tt> - Slowpoke</li>
+<li><tt>40849-40855</tt> - Kadabra</li>
+<li><tt>40856-40863</tt> - Graveler</li>
+<li><tt>40864-40870</tt> - Chansey</li>
+<li><tt>40871-40884</tt> - Machoke</li>
+<li><tt>40885-40895</tt> - Mr. Mime</li>
+<li><tt>40896-408A6</tt> - Hitmonlee</li>
+<li><tt>408A7-408B8</tt> - Hitmonchan</li>
+<li><tt>408B9-408C7</tt> - Arbok</li>
+<li><tt>408C8-408D9</tt> - Parasect</li>
+<li><tt>408DA-408E7</tt> - Psyduck</li>
+<li><tt>408E8-408F9</tt> - Drowzee</li>
+<li><tt>408FA-4090A</tt> - Golem</li>
+<li><tt>4090B-4091C</tt> - Magmar</li>
+<li><tt>4091D-4092E</tt> - Electabuzz</li>
+<li><tt>4092F-4093E</tt> - Magneton</li>
+<li><tt>4093F-40952</tt> - Koffing</li>
+<li><tt>40953-40966</tt> - Mankey</li>
+<li><tt>40967-40978</tt> - Seel</li>
+<li><tt>40979-40986</tt> - Diglett</li>
+<li><tt>40987-40999</tt> - Tauros</li>
+<li><tt>4099A-409AC</tt> - Farfetch'd</li>
+<li><tt>409AD-409BC</tt> - Venonat</li>
+<li><tt>409BD-409CC</tt> - Dragonite</li>
+<li><tt>409CD-409DF</tt> - Doduo</li>
+<li><tt>409E0-409F0</tt> - Poliwag</li>
+<li><tt>409F1-40A04</tt> - Jynx</li>
+<li><tt>40A05-40A13</tt> - Moltres</li>
+<li><tt>40A14-40A23</tt> - Articuno</li>
+<li><tt>40A24-40A35</tt> - Zapdos</li>
+<li><tt>40A36-40A48</tt> - Ditto</li>
+<li><tt>40A49-40A5C</tt> - Meowth</li>
+<li><tt>40A5D-40A70</tt> - Krabby</li>
+<li><tt>40A71-40A7D</tt> - Vulpix</li>
+<li><tt>40A7E-40A8A</tt> - Ninetales</li>
+<li><tt>40A8B-40A99</tt> - Pikachu</li>
+<li><tt>40A9A-40AA8</tt> - Raichu</li>
+<li><tt>40AA9-40AB8</tt> - Dratini</li>
+<li><tt>40AB9-40AC8</tt> - Dragonair</li>
+<li><tt>40AC9-40ADB</tt> - Kabuto</li>
+<li><tt>40ADC-40AEE</tt> - Kabutops</li>
+<li><tt>40AEF-40AFE</tt> - Horsea</li>
+<li><tt>40AFF-40B0E</tt> - Seadra</li>
+<li><tt>40B0F-40B1D</tt> - Sandshrew</li>
+<li><tt>40B1E-40B2C</tt> - Sandslash</li>
+<li><tt>40B2D-40B3C</tt> - Omanyte</li>
+<li><tt>40B3D-40B4C</tt> - Omastar</li>
+<li><tt>40B4D-40B5D</tt> - Jigglypuff</li>
+<li><tt>40B5E-40B6E</tt> - Wigglytuff</li>
+<li><tt>40B6F-40B81</tt> - Eevee</li>
+<li><tt>40B82-40B90</tt> - Flareon</li>
+<li><tt>40B91-40BA3</tt> - Jolteon</li>
+<li><tt>40BA4-40BB7</tt> - Vaporeon</li>
+<li><tt>40BB8-40BCB</tt> - Machop</li>
+<li><tt>40BCC-40BD8</tt> - Zubat</li>
+<li><tt>40BD9-40BE7</tt> - Ekans</li>
+<li><tt>40BE8-40BF9</tt> - Paras</li>
+<li><tt>40BFA-40C0A</tt> - Poliwhirl</li>
+<li><tt>40C0B-40C1B</tt> - Poliwrath</li>
+<li><tt>40C1C-40C2E</tt> - Weedle</li>
+<li><tt>40C2F-40C3E</tt> - Kakuna</li>
+<li><tt>40C3F-40C52</tt> - Beedrill</li>
+<li><tt>40C53-40C66</tt> - Dodrio</li>
+<li><tt>40C67-40C7A</tt> - Primeape</li>
+<li><tt>40C7B-40C88</tt> - Dugtrio</li>
+<li><tt>40C89-40C9C</tt> - Venomoth</li>
+<li><tt>40C9D-40CAE</tt> - Dewgong</li>
+<li><tt>40CAF-40CBC</tt> - Caterpie</li>
+<li><tt>40CBD-40CCC</tt> - Metapod</li>
+<li><tt>40CCD-40CDF</tt> - Butterfree</li>
+<li><tt>40CE0-40CF3</tt> - Machamp</li>
+<li><tt>40CF4-40D01</tt> - Golduck</li>
+<li><tt>40D02-40D13</tt> - Hypno</li>
+<li><tt>40D14-40D20</tt> - Golbat</li>
+<li><tt>40D21-40D31</tt> - Mewtwo</li>
+<li><tt>40D32-40D43</tt> - Snorlax</li>
+<li><tt>40D44-40D51</tt> - Magikarp</li>
+<li><tt>40D52-40D61</tt> - Muk</li>
+<li><tt>40D62-40D71</tt> - Kingler</li>
+<li><tt>40D72-40D82</tt> - Cloyster</li>
+<li><tt>40D83-40D90</tt> - Electrode</li>
+<li><tt>40D91-40D9F</tt> - Clefable</li>
+<li><tt>40DA0-40DB3</tt> - Weezing</li>
+<li><tt>40DB4-40DC7</tt> - Persian</li>
+<li><tt>40DC8-40DDB</tt> - Marowak</li>
+<li><tt>40DDC-40DE8</tt> - Haunter</li>
+<li><tt>40DE9-40DF5</tt> - Abra</li>
+<li><tt>40DF6-40E02</tt> - Alakazam</li>
+<li><tt>40E03-40E10</tt> - Pidgeotto</li>
+<li><tt>40E11-40E1E</tt> - Pidgeot</li>
+<li><tt>40E1F-40E32</tt> - Starmie</li>
+<li><tt>40E33-40E40</tt> - Bulbasaur</li>
+<li><tt>40E41-40E4E</tt> - Venusaur</li>
+<li><tt>40E4F-40E61</tt> - Tentacruel</li>
+<li><tt>40E62-40E73</tt> - Goldeen</li>
+<li><tt>40E74-40E85</tt> - Seaking</li>
+<li><tt>40E86-40E99</tt> - Ponyta</li>
+<li><tt>40E9A-40EAD</tt> - Rapidash</li>
+<li><tt>40EAE-40EBA</tt> - Rattata</li>
+<li><tt>40EBB-40EC7</tt> - Raticate</li>
+<li><tt>40EC8-40EDB</tt> - Nidorino</li>
+<li><tt>40EDC-40EEF</tt> - Nidorina</li>
+<li><tt>40EF0-40EFD</tt> - Geodude</li>
+<li><tt>40EFE-40F0E</tt> - Porygon</li>
+<li><tt>40F0F-40F1E</tt> - Aerodactyl</li>
+<li><tt>40F1F-40F2E</tt> - Magnemite</li>
+<li><tt>40F2F-40F3E</tt> - Charmander</li>
+<li><tt>40F3F-40F52</tt> - Squirtle</li>
+<li><tt>40F53-40F61</tt> - Charmeleon</li>
+<li><tt>40F62-40F71</tt> - Wartortle</li>
+<li><tt>40F72-40F80</tt> - Charizard</li>
+<li><tt>40F81-40F8E</tt> - Oddish</li>
+<li><tt>40F8F-40F9C</tt> - Gloom</li>
+<li><tt>40F9D-40FAC</tt> - Vileplume</li>
+<li><tt>40FAD-40FBC</tt> - Bellsprout</li>
+<li><tt>40FBD-40FD0</tt> - Weepinbell</li>
+<li><tt>40FD1-40FE4</tt> - Victreebel</li></div>
+</div>
+<tt>41024-410E1</tt> Pokedex Order
+
+<tt>4195A-427F3</tt> Starting Game graphics
+
+<tt>427F3-43E85</tt> Blank Data
+
+==Bank 11==
+
+$44000 "Lavender Town Header"
+
+$4402D "Lavender Town Object Data"
+
+$44085 "Lavender Town Data"
+
+$440DF "Viridian Pokemon Center Data"
+
+$440FB "Safari Zone Rest House (1) Data"
+
+$4410B "Lavender Town Script"
+
+$4410E "Lavender Town Text Pointers"
+
+$44251 "Viridian Pokemon Center Header"
+
+$4425D "Viridian Pokemon Center Script"
+
+$44263 "Viridian Pokemon Center Text Pointers"
+
+$44277 "Viridian Pokemon Center Object Data"
+
+$442A3 "Mansion (1) Header"
+
+$442AF "Mansion (1) Script"
+
+$4432C "Mansion (1) Text Pointers"
+
+$443A4 "Mansion (1) Object Data"
+
+$443FE "Mansion (1) Data"
+
+$444D0 "Rock Tunnel (1) Header"
+
+$444DC "Rock Tunnel (1) Script"
+
+$444F5 "Rock Tunnel (1) Text Pointers"
+
+$445F6 "Rock Tunnel (1) Object Data"
+
+$44675 "Rock Tunnel (1) Data"
+
+$447DD "Seafoam Islands (1) Header"
+
+$447E9 "Seafoam Islands (1) Script"
+
+$4484B "Seafoam Islands (1) Text Pointers"
+
+$4484F "Seafoam Islands (1) Object Data"
+
+$4489F "Seafoam Islands (1) Data"
+
+$44926 "S.S. Anne (3/upper deck hallway) Header"
+
+$44932 "S.S. Anne (3) Script"
+
+$44935 "S.S. Anne (3) Text Pointers"
+
+$4493C "S.S. Anne (3) Object Data"
+
+$44956 "S.S. Anne (3) Data"
+
+$44974 "Victory Road (3) Header"
+
+$44980 "Victory Road (3) Script"
+
+$44A24 "Victory Road (3) Text Pointers"
+
+$44ACD "Victory Road (3) Object Data"
+
+$44B37 "Victory Road (3) Data"
+
+$44BBE "Rocket Hideout (1) Header"
+
+$44BCA "Rocket Hideout (1) Script"
+
+$44C14 "Rocket Hideout (1) Text Pointers"
+
+$44CE7 "Rocket Hideout (1) Object Data"
+
+$44D49 "Rocket Hideout (1) Data"
+
+$44E1B "Rocket Hideout (2) Header"
+
+$44E27 "Rocket Hideout (2) Script"
+
+$450C7 "Rocket Hideout (2) Text Pointers"
+
+$450F7 "Rocket Hideout (2) Object Data"
+
+$45147 "Rocket Hideout (2) Data"
+
+$45219 "Rocket Hideout (3) Header"
+
+$45225 "Rocket Hideout (3) Script"
+
+$452FA "Rocket Hideout (3) Text Pointers"
+
+$4534D "Rocket Hideout (3) Object Data"
+
+$4537F "Rocket Hideout (3) Data"
+
+$45451 "Rocket Hideout (4) Header"
+
+$4545D "Rocket Hideout (4) Script"
+
+$45501 "Rocket Hideout (4) Text Pointers"
+
+$455F1 "Rocket Hideout (4) Object Data"
+
+$45650 "Rocket Hideout (4) Data"
+
+$45704 "Rocket Hideout (Elevator) Header"
+
+$45710 "Rocket Hideout (Elevator) Script"
+
+$4576B "Rocket Hideout (Elevator) Text Pointers"
+
+$45791 "Rocket Hideout (Elevator) Object Data"
+
+$457A8 "Rocket Hideout (Elevator) Data"
+
+$457B4 "Silph Co (Elevator) Header"
+
+$457C0 "Silph Co (Elevator) Script"
+
+$45833 "Silph Co (Elevator) Text Pointers"
+
+$45844 "Silph Co (Elevator) Object Data"
+
+$4585B "Silph Co (Elevator) Data"
+
+$4585F "Safari Zone East Header"
+
+$4586B "Safari Zone East Script"
+
+$4586E "Safari Zone East Text Pointers"
+
+$4588B "Safari Zone East Object Data"
+
+$458DC "Safari Zone East Data"
+
+$4599F "Safari Zone North Header"
+
+$459AB "Safari Zone North Script"
+
+$459AE "Safari Zone North Text Pointers"
+
+$459D5 "Safari Zone North Object Data"
+
+$45A3E "Safari Zone North Data"
+
+$45BA6 "Safari Zone Center Header"
+
+$45BB2 "Safari Zone Center Script"
+
+$45BB5 "Safari Zone Center Text Pointers"
+
+$45BC5 "Safari Zone Center Object Data"
+
+$45C1E "Safari Zone Center Data"
+
+$45CE1 "Safari Zone Rest House (1) Header"
+
+$45CED "Safari Zone Rest House (1) Script"
+
+$45CF0 "Safari Zone Rest House (1) Text Pointers"
+
+$45CFE "Safari Zone Rest House (1) Object Data"
+
+$45D1E "Safari Zone Rest House (2) Header"
+
+$45D2A "Safari Zone Rest House (2) Script"
+
+$45D2E "Safari Zone Rest House (2) Text Pointers"
+
+$45D43 "Safari Zone Rest House (2) Object Data"
+
+$45D69 "Safari Zone Rest House (3) Header"
+
+$45D75 "Safari Zone Rest House (3) Script"
+
+$45D79 "Safari Zone Rest House (3) Text Pointers"
+
+$45D8E "Safari Zone Rest House (3) Object Data"
+
+$45DB4 "Safari Zone Rest House (4) Header"
+
+$45DC0 "Safari Zone Rest House (4) Script"
+
+$45DC4 "Safari Zone Rest House (4) Text Pointers"
+
+$45DD9 "Safari Zone Rest House (4) Object Data"
+
+$45DFF "Unknown Dungeon(2) Header"
+
+$45E0B "Unknown Dungeon(2) Script"
+
+$45E0E "Unknown Dungeon(2) Text Pointers"
+
+$45E14 "Unknown Dungeon(2) Object Data"
+
+$45E5D "Unknown Dungeon(2) Data"
+
+$45EE4 "Unknown Dungeon(3) Header"
+
+$45EF0 "Unknown Dungeon(3) Script"
+
+$45F09 "Unknown Dungeon(3) Text Pointers"
+
+$45F36 "Unknown Dungeon(3) Object Data"
+
+$45F58 "Unknown Dungeon(3) Data"
+
+$45FDF "Rock Tunnel (2) Header"
+
+$45FEB "Rock Tunnel (2) Script"
+
+$46004 "Rock Tunnel (2) Text Pointers"
+
+$4613D "Rock Tunnel (2) Object Data"
+
+$461A1 "Rock Tunnel (2) Data"
+
+$46309 "Seafoam Islands (2) Header"
+
+$46315 "Seafoam Islands (2) Script"
+
+$46372 "Seafoam Islands (2) Text Pointers"
+
+$46376 "Seafoam Islands (2) Object Data"
+
+$463BE "Seafoam Islands (2) Data"
+
+$46445 "Seafoam Islands (3) Header"
+
+$46451 "Seafoam Islands (3) Script"
+
+$464AE "Seafoam Islands (3) Text Pointers"
+
+$464B2 "Seafoam Islands (3) Object Data"
+
+$464FA "Seafoam Islands (3) Data"
+
+$46581 "Seafoam Islands (4) Header"
+
+$4658D "Seafoam Islands (4) Script"
+
+$4669A "Seafoam Islands (4) Text Pointers"
+
+$466A6 "Seafoam Islands (4) Object Data"
+
+$46706 "Seafoam Islands (4) Data"
+
+$4678D "Seafoam Islands (5) Header"
+
+$46799 "Seafoam Islands (5) Script"
+
+$4687C "Seafoam Islands (5) Text Pointers"
+
+$468BC "Seafoam Islands (5) Object Data"
+
+$468FA "Seafoam Islands (5) Data" 
+
+$46E47-470A9 Hidden Items Data
+
+470AB-47185 Blank Data
+
+47257-47FFF Blank Data
+
+==Bank 12==
+
+$48000 "Route 7 Header"
+
+$48022 "Route 7 Object Data"
+
+$48051 "Route 7 Data"
+
+$480AB "Mt. Moon Pokemon Center Data"
+
+$480C7 "Route 11 Gate Data"
+
+$480DB "Route 11 Gate (Upstairs) Data"
+
+$48152 "Route 7 Script"
+
+$48155 "Route 7 Text Pointers"
+
+$4815C "Ash's House F1 Header"
+
+$48168 "Ash's House F1 Script"
+
+$4816B "Ash's House F1 Text Pointers"
+
+$481E4 "Ash's House F1 Object Data"
+
+$48209 "Ash's House F1 Data"
+
+$48219 "Celadon Mart (3) Header"
+
+$48225 "Celadon Mart (3) Script"
+
+$48228 "Celadon Mart (3) Text Pointers"
+
+$482C4 "Celadon Mart (3) Object Data"
+
+$48322 "Celadon Mart (3) Data"
+
+$4834A "Celadon Mart (4) Header"
+
+$48356 "Celadon Mart (4) Script"
+
+$48359 "Celadon Mart (4) Text Pointers"
+
+$48370 "Celadon Mart (4) Object Data"
+
+$483A1 "Celadon Mart (4) Data"
+
+$483C9 "Celadon Mart (6) Header"
+
+$483D5 "Celadon Mart (6) Script"
+
+$4855B "Celadon Mart (6) Text Pointers"
+
+$485A8 "Celadon Mart (6) Object Data"
+
+$485CC "Celadon Mart (6) Data"
+
+$485F4 "Celadon Mart Elevator Header"
+
+$48600 "Celadon Mart Elevator Script"
+
+$4865C "Celadon Mart Elevator Text Pointers"
+
+$4866D "Celadon Mart Elevator Object Data"
+
+$48684 "Celadon Mart Elevator Data"
+
+$48688 "Celadon Mansion (1) Header"
+
+$48694 "Celadon Mansion (1) Script"
+
+$48697 "Celadon Mansion (1) Text Pointers"
+
+$486CF "Celadon Mansion (1) Object Data"
+
+$48716 "Celadon Mansion (1) Data"
+
+$4872E "Celadon Mansion (2) Header"
+
+$4873A "Celadon Mansion (2) Script"
+
+$4873E "Celadon Mansion (2) Text Pointers"
+
+$48745 "Celadon Mansion (2) Object Data"
+
+$4876C "Celadon Mansion (2) Data"
+
+$48784 "Celadon Mansion (3) Header"
+
+$48790 "Celadon Mansion (3) Script"
+
+$48793 "Celadon Mansion (3) Text Pointers"
+
+$487FF "Celadon Mansion (3) Object Data"
+
+$48847 "Celadon Mansion (3) Data"
+
+$4885F "Celadon Mansion (4) Header"
+
+$4886B "Celadon Mansion (4) Script"
+
+$4886E "Celadon Mansion (4) Text Pointers"
+
+$48875 "Celadon Mansion (4) Object Data"
+
+$48894 "Celadon Mansion (4) Data"
+
+$488AC "Celadon Pokecenter Header"
+
+$488B8 "Celadon Pokecenter Script"
+
+$488BE "Celadon Pokecenter Text Pointers"
+
+$488D2 "Celadon Pokecenter Object Data"
+
+$488FE "Celadon Gym Header"
+
+$4890A "Celadon Gym Script"
+
+$489A6 "Celadon Gym Text Pointers"
+
+$48B30 "Celadon Gym Object Data"
+
+$48B84 "Celadon Gym Data"
+
+$48BB1 "Celadon Game Corner Header"
+
+$48BBD "Celadon Game Corner Script"
+
+$48C8A "Celadon Game Corner Text Pointers"
+
+$48FA0 "Celadon Game Corner Object Data"
+
+$49003 "Celadon Game Corner Data"
+
+$4905D "Celadon Mart (5) Header"
+
+$49069 "Celadon Mart (5) Script"
+
+$4906C "Celadon Mart (5) Text Pointers"
+
+$49085 "Celadon Mart (5) Object Data"
+
+$490BC "Celadon Mart (5) Data"
+
+$490E4 "Celadon Prize Room Header"
+
+$490F0 "Celadon Prize Room Script"
+
+$490F3 "Celadon Prize Room Text Pointers"
+
+$49108 "Celadon Prize Room Object Data"
+
+$49131 "Celadon Prize Room Data"
+
+$49145 "Celadon Diner Header"
+
+$49151 "Celadon Diner Script"
+
+$49155 "Celadon Diner Text Pointers"
+
+$491BC "Celadon Diner Object Data"
+
+$491EE "Celadon Diner Data"
+
+$49202 "Celadon House (2) Header"
+
+$4920E "Celadon House (2) Script"
+
+$49212 "Celadon House (2) Text Pointers"
+
+$49227 "Celadon House (2) Object Data"
+
+$4924D "Celadon House (2) Data"
+
+$4925D "Celadon Hotel Header"
+
+$49269 "Celadon Hotel Script"
+
+$4926C "Celadon Hotel Text Pointers"
+
+$49281 "Celadon Hotel Object Data"
+
+$492A7 "Celadon Hotel Data"
+
+$492C3 "Mt. Moon Pokemon Center Header"
+
+$492CF "Mt. Moon Pokemon Center Script"
+
+$492D5 "Mt. Moon Pokemon Center Text Pointers"
+
+$49376 "Mt. Moon Pokemon Center Object Data"
+
+$493AE "Rock Tunnel Pokemon Center Header"
+
+$493BA "Rock Tunnel Pokemon Center Script"
+
+$493C0 "Rock Tunnel Pokemon Center Text Pointers"
+
+$493D4 "Rock Tunnel Pokemon Center Object Data"
+
+$49400 "Route 11 Gate Header"
+
+$4940C "Route 11 Gate Script"
+
+$4940F "Route 11 Gate Text Pointers"
+
+$49416 "Route 11 Gate Object Data"
+
+$49448 "Route 11 Gate (Upstairs) Header"
+
+$49454 "Route 11 Gate (Upstairs) Script"
+
+$49457 "Route 11 Gate (Upstairs) Text Pointers"
+
+$494DA "Route 11 Gate (Upstairs) Object Data"
+
+$494F8 "Route 12 Gate Header"
+
+$49504 "Route 12 Gate Script"
+
+$49507 "Route 12 Gate Text Pointers"
+
+$4950E "Route 12 Gate Object Data"
+
+$49540 "Route 12 Gate Data"
+
+$49554 "Route 12 Gate Upstairs Header"
+
+$49560 "Route 12 Gate Upstairs Script"
+
+$49563 "Route 12 Gate Upstairs Text Pointers"
+
+$495DE "Route 12 Gate Upstairs Object Data"
+
+$495F6 "Route 15 Gate Header"
+
+$49602 "Route 15 Gate Script"
+
+$49605 "Route 15 Gate Text Pointers"
+
+$4960C "Route 15 Gate Object Data"
+
+$4963E "Route 15 Gate Upstairs Header"
+
+$4964A "Route 15 Gate Upstairs Script"
+
+$4964D "Route 15 Gate Upstairs Text Pointers"
+
+$4969D "Route 15 Gate Upstairs Object Data"
+
+$496B2 "Route 16 Gate Map Header"
+
+$496BE "Route 16 Gate Map Script"
+
+$4975A "Route 16 Gate Map Text Pointers"
+
+$4978B "Route 16 Gate Map Object Data"
+
+$497E3 "Route 16 Gate Map Data"
+
+$497FF "Route 16 Gate Upstairs Header"
+
+$4980B "Route 16 Gate Upstairs Script"
+
+$4980E "Route 16 Gate Upstairs Text Pointers"
+
+$4984C "Route 16 Gate Upstairs Object Data"
+
+$4986A "Route 18 Gate Header"
+
+$49876 "Route 18 Gate Script"
+
+$4990D "Route 18 Gate Text Pointers"
+
+$49937 "Route 18 Gate Object Data"
+
+$49969 "Route 18 Gate Upstairs Header"
+
+$49975 "Route 18 Gate Upstairs Script"
+
+$49978 "Route 18 Gate Upstairs Text Pointers"
+
+$499A4 "Route 18 Gate Upstairs Object Data"
+
+$499BC "Mt. Moon Cave (1) Header"
+
+$499C8 "Mt. Moon Cave (1) Script"
+
+$499E1 "Mt. Moon Cave (1) Text Pointers"
+
+$49B06 "Mt. Moon Cave (1) Object Data"
+
+$49B97 "Mt. Moon Cave (1) Data"
+
+$49CFF "Mt. Moon Cave (3) Header"
+
+$49D0B "Mt. Moon Cave (3) Script"
+
+$49E34 "Mt. Moon Cave (3) Text Pointers"
+
+$49FDB "Mt. Moon Cave (3) Object Data"
+
+$4A041 "Mt. Moon Cave (3) Data"
+
+$4A1A9 "Safari Zone West Header"
+
+$4A1B5 "Safari Zone West Script"
+
+$4A1B8 "Safari Zone West Text Pointers"
+
+$4A1DC "Safari Zone West Object Data"
+
+$4A248 "Safari Zone West Data"
+
+$4A30B "Safari Zone Secret House Header"
+
+$4A317 "Safari Zone Secret House Script"
+
+$4A31A "Safari Zone Secret House Text Pointers"
+
+$4A365 "Safari Zone Secret House Object Data"
+
+$4A37F "Safari Zone Secret House Data"
+
+
+
+==Bank 13==
+
+4C000-4FBA2 Trainer's pics
+
+$4FD04 "Battle Center Header"
+
+$4FD10 "Battle Center Script"
+
+$4FD4C "Battle Center Text Pointers"
+
+$4FD53 "Battle Center Object Data"
+
+$4FD5D "Battle Center Data"
+
+$4FD71 "Trade Center Header"
+
+$4FD7D "Trade Center Script"
+
+$4FD80 "Trade Center Text Pointers"
+
+$4FD87 "Trade Center Object Data"
+
+$4FD91 "Trade Center Data" 
+
+4FFA2-4FFFF Blank Data
+
+==Bank 14==
+
+$50000 "Route 22 Header"
+
+$50022 "Route 22 Object Data"
+
+$5003D "Route 22 Data"
+
+$500F1 "Route 20 Header"
+
+$50113 "Route 20 Object Data"
+
+$5017D "Route 20 Data"
+
+$5033F "Route 23 Header"
+
+$50361 "Route 23 Object Data"
+
+$503B2 "Route 23 Data"
+
+$50682 "Route 24 Header"
+
+$506A4 "Route 24 Object Data"
+
+$506E7 "Route 24 Data"
+
+$5079B "Route 25 Header"
+
+$507B2 "Route 25 Object Data"
+
+$50810 "Route 25 Data"
+
+$5091E "Indigo Plateau Header"
+
+$50935 "Indigo Plateau Script"
+
+$50936 "Indigo Plateau Text Pointers"
+
+$5094A "Indigo Plateau Data"
+
+$509A4 "Saffron City Header"
+
+$509DC "Saffron City Object Data"
+
+$50A98 "Saffron City Data"
+
+$50C00 "Saffron City Script"
+
+$50C03 "Saffron City Text Pointers"
+
+$50CA9 "Route 20 Script"
+
+$50D22 "Route 20 Text Pointers"
+
+$50EB2 "Route 22 Script"
+
+$51175 "Route 22 Text Pointers"
+
+$511DA "Route 23 Script"
+
+$512F7 "Route 23 Text Pointers"
+
+$513AD "Route 24 Script"
+
+$5144B "Route 24 Text Pointers"
+
+$515CB "Route 25 Script"
+
+$51628 "Route 25 Text Pointers"
+
+$51791 "Victory Road Header"
+
+$5179D "Victory Road Script"
+
+$5181B "Victory Road Text Pointers"
+
+$51915 "Victory Road Object Data"
+
+$519AF "Victory Road Data"
+
+$51A36 "Mt. Moon Cave (2) Header"
+
+$51A42 "Mt. Moon Cave (2) Script"
+
+$51A46 "Mt. Moon Cave (2) Text Pointers"
+
+$51A4D "Mt. Moon Cave (2) Object Data"
+
+$51A91 "Mt. Moon Cave (2) Data"
+
+$51B55 "Silph Co (7) Header"
+
+$51B61 "Silph Co (7) Script"
+
+$51D3F "Silph Co (7) Text Pointers"
+
+$51ED7 "Silph Co (7) Object Data"
+
+$51F57 "Silph Co (7) Data"
+
+$51FCC "Mansion (2) Header"
+
+$51FD8 "Mansion (2) Script"
+
+$5204D "Mansion (2) Text Pointers"
+
+$520D1 "Mansion (2) Object Data"
+
+$52110 "Mansion (2) Data"
+
+$521E2 "Mansion (3) Header"
+
+$521EE "Mansion (3) Script"
+
+$5228A "Mansion (3) Text Pointers"
+
+$522E6 "Mansion (3) Object Data"
+
+$52326 "Mansion (3) Data"
+
+$523AD "Mansion (4) Header"
+
+$523B9 "Mansion (4) Script"
+
+$52436 "Mansion (4) Text Pointers"
+
+$52498 "Mansion (4) Object Data"
+
+$524DD "Mansion (4) Data"
+
+52A42-53FFF Blank Data
+
+==Bank 15==
+
+$54000 "Route 2 Header"
+
+$54022 "Route 2 Object Data"
+
+$5407E "Route 2 Data"
+
+$541E6 "Route 3 Header"
+
+$54208 "Route 3 Object Data"
+
+$54255 "Route 3 Data"
+
+$54390 "Route 4 Header"
+
+$543B2 "Route 4 Object Data"
+
+$543EC "Route 4 Data"
+
+$54581 "Route 5 Header"
+
+$545A3 "Route 5 Object Data"
+
+$545D2 "Route 5 Data"
+
+$54686 "Route 9 Header"
+
+$546A8 "Route 9 Object Data"
+
+$546FE "Route 9 Data"
+
+$5480C "Route 13 Header"
+
+$5482E "Route 13 Object Data"
+
+$5488B "Route 13 Data"
+
+$54999 "Route 14 Header"
+
+$549BB "Route 14 Object Data"
+
+$54A12 "Route 14 Data"
+
+$54B20 "Route 17 Header"
+
+$54B42 "Route 17 Object Data"
+
+$54BA8 "Route 17 Data"
+
+$54E78 "Route 19 Header"
+
+$54E9A "Route 19 Object Data"
+
+$54EF1 "Route 19 Data"
+
+$54FFF "Route 21 Header"
+
+$55021 "Route 21 Object Data"
+
+$5506D "Route 21 Data"
+
+$5522F "Day Care Center Data"
+
+$5523F "Fuchsia House (3) Data"
+
+$554E3 "Route 2 Script"
+
+$554E6 "Route 2 Text Pointers"
+
+$554F8 "Route 3 Script"
+
+$55511 "Route 3 Text Pointers"
+
+$55658 "Route 4 Script"
+
+$55671 "Route 4 Text Pointers"
+
+$556B2 "Route 5 Script"
+
+$556B5 "Route 5 Text Pointers"
+
+$556BC "Route 9 Script"
+
+$556D5 "Route 9 Text Pointers"
+
+$5581E "Route 13 Script"
+
+$55837 "Route 13 Text Pointers"
+
+$559D3 "Route 14 Script"
+
+$559EC "Route 14 Text Pointers"
+
+$55B7A "Route 17 Script"
+
+$55B93 "Route 17 Text Pointers"
+
+$55D44 "Route 19 Script"
+
+$55D5D "Route 19 Text Pointers"
+
+$55EEB "Route 21 Script"
+
+$55F04 "Route 21 Text Pointers"
+
+$56064 "Vermilion House (2) Header"
+
+$56070 "Vermilion House (2) Script"
+
+$56073 "Vermilion House (2) Text Pointers"
+
+$560CF "Vermilion House (2) Object Data"
+
+$560E9 "Celadon Mart (2) Header"
+
+$560F5 "Celadon Mart (2) Script"
+
+$560F8 "Celadon Mart (2) Text Pointers"
+
+$56111 "Celadon Mart (2) Object Data"
+
+$56148 "Celadon Mart (2) Data"
+
+$56170 "Fuchsia House (3) Header"
+
+$5617C "Fuchsia House (3) Script"
+
+$5617F "Fuchsia House (3) Text Pointers"
+
+$56221 "Fuchsia House (3) Object Data"
+
+$56243 "Day Care Center Header"
+
+$5624F "Day Care Center Script"
+
+$56252 "Day Care Center Text Pointers"
+
+$56459 "Day Care Center Object Data"
+
+$56473 "Route 12 House Header"
+
+$5647F "Route 12 House Script"
+
+$56482 "Route 12 House Text Pointers"
+
+$564DE "Route 12 House Object Data"
+
+$564F8 "Silph Co (8) Header"
+
+$56504 "Silph Co (8) Script"
+
+$5657D "Silph Co (8) Text Pointers"
+
+$56613 "Silph Co (8) Object Data"
+
+$5666D "Silph Co (8) Data" 
+
+56799-567F8 Diploma Text
+
+56A4B-57FFF Blank Data
+
+==Bank 16==
+
+$58000 "Route 6 Header"
+
+$58022 "Route 6 Object Data"
+
+$58079 "Route 6 Data"
+
+$5812D "Route 8 Header"
+
+$5814F "Route 8 Object Data"
+
+$581C6 "Route 8 Data"
+
+$582D4 "Route 10 Header"
+
+$582F6 "Route 10 Object Data"
+
+$58356 "Route 10 Data"
+
+$584BE "Route 11 Header"
+
+$584E0 "Route 11 Object Data"
+
+$5855F "Route 11 Data"
+
+$5866D "Route 12 Header"
+
+$5869A "Route 12 Object Data"
+
+$58710 "Route 12 Data"
+
+$5892C "Route 15 Header"
+
+$5894E "Route 15 Object Data"
+
+$589CC "Route 15 Data"
+
+$58ADA "Route 16 Header"
+
+$58AFC "Route 16 Object Data"
+
+$58B84 "Route 16 Data"
+
+$58C38 "Route 18 Header"
+
+$58C5A "Route 18 Object Data"
+
+$58C9C "Route 18 Data"
+
+$590B0 "Route 6 Script"
+
+$590C9 "Route 6 Text Pointers"
+
+$591B6 "Route 8 Script"
+
+$591CF "Route 8 Text Pointers"
+
+$59336 "Route 10 Script"
+
+$5934F "Route 10 Text Pointers"
+
+$5944C "Route 11 Script"
+
+$59465 "Route 11 Text Pointers"
+
+$595F3 "Route 12 Script"
+
+$59675 "Route 12 Text Pointers"
+
+$597AE "Route 15 Script"
+
+$597C7 "Route 15 Text Pointers"
+
+$59933 "Route 16 Script"
+
+$599B9 "Route 16 Text Pointers"
+
+$59AC7 "Route 18 Script"
+
+$59AE0 "Route 18 Text Pointers"
+
+$59B64 "Vermilion Pokemon Fan Club Header"
+
+$59B70 "Vermilion Pokemon Fan Club Script"
+
+$59B84 "Vermilion Pokemon Fan Club Text Pointers"
+
+$59C97 "Vermilion Pokemon Fan Club Object Data"
+
+$59CD5 "Vermilion Pokemon Fan Club Data"
+
+$59CE5 "Silph Co (2) Header"
+
+$59CF1 "Silph Co (2) Script"
+
+$59D86 "Silph Co (2) Text Pointers"
+
+$59E66 "Silph Co (2) Object Data"
+
+$59EC8 "Silph Co (2) Data"
+
+$59F4F "Silph Co (3) Header"
+
+$59F5B "Silph Co (3) Script"
+
+$59FC4 "Silph Co (3) Text Pointers"
+
+$5A035 "Silph Co (3) Object Data"
+
+$5A0A6 "Silph Co (3) Data"
+
+$5A12D "Silph Co (10) Header"
+
+$5A139 "Silph Co (10) Script"
+
+$5A186 "Silph Co (10) Text Pointers"
+
+$5A1FB "Silph Co (10) Object Data"
+
+$5A25A "Silph Co (10) Data"
+
+$5A2A2 "Elite Four Lance Header"
+
+$5A2AE "Elite Four Lance Script"
+
+$5A395 "Elite Four Lance Text Pointers"
+
+$5A3C5 "Elite Four Lance Object Data"
+
+$5A3E9 "Elite Four Lance Data"
+
+$5A492 "Hall of Fame Room Header"
+
+$5A49E "Hall of Fame Room Script"
+
+$5A56A "Hall of Fame Room Text Pointers"
+
+$5A571 "Hall of Fame Room Object Data"
+
+$5A58B "Hall of Fame Room Data" 
+
+5A5BA-5BFFF Blank Data
+
+
+
+==Bank 17==
+
+$5C000 "Cerulean Mart Data"
+
+$5C010 "Ash's House F2 Data"
+
+$5C020 "Pewter City Museum F1 Data"
+
+$5C048 "Pewter City Museum F2 Data"
+
+$5C064 "Pewter City Pokemon Center Data"
+
+$5C080 "Underground Tunnel Entrance (Route 5) Data"
+
+$5C090 "Viridian Forest (Exit) Data"
+
+$5C0A4 "Ash's House F2 Header"
+
+$5C0B0 "Ash's House F2 Script"
+
+$5C0CF "Ash's House F2 Text Pointers"
+
+$5C0D0 "Ash's House F2 Object Data"
+
+$5C0EB "Pewter City Museum F1 Header"
+
+$5C0F7 "Pewter City Museum F1 Script"
+
+$5C12B "Pewter City Museum F1 Text Pointers"
+
+$5C2C1 "Pewter City Museum F1 Object Data"
+
+$5C30B "Pewter City Museum F2 Header"
+
+$5C317 "Pewter City Museum F2 Script"
+
+$5C31A "Pewter City Museum F2 Text Pointers"
+
+$5C34B "Pewter City Museum F2 Object Data"
+
+$5C37B "Pewter City Gym Header"
+
+$5C387 "Pewter City Gym Script"
+
+$5C435 "Pewter City Gym Text Pointers"
+
+$5C52E "Pewter City Gym Object Data"
+
+$5C558 "Pewter City Gym Data"
+
+$5C57B "Pewter City Pokemon Center Header"
+
+$5C587 "Pewter City Pokemon Center Script"
+
+$5C58D "Pewter City Pokemon Center Text Pointers"
+
+$5C60D "Pewter City Pokemon Center Object Data"
+
+$5C639 "Cerulean Pokemon Center Header"
+
+$5C645 "Cerulean Pokemon Center Script"
+
+$5C64B "Cerulean Pokemon Center Text Pointers"
+
+$5C65F "Cerulean Pokemon Center Object Data"
+
+$5C68B "Cerulean Pokemon Center Data"
+
+$5C6A7 "Cerulean Gym Header"
+
+$5C6B3 "Cerulean Gym Script"
+
+$5C74A "Cerulean Gym Text Pointers"
+
+$5C834 "Cerulean Gym Object Data"
+
+$5C866 "Cerulean Gym Data"
+
+$5C889 "Cerulean Mart Header"
+
+$5C895 "Cerulean Mart Script"
+
+$5C898 "Cerulean Mart Text Pointers"
+
+$5C8A8 "Cerulean Mart Object Data"
+
+$5C8CE "Lavender Pokecenter Header"
+
+$5C8DA "Lavender Pokecenter Script"
+
+$5C8E0 "Lavender Pokecenter Text Pointers"
+
+$5C8F4 "Lavender Pokecenter Object Data"
+
+$5C920 "Lavender Mart Header"
+
+$5C92C "Lavender Mart Script"
+
+$5C92F "Lavender Mart Text Pointers"
+
+$5C95D "Lavender Mart Object Data"
+
+$5C983 "Vermilion Pokemon Center Header"
+
+$5C98F "Vermilion Pokemon Center Script"
+
+$5C995 "Vermilion Pokemon Center Text Pointers"
+
+$5C9A9 "Vermilion Pokemon Center Object Data"
+
+$5C9D5 "Vermilion Mart Header"
+
+$5C9E1 "Vermilion Mart Script"
+
+$5C9E4 "Vermilion Mart Text Pointers"
+
+$5C9F4 "Vermilion Mart Object Data"
+
+$5CA1A "Vermilion Gym Header"
+
+$5CA26 "Vermilion Gym Script"
+
+$5CAE8 "Vermilion Gym Text Pointers"
+
+$5CBFE "Vermilion Gym Object Data"
+
+$5CC38 "Vermilion Gym Data"
+
+$5CC65 "Copycat's House F2 Header"
+
+$5CC71 "Copycat's House F2 Script"
+
+$5CC74 "Copycat's House F2 Text Pointers"
+
+$5CD21 "Copycat's House F2 Object Data"
+
+$5CD51 "Fighting Dojo Header"
+
+$5CD5D "Fighting Dojo Script"
+
+$5CE03 "Fighting Dojo Text Pointers"
+
+$5CF9B "Fighting Dojo Object Data"
+
+$5CFE3 "Fighting Dojo Data"
+
+$5D001 "Saffron Gym Header"
+
+$5D00D "Saffron Gym Script"
+
+$5D0AB "Saffron Gym Text Pointers"
+
+$5D259 "Saffron Gym Object Data"
+
+$5D3A3 "Saffron Gym Data"
+
+$5D3FD "Saffron Mart Header"
+
+$5D409 "Saffron Mart Script"
+
+$5D40C "Saffron Mart Text Pointers"
+
+$5D41C "Saffron Mart Object Data"
+
+$5D442 "Silph Co (1) Header"
+
+$5D44E "Silph Co (1) Script"
+
+$5D469 "Silph Co (1) Text Pointers"
+
+$5D470 "Silph Co (1) Object Data"
+
+$5D4A2 "Silph Co (1) Data"
+
+$5D529 "Saffron Pokecenter Header"
+
+$5D535 "Saffron Pokecenter Script"
+
+$5D53B "Saffron Pokecenter Text Pointers"
+
+$5D54F "Saffron Pokecenter Object Data"
+
+$5D57B "Viridian Forest (Exit) Header"
+
+$5D587 "Viridian Forest (Exit) Script"
+
+$5D58A "Viridian Forest (Exit) Text Pointers"
+
+$5D598 "Viridian Forest (Exit) Object Data"
+
+$5D5C8 "Route 2 Gate Header"
+
+$5D5D4 "Route 2 Gate Script"
+
+$5D5D7 "Route 2 Gate Text Pointers"
+
+$5D620 "Route 2 Gate Object Data"
+
+$5D650 "Viridian Forest (Entrance) Header"
+
+$5D65C "Viridian Forest (Entrance) Script"
+
+$5D65F "Viridian Forest (Entrance) Text Pointers"
+
+$5D66D "Viridian Forest (Entrance) Object Data"
+
+$5D69D "Underground Tunnel Entrance (Route 5) Header"
+
+$5D6A9 "Underground Tunnel Entrance (Route 5) Script"
+
+$5D6B0 "Underground Tunnel Entrance (Route 5) Text Pointers"
+
+$5D6C1 "Underground Tunnel Entrance (Route 5) Object Data"
+
+$5D6E3 "Underground Tunnel Entrance (Route 6) Header"
+
+$5D6EF "Underground Tunnel Entrance (Route 6) Script"
+
+$5D6F7 "Underground Tunnel Entrance (Route 6) Text Pointers"
+
+$5D6FE "Underground Tunnel Entrance (Route 6) Object Data"
+
+$5D720 "Underground Path Entrance (Route 7) Header"
+
+$5D72C "Underground Path Entrance (Route 7) Script"
+
+$5D734 "Underground Path Entrance (Route 7) Text Pointers"
+
+$5D73B "Underground Path Entrance (Route 7) Object Data"
+
+$5D75D "Underground Path Entrance (Route 7) (Copy) Header"
+
+$5D769 "Underground Path Entrance (Route 7) (Copy) Script"
+
+$5D76F "Underground Path Entrance (Route 7) (Copy) Text Pointers"
+
+$5D787 "Underground Path Entrance (Route 7) (Copy) Object Data"
+
+$5D7AF "Silph Co (9) Header"
+
+$5D7BB "Silph Co (9) Script"
+
+$5D88B "Silph Co (9) Text Pointers"
+
+$5D93F "Silph Co (9) Object Data"
+
+$5D989 "Silph Co (9) Data"
+
+$5D9FE "Victory Road (1) Header"
+
+$5DA0A "Victory Road (1) Script"
+
+$5DA5F "Victory Road (1) Text Pointers"
+
+$5DAB8 "Victory Road (1) Object Data"
+
+$5DB04 "Victory Road (1) Data" 
+
+5DCA8-5DCD7 Linking Help Text
+
+5DDAC-5DDCA Conditions Text
+
+5DF15-5FFFF Blank Data
+
+==Bank 18==
+
+$60000 "Viridian Forest Data"
+
+$60198 "Underground Path (N/S) Data"
+
+$601F4 "Underground Path (W/E) Data"
+
+$603C0 "S.S. Anne (9) Data"
+
+$60420 "Pokemon Tower (1) Header"
+
+$6042C "Pokemon Tower (1) Script"
+
+$6042F "Pokemon Tower (1) Text Pointers"
+
+$60452 "Pokemon Tower (1) Object Data"
+
+$6048C "Pokemon Tower (1) Data"
+
+$604E6 "Pokemon Tower (2) Header"
+
+$604F2 "Pokemon Tower (2) Script"
+
+$605DB "Pokemon Tower (2) Text Pointers"
+
+$60646 "Pokemon Tower (2) Object Data"
+
+$60666 "Pokemon Tower (2) Data"
+
+$606C0 "Pokemon Tower (3) Header"
+
+$606CC "Pokemon Tower (3) Script"
+
+$606E5 "Pokemon Tower (3) Text Pointers"
+
+$6075D "Pokemon Tower (3) Object Data"
+
+$60790 "Pokemon Tower (3) Data"
+
+$607EA "Pokemon Tower (4) Header"
+
+$607F6 "Pokemon Tower (4) Script"
+
+$6080F "Pokemon Tower (4) Text Pointers"
+
+$6088B "Pokemon Tower (4) Object Data"
+
+$608CC "Pokemon Tower (4) Data"
+
+$60926 "Pokemon Tower (5) Header"
+
+$60932 "Pokemon Tower (5) Script"
+
+$6099B "Pokemon Tower (5) Text Pointers"
+
+$60A48 "Pokemon Tower (5) Object Data"
+
+$60A89 "Pokemon Tower (5) Data"
+
+$60AE3 "Pokemon Tower (6) Header"
+
+$60AEF "Pokemon Tower (6) Script"
+
+$60BB1 "Pokemon Tower (6) Text Pointers"
+
+$60C5B "Pokemon Tower (6) Object Data"
+
+$60C95 "Pokemon Tower (6) Data"
+
+$60CF9 "Pokemon Tower (7) Header"
+
+$60D05 "Pokemon Tower (7) Script"
+
+$60E3F "Pokemon Tower (7) Text Pointers"
+
+$60EF6 "Pokemon Tower (7) Object Data"
+
+$60F20 "Pokemon Tower (7) Data"
+
+$60F7A "Celadon Mart (1) Header"
+
+$60F86 "Celadon Mart (1) Script"
+
+$60F89 "Celadon Mart (1) Text Pointers"
+
+$60F9E "Celadon Mart (1) Object Data"
+
+$60FDE "Celadon Mart (1) Data"
+
+$61101 "Viridian Forest Header"
+
+$6110D "Viridian Forest Script"
+
+$61126 "Viridian Forest Text Pointers"
+
+$611DA "Viridian Forest Object Data"
+
+$61259 "S.S. Anne (1/floor 1 outside rooms) Header"
+
+$61265 "S.S. Anne (1) Script"
+
+$61269 "S.S. Anne (1) Text Pointers"
+
+$61277 "S.S. Anne (1) Object Data"
+
+$612DF "S.S. Anne (1) Data"
+
+$61393 "S.S. Anne (2/floor 2 outside rooms) Header"
+
+$6139F "S.S. Anne (2) Script"
+
+$614DB "S.S. Anne (2) Text Pointers"
+
+$61514 "S.S. Anne (2) Object Data"
+
+$6156E "S.S. Anne (2) Data"
+
+$61622 "S.S. Anne (4/basement outside rooms) Header"
+
+$6162E "S.S. Anne (4) Script"
+
+$61631 "S.S. Anne (4) Text Pointers"
+
+$61632 "S.S. Anne (4) Object Data"
+
+$61666 "S.S. Anne (4) Data"
+
+$616A2 "S.S. Anne (5/upper deck outside) Header"
+
+$616AE "S.S. Anne (5) Script"
+
+$616C7 "S.S. Anne (5) Text Pointers"
+
+$6172B "S.S. Anne (5) Object Data"
+
+$61761 "S.S. Anne (5) Data"
+
+$617A7 "S.S. Anne (6/kitchen) Header"
+
+$617B3 "S.S. Anne (6) Script"
+
+$617B7 "S.S. Anne (6) Text Pointers"
+
+$6181B "S.S. Anne (6) Object Data"
+
+$61851 "S.S. Anne (6) Data"
+
+$61889 "S.S. Anne (7) Header"
+
+$61895 "S.S. Anne (7) Script"
+
+$618A7 "S.S. Anne (7) Text Pointers"
+
+$61946 "S.S. Anne (7) Object Data"
+
+$6195E "S.S. Anne (7) Data"
+
+$6196A "S.S. Anne (8) Header"
+
+$61976 "S.S. Anne (8) Script"
+
+$6198F "S.S. Anne (8) Text Pointers"
+
+$61A60 "S.S. Anne (8) Object Data"
+
+$61ADF "S.S. Anne (8) Data"
+
+$61B3F "S.S. Anne (9) Header"
+
+$61B4B "S.S. Anne (9) Script"
+
+$61B6A "S.S. Anne (9) Text Pointers"
+
+$61C8D "S.S. Anne (9) Object Data"
+
+$61D49 "S.S. Anne (10) Header"
+
+$61D55 "S.S. Anne (10) Script"
+
+$61D6E "S.S. Anne (10) Text Pointers"
+
+$61E75 "S.S. Anne (10) Object Data"
+
+$61F1A "Underground Path (N/S) Header"
+
+$61F26 "Underground Path (N/S) Script"
+
+$61F29 "Underground Path (N/S) Text Pointers"
+
+$61F2A "Underground Path (N/S) Object Data"
+
+$61F3E "Underground Path (W/E) Header"
+
+$61F4A "Underground Path (W/E) Script"
+
+$61F4D "Underground Path (W/E) Text Pointers"
+
+$61F4E "Underground Path (W/E) Object Data"
+
+$61F62 "Diglett's Cave Header"
+
+$61F6E "Diglett's Cave Script"
+
+$61F71 "Diglett's Cave Text Pointers"
+
+$61F72 "Diglett's Cave Object Data"
+
+$61F86 "Diglett's Cave Data"
+
+$620EE "Silph Co (11) Header"
+
+$620FA "Silph Co (11) Script"
+
+$622B7 "Silph Co (11) Text Pointers"
+
+$62380 "Silph Co (11) Object Data"
+
+$623C8 "Silph Co (11) Data" 
+
+6252A-63FFF Blank Data
+
+==Bank 19==
+
+64000-67FFF Tilesets
+
+==Bank 1A==
+
+68000-6AFF8 Tilesets
+
+6AFF8-6B5E8 Border
+
+6B5E8-6BFFF Tilesets
+
+==Bank 1B==
+
+6C000-6EB0B Tilesets
+
+6EB0B-6FFFF Blank data
+
+==Bank 1C==
+
+<tt>7026B-70277</tt> "HALL OF FAME"
+
+<tt>70329-7033C</tt> "LEVEL/" "TYPE1/" "TYPE2/"
+
+<tt>703EA-703F9</tt> "PLAY TIME" "MONEY"
+
+<tt>70F11-70F3F</tt> Order of Map Areas on Town Map
+
+<tt>71100-711AA</tt> Town Map
+
+<tt>7124A-71257</tt> "Area Unknown"
+
+<tt>71313-713BD</tt> Locations of Map Areas on Town Map/Pointers to Map Area Text
+<div class="mw-collapsible mw-collapsed">
+<tt>71473-716BD</tt> Map Area Text
+<div class="mw-collapsible-content"><tt><li>71473-7147E - PALLET TOWN</li>
+<li>7147F-7148C - VIRIDIAN CITY</li>
+<li>7148D-71498 - PEWTER CITY</li>
+<li>71499-714A6 - CERULEAN CITY</li>
+<li>714A7-714B4 - LAVENDER TOWN</li>
+<li>714B5-714C3 - VERMILION CITY</li>
+<li>714C4-714D0 - CELADON CITY</li>
+<li>714D1-714DD - FUCHSIA CITY</li>
+<li>714DE-714ED - CINNABAR ISLAND</li>
+<li>714EE-714FC - INDIGO PLATEAU</li>
+<li>714FD-71509 - SAFFRON CITY</li>
+<li>7150A-71511 - ROUTE 1</li>
+<li>71512-71519 - ROUTE 2</li>
+<li>7151A-71521 - ROUTE 3</li>
+<li>71522-71529 - ROUTE 4</li>
+<li>7152A-71531 - ROUTE 5</li>
+<li>71532-71539 - ROUTE 6</li>
+<li>7153A-71541 - ROUTE 7</li>
+<li>71542-71549 - ROUTE 8</li>
+<li>7154A-71551 - ROUTE 9</li>
+<li>71552-7155A - ROUTE 10</li>
+<li>7155B-71563 - ROUTE 11</li>
+<li>71564-7156C - ROUTE 12</li>
+<li>7156D-71575 - ROUTE 13</li>
+<li>71576-7157E - ROUTE 14</li>
+<li>7157F-71587 - ROUTE 15</li>
+<li>71588-71590 - ROUTE 16</li>
+<li>71591-71599 - ROUTE 17</li>
+<li>7159A-715A2 - ROUTE 18</li>
+<li>715A3-715AF - SEA ROUTE 19</li>
+<li>715B0-715BC - SEA ROUTE 20</li>
+<li>715BD-715C9 - SEA ROUTE 21</li>
+<li>715CA-715D2 - ROUTE 22</li>
+<li>715D3-715DB - ROUTE 23</li>
+<li>715DC-715E4 - ROUTE 24</li>
+<li>715E5-715ED - ROUTE 25</li>
+<li>715EE-715FD - VIRIDIAN FOREST</li>
+<li>715FE-71605 - MT.MOON</li>
+<li>71606-71611 - ROCK TUNNEL</li>
+<li>71612-7161D - SEA COTTAGE</li>
+<li>7161E-71626 - S.S.ANNE</li>
+<li>71627-71632 - POKéMON LEAGUE</li>
+<li>71633-71643 - UNDERGROUND PATH</li>
+<li>71644-7164E - POKéMON TOWER</li>
+<li>7164F-7165E - SEAFOAM ISLANDS</li>
+<li>7165F-7166B - VICTORY ROAD</li>
+<li>7166C-71679 - DIGLETT's CAVE</li>
+<li>7167A-71683 - ROCKET HQ</li>
+<li>71684-7168D - SILPH CO.</li>
+<li>7168E-71697 - PKMN MANSION</li>
+<li>71698-716A3 - SAFARI ZONE</li>
+<li>716A4-716B1 - CERULEAN CAVE</li>
+<li>716B2-716BD - POWER PLANT</li></tt></div>
+</div>
+<div class="mw-collapsible mw-collapsed">
+<tt>7190D-71958</tt> Pokémon Menu Sprite Assignments
+<div class="mw-collapsible-content"><li><tt>7190D</tt> - Bulbasaur & Ivysaur</li>
+<li><tt>7190E</tt> - Venusaur & Charmander</li>
+<li><tt>7190F</tt> - Charmeleon & Charizard</li>
+<li><tt>71910</tt> - Squirtle & Wartortle</li>
+<li><tt>71911</tt> - Blastoise & Caterpie</li>
+<li><tt>71912</tt> - Metapod & Butterfree</li>
+<li><tt>71913</tt> - Weedle & Kakuna</li>
+<li><tt>71914</tt> - Beedrill & Pidgey</li>
+<li><tt>71915</tt> - Pidgeotto & Pidgeot</li>
+<li><tt>71916</tt> - Rattata & Raticate</li>
+<li><tt>71917</tt> - Spearow & Fearow</li>
+<li><tt>71918</tt> - Ekans & Arbok</li>
+<li><tt>71919</tt> - Pikachu & Raichu</li>
+<li><tt>7191A</tt> - Sandshrew & Sandslash</li>
+<li><tt>7191B</tt> - Nidoran♀ & Nidorina</li>
+<li><tt>7191C</tt> - Nidoqueen & Nidoran♂</li>
+<li><tt>7191D</tt> - Nodorino & Nidoking</li>
+<li><tt>7191E</tt> - Clefairy & Clefable</li>
+<li><tt>7191F</tt> - Vulpix & Ninetales</li>
+<li><tt>71920</tt> - Jigglypuff & Wigglytuff</li>
+<li><tt>71921</tt> - Zubat & Golbat</li>
+<li><tt>71922</tt> - Oddish & Gloom</li>
+<li><tt>71923</tt> - Vileplume & Paras</li>
+<li><tt>71924</tt> - Parasect & Venonat</li>
+<li><tt>71925</tt> - Venomoth & Diglett</li>
+<li><tt>71926</tt> - Dugtrio & Meowth</li>
+<li><tt>71927</tt> - Persian & Psyduck</li>
+<li><tt>71928</tt> - Golduck & Mankey</li>
+<li><tt>71929</tt> - Primeape & Growlithe</li>
+<li><tt>7192A</tt> - Arcanine & Poliwag</li>
+<li><tt>7192B</tt> - Poliwhirl & Poliwrath</li>
+<li><tt>7192C</tt> - Abra & Kadabra</li>
+<li><tt>7192D</tt> - Alakazam & Machop</li>
+<li><tt>7192E</tt> - Machoke & Machamp</li>
+<li><tt>7192F</tt> - Bellsprout & Weepinbell</li>
+<li><tt>71930</tt> - Victreebel & Tentacool</li>
+<li><tt>71931</tt> - Tentacruel & Geodude</li>
+<li><tt>71932</tt> - Graveler & Golem</li>
+<li><tt>71933</tt> - Ponyta & Rapidash</li>
+<li><tt>71934</tt> - Slowpoke & Slowbro</li>
+<li><tt>71935</tt> - Magnemite & Magneton</li>
+<li><tt>71936</tt> - Farfetch'd & Doduo</li>
+<li><tt>71937</tt> - Dodrio & Seel</li>
+<li><tt>71938</tt> - Dewgong & Grimer</li>
+<li><tt>71939</tt> - Muk & Shellder</li>
+<li><tt>7193A</tt> - Cloyster & Gastly</li>
+<li><tt>7193B</tt> - Haunter & Gengar</li>
+<li><tt>7193C</tt> - Onix & Drowzee</li>
+<li><tt>7193D</tt> - Hypno & Krabby</li>
+<li><tt>7193E</tt> - Kingler & Voltorb</li>
+<li><tt>7193F</tt> - Electrode & Exeggcute</li>
+<li><tt>71940</tt> - Exeggutor & Cubone</li>
+<li><tt>71941</tt> - Marowak & Hitmonlee</li>
+<li><tt>71942</tt> - Hitmonchan & Lickitung</li>
+<li><tt>71943</tt> - Koffing & Weezing</li>
+<li><tt>71944</tt> - Rhyhorn & Rhydon</li>
+<li><tt>71945</tt> - Chansey & Tangela</li>
+<li><tt>71946</tt> - Kangaskhan & Horsea</li>
+<li><tt>71947</tt> - Seadra & Goldeen</li>
+<li><tt>71948</tt> - Seeking & Staryu</li>
+<li><tt>71949</tt> - Starmie & Mr. Mime</li>
+<li><tt>7194A</tt> - Scyther & Jynx</li>
+<li><tt>7194B</tt> - Electabuzz & Magmar</li>
+<li><tt>7194C</tt> - Pinsir & Tauros</li>
+<li><tt>7194D</tt> - Magikarp & Gyarados</li>
+<li><tt>7194E</tt> - Lapras & Ditto</li>
+<li><tt>7194F</tt> - Eevee & Vaporeon</li>
+<li><tt>71950</tt> - Jolteon & Flareon</li>
+<li><tt>71951</tt> - Porygon & Omanyte</li>
+<li><tt>71952</tt> - Omastar & Kabuto</li>
+<li><tt>71953</tt> - Kabutops & Aerodactyl</li>
+<li><tt>71954</tt> - Snorlax & Articuno</li>
+<li><tt>71955</tt> - Zapdos & Moltres</li>
+<li><tt>71956</tt> - Dratini & Dragonair</li>
+<li><tt>71957</tt> - Draonite & Mewtwo</li>
+<li><tt>71958</tt> - Mew</li></div>
+</div>
+<tt>71959-71AD9</tt> Sprites
+<div class="mw-collapsible mw-collapsed">
+<tt>71B7B-71C06</tt> In-Game Pokémon Trades (Pokémon Offered, Pokémon Received, Nicknames)
+<div class="mw-collapsible-content"><div class="mw-collapsible mw-collapsed"><li><tt>71B7B-71B88</tt></li>
+<div class="mw-collapsible-content">
+*<tt>71B7B</tt> - Pokémon Offered (Nidorino)
+*<tt>71B7C</tt> - Pokémon Received (Nidorina)
+*<tt>71B7D</tt>
+*<tt>71B7E-71B88</tt> - Nickname ("<tt>TERRY</tt>")</div>
+</div>
+<div class="mw-collapsible mw-collapsed"><li><tt>71B89-71B96</tt></li>
+<div class="mw-collapsible-content">
+*<tt>71B89</tt> - Pokémon Offered (Abra)
+*<tt>71B8A</tt> - Pokémon Received (Mr. Mime)
+*<tt>71B8B</tt>
+*<tt>71B8C-71B96</tt> - Nickname ("<tt>MARCEL</tt>")</div>
+</div>
+<div class="mw-collapsible mw-collapsed"><li><tt>71B97-71BA4</tt></li>
+<div class="mw-collapsible-content">
+*<tt>71B97</tt> - Pokémon Offered (Butterfree)
+*<tt>71B98</tt> - Pokémon Received (Beedrill)
+*<tt>71B99</tt>
+*<tt>71B9A-71BA4</tt> - Nickname ("<tt>CHIKUCHIKU</tt>")</div>
+</div>
+<div class="mw-collapsible mw-collapsed"><li><tt>71BA5-71BB2</tt></li>
+<div class="mw-collapsible-content">
+*<tt>71BA5</tt> - Pokémon Offered (Ponyta)
+*<tt>71BA6</tt> - Pokémon Received (Seel)
+*<tt>71BA7</tt>
+*<tt>71BA8-71BB2</tt> - Nickname ("<tt>SAILOR</tt>")</div>
+</div>
+<div class="mw-collapsible mw-collapsed"><li><tt>71BB3-71BC0</tt></li>
+<div class="mw-collapsible-content">
+*<tt>71BB3</tt> - Pokémon Offered (Spearow)
+*<tt>71BB4</tt> - Pokémon Received (Farfetch'd)
+*<tt>71BB5</tt>
+*<tt>71BB6-71BC0</tt> - Nickname ("<tt>DUX</tt>")</div>
+</div>
+<div class="mw-collapsible mw-collapsed"><li><tt>71BC1-71BCE</tt></li>
+<div class="mw-collapsible-content">
+*<tt>71BC1</tt> - Pokémon Offered (Slowbro)
+*<tt>71BC2</tt> - Pokémon Received (Lickitung)
+*<tt>71BC3</tt>
+*<tt>71BC4-71BCE</tt> - Nickname ("<tt>MARC</tt>")</div>
+</div>
+<div class="mw-collapsible mw-collapsed"><li><tt>71BCF-71BDC</tt></li>
+<div class="mw-collapsible-content">
+*<tt>71BCF</tt> - Pokémon Offered (Poliwhirl)
+*<tt>71BD0</tt> - Pokémon Received (Jynx)
+*<tt>71BD1</tt>
+*<tt>71BD2-71BDC</tt> - Nickname ("<tt>LOLA</tt>")</div>
+</div>
+<div class="mw-collapsible mw-collapsed"><li><tt>71BDD-71BEA</tt></li>
+<div class="mw-collapsible-content">
+*<tt>71BDD</tt> - Pokémon Offered (Raichu)
+*<tt>71BDE</tt> - Pokémon Received (Electrode)
+*<tt>71BDF</tt>
+*<tt>71BE0-71BEA</tt> - Nickname ("<tt>DORIS</tt>")</div>
+</div>
+<div class="mw-collapsible mw-collapsed"><li><tt>71BEB-71BF8</tt></li>
+<div class="mw-collapsible-content">
+*<tt>71BEB</tt> - Pokémon Offered (Venonat)
+*<tt>71BEC</tt> - Pokémon Received (Tangela)
+*<tt>71BED</tt>
+*<tt>71BEE-71BF8</tt> - Nickname ("<tt>CRINKLES</tt>")</div>
+</div>
+<div class="mw-collapsible mw-collapsed"><li><tt>71BF9-71C06</tt></li>
+<div class="mw-collapsible-content">
+*<tt>71BF9</tt> - Pokémon Offered (Nidoran M)
+*<tt>71BFA</tt> - Pokémon Received (Nidoran F)
+*<tt>71BFB</tt>
+*<tt>71BFC-71C06</tt> - Nickname ("<tt>SPOT</tt>")</div>
+</div></div></div><div class="mw-collapsible mw-collapsed">
+<tt>725C9-7265F</tt> Which Colour Palette is used by each Pokémon
+<div class="mw-collapsible-content"><li><tt>725C9</tt> - Bulbasaur's Palette</li>
+<li><tt>725CA</tt> - Ivysaur's Palette</li>
+<li><tt>725CB</tt> - Venusaur's Palette</li>
+<li><tt>725CC</tt> - Charmander's Palette</li>
+<li><tt>725CD</tt> - Charmeleon's Palette</li>
+<li><tt>725CE</tt> - Charizard's Palette</li>
+<li><tt>725CF</tt> - Squirtle's Palette</li>
+<li><tt>725D0</tt> - Wartortle's Palette</li>
+<li><tt>725D1</tt> - Blastoise's Palette</li>
+<li><tt>725D2</tt> - Caterpie's Palette</li>
+<li><tt>725D3</tt> - Metapod's Palette</li>
+<li><tt>725D4</tt> - Butterfree's Palette</li>
+<li><tt>725D5</tt> - Weedle's Palette</li>
+<li><tt>725D6</tt> - Kakuna's Palette</li>
+<li><tt>725D7</tt> - Beedrill's Palette</li>
+<li><tt>725D8</tt> - Pidgey's Palette</li>
+<li><tt>725D9</tt> - Pidgeotto's Palette</li>
+<li><tt>725DA</tt> - Pidgeot's Palette</li>
+<li><tt>725DB</tt> - Rattata's Palette</li>
+<li><tt>725DC</tt> - Raticate's Palette</li>
+<li><tt>725DD</tt> - Spearow's Palette</li>
+<li><tt>725DE</tt> - Fearow's Palette</li>
+<li><tt>725DF</tt> - Ekans's Palette</li>
+<li><tt>725E0</tt> - Arbok's Palette</li>
+<li><tt>725E1</tt> - Pikachu's Palette</li>
+<li><tt>725E2</tt> - Raichu's Palette</li>
+<li><tt>725E3</tt> - Sandshrew's Palette</li>
+<li><tt>725E4</tt> - Sandslash's Palette</li>
+<li><tt>725E5</tt> - Nidoran F's Palette</li>
+<li><tt>725E6</tt> - Nidorina's Palette</li>
+<li><tt>725E7</tt> - Nidoqueen's Palette</li>
+<li><tt>725E8</tt> - Nidoran M's Palette</li>
+<li><tt>725E9</tt> - Nidorino's Palette</li>
+<li><tt>725EA</tt> - Nidoking's Palette</li>
+<li><tt>725EB</tt> - Clefairy's Palette</li>
+<li><tt>725EC</tt> - Clefable's Palette</li>
+<li><tt>725ED</tt> - Vulpix's Palette</li>
+<li><tt>725EE</tt> - Ninetales's Palette</li>
+<li><tt>725EF</tt> - Jigglypuff's Palette</li>
+<li><tt>725F0</tt> - Wigglytuff's Palette</li>
+<li><tt>725F1</tt> - Zubat's Palette</li>
+<li><tt>725F2</tt> - Golbat's Palette</li>
+<li><tt>725F3</tt> - Oddish's Palette</li>
+<li><tt>725F4</tt> - Gloom's Palette</li>
+<li><tt>725F5</tt> - Vileplume's Palette</li>
+<li><tt>725F6</tt> - Paras's Palette</li>
+<li><tt>725F7</tt> - Parasect's Palette</li>
+<li><tt>725F8</tt> - Venonat's Palette</li>
+<li><tt>725F9</tt> - Venomoth's Palette</li>
+<li><tt>725FA</tt> - Diglett's Palette</li>
+<li><tt>725FB</tt> - Dugtrio's Palette</li>
+<li><tt>725FC</tt> - Meowth's Palette</li>
+<li><tt>725FD</tt> - Persian's Palette</li>
+<li><tt>725FE</tt> - Psyduck's Palette</li>
+<li><tt>725FF</tt> - Golduck's Palette</li>
+<li><tt>72600</tt> - Mankey's Palette</li>
+<li><tt>72601</tt> - Primeape's Palette</li>
+<li><tt>72602</tt> - Growlithe's Palette</li>
+<li><tt>72603</tt> - Arcanine's Palette</li>
+<li><tt>72604</tt> - Poliwag's Palette</li>
+<li><tt>72605</tt> - Poliwhirl's Palette</li>
+<li><tt>72606</tt> - Poliwrath's Palette</li>
+<li><tt>72607</tt> - Abra's Palette</li>
+<li><tt>72608</tt> - Kadabra's Palette</li>
+<li><tt>72609</tt> - Alakazam's Palette</li>
+<li><tt>7260A</tt> - Machop's Palette</li>
+<li><tt>7260B</tt> - Machoke's Palette</li>
+<li><tt>7260C</tt> - Machamp's Palette</li>
+<li><tt>7260D</tt> - Bellsprout's Palette</li>
+<li><tt>7260E</tt> - Weepinbell's Palette</li>
+<li><tt>7260F</tt> - Victreebel's Palette</li>
+<li><tt>72610</tt> - Tentacool's Palette</li>
+<li><tt>72611</tt> - Tentacruel's Palette</li>
+<li><tt>72612</tt> - Geodude's Palette</li>
+<li><tt>72613</tt> - Graveler's Palette</li>
+<li><tt>72614</tt> - Golem's Palette</li>
+<li><tt>72615</tt> - Ponyta's Palette</li>
+<li><tt>72616</tt> - Rapidash's Palette</li>
+<li><tt>72617</tt> - Slowpoke's Palette</li>
+<li><tt>72618</tt> - Slowbro's Palette</li>
+<li><tt>72619</tt> - Magnemite's Palette</li>
+<li><tt>7261A</tt> - Magneton's Palette</li>
+<li><tt>7261B</tt> - Farfetch'd's Palette</li>
+<li><tt>7261C</tt> - Doduo's Palette</li>
+<li><tt>7261D</tt> - Dodrio's Palette</li>
+<li><tt>7261E</tt> - Seel's Palette</li>
+<li><tt>7261F</tt> - Dewgong's Palette</li>
+<li><tt>72620</tt> - Grimer's Palette</li>
+<li><tt>72621</tt> - Muk's Palette</li>
+<li><tt>72622</tt> - Shellder's Palette</li>
+<li><tt>72623</tt> - Cloyster's Palette</li>
+<li><tt>72624</tt> - Gastly's Palette</li>
+<li><tt>72625</tt> - Haunter's Palette</li>
+<li><tt>72626</tt> - Gengar's Palette</li>
+<li><tt>72627</tt> - Onix's Palette</li>
+<li><tt>72628</tt> - Drowzee's Palette</li>
+<li><tt>72629</tt> - Hypno's Palette</li>
+<li><tt>7262A</tt> - Krabby's Palette</li>
+<li><tt>7262B</tt> - Kingler's Palette</li>
+<li><tt>7262C</tt> - Voltorb's Palette</li>
+<li><tt>7262D</tt> - Electrode's Palette</li>
+<li><tt>7262E</tt> - Exeggcute's Palette</li>
+<li><tt>7262F</tt> - Exeggutor's Palette</li>
+<li><tt>72630</tt> - Cubone's Palette</li>
+<li><tt>72631</tt> - Marowak's Palette</li>
+<li><tt>72632</tt> - Hitmonlee's Palette</li>
+<li><tt>72633</tt> - Hitmonchan's Palette</li>
+<li><tt>72634</tt> - Lickitung's Palette</li>
+<li><tt>72635</tt> - Koffing's Palette</li>
+<li><tt>72636</tt> - Weezing's Palette</li>
+<li><tt>72637</tt> - Rhyhorn's Palette</li>
+<li><tt>72638</tt> - Rhydon's Palette</li>
+<li><tt>72639</tt> - Chansey's Palette</li>
+<li><tt>7263A</tt> - Tangela's Palette</li>
+<li><tt>7263B</tt> - Kangaskhan's Palette</li>
+<li><tt>7263C</tt> - Horsea's Palette</li>
+<li><tt>7263D</tt> - Seadra's Palette</li>
+<li><tt>7263E</tt> - Goldeen's Palette</li>
+<li><tt>7263F</tt> - Seaking's Palette</li>
+<li><tt>72640</tt> - Staryu's Palette</li>
+<li><tt>72641</tt> - Starmie's Palette</li>
+<li><tt>72642</tt> - Mr. Mime's Palette</li>
+<li><tt>72643</tt> - Scyther's Palette</li>
+<li><tt>72644</tt> - Jynx's Palette</li>
+<li><tt>72645</tt> - Electabuzz's Palette</li>
+<li><tt>72646</tt> - Magmar's Palette</li>
+<li><tt>72647</tt> - Pinsir's Palette</li>
+<li><tt>72648</tt> - Tauros's Palette</li>
+<li><tt>72649</tt> - Magikarp's Palette</li>
+<li><tt>7264A</tt> - Gyrados's Palette</li>
+<li><tt>7264B</tt> - Lapras's Palette</li>
+<li><tt>7264C</tt> - Ditto's Palette</li>
+<li><tt>7264D</tt> - Eevee's Palette</li>
+<li><tt>7264E</tt> - Vaporeon's Palette</li>
+<li><tt>7264F</tt> - Jolteon's Palette</li>
+<li><tt>72650</tt> - Flareon's Palette</li>
+<li><tt>72651</tt> - Porygon's Palette</li>
+<li><tt>72652</tt> - Omanyte's Palette</li>
+<li><tt>72653</tt> - Omastar's Palette</li>
+<li><tt>72654</tt> - Kabuto's Palette</li>
+<li><tt>72655</tt> - Kabutops's Palette</li>
+<li><tt>72656</tt> - Aerodactyl's Palette</li>
+<li><tt>72657</tt> - Snorlax's Palette</li>
+<li><tt>72658</tt> - Articuno's Palette</li>
+<li><tt>72659</tt> - Zapdos's Palette</li>
+<li><tt>7265A</tt> - Moltres's Palette</li>
+<li><tt>7265B</tt> - Dratini's Palette</li>
+<li><tt>7265C</tt> - Dragonair's Palette</li>
+<li><tt>7265D</tt> - Dragonite's Palette</li>
+<li><tt>7265E</tt> - Mewtwo's Palette</li>
+<li><tt>7265F</tt> - Mew's Palette</li></div>
+</div>
+<tt>72660-72667</tt> Route Palette
+
+<tt>72668-7266F</tt> Pallet Palette
+
+<tt>72670-72677</tt> Viridian Palette
+
+<tt>72678-7267F</tt> Petwer Palette
+
+<tt>72680-72687</tt> Cerulean Palette
+
+<tt>72688-7268F</tt> Lavender Palette
+
+<tt>72690-72697</tt> Vermilion Palette
+
+<tt>72698-7269F</tt> Celadon Palette
+
+<tt>726A0-726A7</tt> Fuchsia Palette
+
+<tt>726A8-726AF</tt> Cinnibar Palette
+
+<tt>726B0-726B7</tt> Indigo Palette
+
+<tt>726B8-726BF</tt> Saffron Palette
+
+<tt>726C8-726CF</tt> Pokémon Logo Palette 2
+
+<tt>726D0-726D7</tt> Pokémon Logo Palette
+
+<tt>726E0-726E7</tt> Pokémon Palette (Human/Mews/Chapel)
+
+<tt>726E8-726EF</tt> Pokémon Palette (Blue)
+
+<tt>726F0-726F7</tt> Pokémon Palette (Red)
+
+<tt>726F8-726FF</tt> Pokémon Palette (Cyan)
+
+<tt>72700-72707</tt> Pokémon Palette (Purple)
+
+<tt>72708-7270F</tt> Pokémon Palette (Brown)
+
+<tt>72710-72717</tt> Pokémon Palette (Green)
+
+<tt>72718-7271F</tt> Pokémon Palette (Pink)
+
+<tt>72720-72727</tt> Pokémon Palette (Yellow)
+
+<tt>72728-7272F</tt> Pokémon Palette (Grey)
+
+<tt>72730-72737</tt> Palette Slot Machine 1
+
+<tt>72738-7273F</tt> Palette Slot Machine 2
+
+<tt>72740-72747</tt> Palette Slot Machine 3
+
+<tt>72748-7274F</tt> Palette Slot Machine 4
+
+<tt>72750-72757</tt> Black
+
+<tt>72258-7275F</tt> Damage Bar Palette (Green)
+
+<tt>72760-72767</tt> Damage Bar Palette (Yellow)
+
+<tt>72768-7276F</tt> Damage Bar Palette (Red)
+
+<tt>72770-72777</tt> Badge Color (2)
+
+<tt>72778-7277F</tt> Cave Palette
+
+<tt>72788-</tt> Border Palette
+
+<tt>72FE8-735E8</tt> Border Graphics
+
+<tt>739D9-73A28</tt> Boxes Text
+
+<tt>73B9D-73FFF</tt> Blank Data
+
+==Bank 1D==
+
+$74000 "Copycat's House F1 Data"
+
+$74010 "Pewter City Mart Data"
+
+$74020 "Fuchsia House (1) Data"
+
+$74030 "Fuchsia Pokecenter Data"
+
+$7404C "Cerulean House (3) Data"
+
+$74897 "Viridian Gym Header"
+
+$748A3 "Viridian Gym Script"
+
+$749EC "Viridian Gym Text Pointers"
+
+$74BDE "Viridian Gym Object Data"
+
+$74C47 "Viridian Gym Data"
+
+$74CA1 "Pewter City Mart Header"
+
+$74CAD "Pewter City Mart Script"
+
+$74CB6 "Pewter City Mart Text Pointers"
+
+$74CDA "Pewter City Mart Object Data"
+
+$74D00 "Unknown Dungeon(1) Header"
+
+$74D0C "Unknown Dungeon(1) Script"
+
+$74D0F "Unknown Dungeon(1) Text Pointers"
+
+$74D15 "Unknown Dungeon(1) Object Data"
+
+$74D76 "Unknown Dungeon(1) Data"
+
+$74DFD "Cerulean House (3) Header"
+
+$74E09 "Cerulean House (3) Script"
+
+$74E13 "Cerulean House (3) Text Pointers"
+
+$74EBE "Cerulean House (3) Object Data"
+
+$7500C "Fuchsia House (1) Header"
+
+$75018 "Fuchsia House (1) Script"
+
+$7501C "Fuchsia House (1) Text Pointers"
+
+$75031 "Fuchsia House (1) Object Data"
+
+$75057 "Fuchsia Pokecenter Header"
+
+$75063 "Fuchsia Pokecenter Script"
+
+$75069 "Fuchsia Pokecenter Text Pointers"
+
+$7507D "Fuchsia Pokecenter Object Data"
+
+$750A9 "Fuchsia House (2) Header"
+
+$750B5 "Fuchsia House (2) Script"
+
+$750B8 "Fuchsia House (2) Text Pointers"
+
+$75180 "Fuchsia House (2) Object Data"
+
+$751AD "Fuchsia House (2) Data"
+
+$751C1 "Safari Zone Entrance Header"
+
+$751CD "Safari Zone Entrance Script"
+
+$752B9 "Safari Zone Entrance Text Pointers"
+
+$753F5 "Safari Zone Entrance Object Data"
+
+$75425 "Safari Zone Entrance Data"
+
+$75431 "Fuchsia Gym Header"
+
+$7543D "Fuchsia Gym Script"
+
+$754D5 "Fuchsia Gym Text Pointers"
+
+$75658 "Fuchsia Gym Object Data"
+
+$756AA "Fuchsia Gym Data"
+
+$756D7 "Fuchsia Meeting Room Header"
+
+$756E3 "Fuchsia Meeting Room Script"
+
+$756E7 "Fuchsia Meeting Room Text Pointers"
+
+$756FC "Fuchsia Meeting Room Object Data"
+
+$75722 "Fuchsia Meeting Room Data"
+
+$7573E "Cinnibar Gym Header"
+
+$7574A "Cinnibar Gym Script"
+
+$7589F "Cinnibar Gym Text Pointers"
+
+$75ACC "Cinnibar Gym Object Data"
+
+$75B26 "Cinnibar Gym Data"
+
+$75B80 "Lab (1) Header"
+
+$75B8C "Lab (1) Script"
+
+$75B90 "Lab (1) Text Pointers"
+
+$75BB3 "Lab (1) Object Data"
+
+$75BF1 "Lab (1) Data"
+
+$75C15 "Lab (2) Header"
+
+$75C21 "Lab (2) Script"
+
+$75C24 "Lab (2) Text Pointers"
+
+$75C45 "Lab (2) Object Data"
+
+$75C6B "Lab (2) Data"
+
+$75C7B "Lab (3) Header"
+
+$75C87 "Lab (3) Script"
+
+$75C8A "Lab (3) Text Pointers"
+
+$75CEC "Lab (3) Object Data"
+
+$75D15 "Lab (3) Data"
+
+$75D25 "Lab (4) Header"
+
+$75D31 "Lab (4) Script"
+
+$75D34 "Lab (4) Text Pointers"
+
+$75DF0 "Lab (4) Object Data"
+
+$75E10 "Lab (4) Data"
+
+$75E20 "Cinnibar Pokecenter Header"
+
+$75E2C "Cinnibar Pokecenter Script"
+
+$75E32 "Cinnibar Pokecenter Text Pointers"
+
+$75E46 "Cinnibar Pokecenter Object Data"
+
+$75E72 "Cinnibar Mart Header"
+
+$75E7E "Cinnibar Mart Script"
+
+$75E81 "Cinnibar Mart Text Pointers"
+
+$75E91 "Cinnibar Mart Object Data"
+
+$75EB7 "Copycat's House F1 Header"
+
+$75EC3 "Copycat's House F1 Script"
+
+$75EC6 "Copycat's House F1 Text Pointers"
+
+$75EE3 "Copycat's House F1 Object Data"
+
+$75F11 "Elite Four Gary Header"
+
+$75F1D "Elite Four Gary Script"
+
+$760D6 "Elite Four Gary Text Pointers"
+
+$7612F "Elite Four Gary Object Data"
+
+$7615F "Elite Four Gary Data"
+
+$7616F "Elite Four Loreli Header"
+
+$7617B "Elite Four Loreli Script"
+
+$76251 "Elite Four Loreli Text Pointers"
+
+$76280 "Elite Four Loreli Object Data"
+
+$762AC "Elite Four Loreli Data"
+
+$762CA "Elite Four Bruno Header"
+
+$762D6 "Elite Four Bruno Script"
+
+$763A8 "Elite Four Bruno Text Pointers"
+
+$763D7 "Elite Four Bruno Object Data"
+
+$76403 "Elite Four Bruno Data"
+
+$76421 "Elite Four Agatha Header"
+
+$7642D "Elite Four Agatha Script"
+
+$76505 "Elite Four Agatha Text Pointers"
+
+$76534 "Elite Four Agatha Object Data"
+
+$76560 "Elite Four Agatha Data"
+
+7687C-76976 Blank Data
+
+76B0B-77FFF Blank Data
+
+==Bank 1E==
+
+781FE-78D5E Batle Images
+
+79B24-79B55  Pokemon Pic Tile Arranger
+
+79FED-7A07D Sprites
+
+7BFC0-7BFFF Blank Data
+
+==Bank 1F==
+
+7C000-7FFFF Music Data
+
+===Music Pointers===
+
+7C249-7C254 Title Screen
+
+7C255-7C25D Credits
+
+7C25E-7C266 Hall of Fame Registration
+
+7C267-7C26F Prof Oak's Lab
+
+7C270-7C275 Jigglypuff's Song
+
+7C276-7C281 Bike Riding
+
+7C282-7C28A Surfing
+
+7C28B-7C293 Casino
+
+7C294-7C29F Introduction Battle
+
+7C2A0-7C2AB Power Plant / Unknown Dungeon
+
+7C2AC-7C2B7 Viridian Forest / Seafoam Islands
+
+7C2B8-7C2C3 Mt. Moon / Rock Tunnel / Victory Road
+
+7C2C4-7C2CF Cinnibar Mansion
+
+7C2D0-7C2D8 Pokemon Tower
+
+7C2D9-7C2E1 Silph Co
+
+7C2E2-7C2EA Meet Bad Trainer
+
+7C2EB-7C2F3 Meet Girl Trainer
+
+7C2F4-7C2FC Meet Angry Trainer
+
+===Music Pointers in Yellow===
+
+7C294-7C29D Intro
+
+7C29E-7C2A8 Power Plant / Unknown Dungeon / Rocket Hideout
+
+7C2A9-7C2B4 Viridian Forest / Seafoam Islands
+
+7C2B5-7C2C0 Mt. Moon / Rock Tunnel / Victory Road
+
+7C2C1-7C2CC Cinnibar Mansion
+
+7C2CD-7C2D5 Pokemon Tower
+
+7C2D6-7C2DE Silph Co.
+
+7C2DF-7C2E7 Meet Trainer
+
+7C2E8-7C2F0 Meet Girl Trainer
+
+7C2F1-7C2F9 Meet Angry Trainer
+
+==Bank 20==
+
+80000-82AAE Text (Bank 1)
+
+82AAF-83FFF Blank Data
+
+==Bank 21==
+
+84000-86CA0 Text (Bank 2)
+
+86CA1-87FFF Blank Data
+
+==Bank 22==
+
+88000-8ACF8 Text (Bank 3)
+
+8ACF9-8BFFF Blank Data
+
+==Bank 23==
+
+8C000-8EC08 Text (Bank 4)
+
+8EC09-8FFFF Blank Data
+
+==Bank 24==
+
+90000-92902 Text (Bank 5)
+
+92903-93FFF Blank Data
+
+==Bank 25==
+
+94000-96A37 Text (Bank 6)
+
+96A38-97FFF Blank Data
+
+==Bank 26==
+
+98000-9AB7A Text (Bank 7)
+
+9AB7B-9BFFF Blank Data
+
+==Bank 27==
+
+9C000-9EAA3 Text (Bank 8)
+
+9EAA4-9FFFF Blank Data
+
+==Bank 28==
+
+A0000-A2A36 Text (Bank 9)
+
+A2A37-A3FFF Blank Data
+
+==Bank 29==
+
+A4000-A6B93 Text (Bank 10)
+
+A6B94-A7FFF Blank Data
+
+==Bank 2A==
+
+A8000-A832F Text (Bank 11)
+
+A8330-ABFFF Blank Data
+
+==Bank 2B==
+===Pokédex Entries===
+<pre>
+* 0xAC000 to 0xAC05A = Rhydon's Pokédex entry
+* 0xAC05B to 0xAC0B3 = Kangaskhan's Pokédex entry
+* 0xAC0B4 to 0xAC113 = Nidoran M's Pokédex entry
+* 0xAC114 to 0xAC16F = Clefairy's Pokédex entry
+* 0xAC170 to 0xAC1CA = Spearow's Pokédex entry
+* 0xAC1CB to 0xAC226 = Voltorb's Pokédex entry
+* 0xAC227 to 0xAC27C = Nidoking's Pokédex entry
+* 0xAC27D to 0xAC2DD = Slowbro's Pokédex entry
+* 0xAC2DE to 0xAC33F = Ivysaur's Pokédex entry
+* 0xAC340 to 0xAC3A6 = Exeggutor's Pokédex entry
+* 0xAC3A7 to 0xAC40B = Lickitung's Pokédex entry
+* 0xAC40C to 0xAC45F = Exeggcute's Pokédex entry
+* 0xAC460 to 0xAC4C0 = Grimer's Pokédex entry
+* 0xAC4C1 to 0xAC51E = Gengar's Pokédex entry
+* 0xAC51F to 0xAC57C = Nidoran F's Pokédex entry
+* 0xAC57D to 0xAC5DA = Nidoqueen's Pokédex entry
+* 0xAC5DB to 0xAC631 = Cubone's Pokédex entry
+* 0xAC632 to 0xAC692 = Rhyhorn's Pokédex entry
+* 0xAC693 to 0xAC6F1 = Lapras's Pokédex entry
+* 0xAC6F2 to 0xAC74E = Arcanine's Pokédex entry
+* 0xAC74F to 0xAC7B7 = Mew's Pokédex entry
+* 0xAC7B8 to 0xAC818 = Gyardos's Pokédex entry
+* 0xAC819 to 0xAC871 = Shellder's Pokédex entry
+* 0xAC872 to 0xAC8D5 = Tentacool's Pokédex entry
+* 0xAC8D6 to 0xAC931 = Gastly's Pokédex entry
+* 0xAC932 to 0xAC98D = Scyther's Pokédex entry
+* 0xAC98E to 0xAC9E3 = Staryu's Pokédex entry
+* 0xAC9E4 to 0xACA42 = Blastoise's Pokédex entry
+* 0xACA43 to 0xACA9D = Pinsir's Pokédex entry
+* 0xACA9E to 0xACB04 = Tangela's Pokédex entry
+* 0xACB05 to 0xACB60 = Growlithe's Pokédex entry
+* 0xACB61 to 0xACBC7 = Onix's Pokédex entry
+* 0xACBC8 to 0xACC25 = Fearow's Pokédex entry
+* 0xACC26 to 0xACC88 = Pidgey's Pokédex entry
+* 0xACC89 to 0xACCDE = Slowpoke's Pokédex entry
+* 0xACCDF to 0xACD38 = Kadabra's Pokédex entry
+* 0xACD39 to 0xACD9A = Graveler's Pokédex entry
+* 0xACD9B to 0xACDF2 = Chansey's Pokédex entry
+* 0xACDF3 to 0xACE58 = Machoke's Pokédex entry
+* 0xACE59 to 0xACEB3 = Mr. Mime's Pokédex entry
+* 0xACEB4 to 0xACF18 = Hitmonlee's Pokédex entry
+* 0xACF19 to 0xACF80 = Hitmonchan's Pokédex entry
+* 0xACF81 to 0xACFDA = Arbok's Pokédex entry
+* 0xACFDB to 0xAD041 = Parasect's Pokédex entry
+* 0xAD042 to 0xAD0A0 = Psyduck's Pokédex entry
+* 0xAD0A1 to 0xAD0FE = Drowzee's Pokédex entry
+* 0xAD0FF to 0xAD160 = Golem's Pokédex entry
+* 0xAD161 to 0xAD1BB = Magmar's Pokédex entry
+* 0xAD1BC to 0xAD218 = Electabuzz's Pokédex entry
+* 0xAD219 to 0xAD276 = Magneton's Pokédex entry
+* 0xAD277 to 0xAD2DD = Koffing's Pokédex entry
+* 0xAD2DE to 0xAD33C = Mankey's Pokédex entry
+* 0xAD33D to 0xAD395 = Seel's Pokédex entry
+* 0xAD396 to 0xAD3F9 = Diglett's Pokédex entry
+* 0xAD3FA to 0xAD456 = Tauros's Pokédex entry
+* 0xAD457 to 0xAD4AD = Farfetch'd's Pokédex entry
+* 0xAD4AE to 0xAD50B = Venonat's Pokédex entry
+* 0xAD50C to 0xAD564 = Dragonite's Pokédex entry
+* 0xAD565 to 0xAD5C1 = Doduo's Pokédex entry
+* 0xAD5C2 to 0xAD624 = Poliwag's Pokédex entry
+* 0xAD635 to 0xAD682 = Jynx's Pokédex entry
+* 0xAD683 to 0xAD6E4 = Moltres's Pokédex entry
+* 0xAD6E5 to 0xAD742 = Articuno's Pokédex entry
+* 0xAD743 to 0xAD7A5 = Zapdos's Pokédex entry
+* 0xAD7A6 to 0xAD80D = Ditto's Pokédex entry
+* 0xAD80E to 0xAD870 = Meowth's Pokédex entry
+* 0xAD871 to 0xAD8CD = Krabby's Pokédex entry
+* 0xAD8CE to 0xAD92A = Vulpix's Pokédex entry
+* 0xAD92B to 0xAD98B = Ninetales's Pokédex entry
+* 0xAD98C to 0xAD9E9 = Pikachu's Pokédex entry
+* 0xAD9EA to 0xADA3E = Raichu's Pokédex entry
+* 0xADA3F to 0xADA9F = Dratini's Pokédex entry
+* 0xADAA0 to 0xADAF9 = Dragonair's Pokédex entry
+* 0xADAFA to 0xADB55 = Kabuto's Pokédex entry
+* 0xADB56 to 0xADBBC = Kabutops's Pokédex entry
+* 0xADBBD to 0xADC19 = Horsea's Pokédex entry
+* 0xADC1A to 0xADC7A = Seadra's Pokédex entry
+* 0xADC7B to 0xADCD8 = Sandshrew's Pokédex entry
+* 0xADCD9 to 0xADD36 = Sandslash's Pokédex entry
+* 0xADD37 to 0xADD8D = Omanyte's Pokédex entry
+* 0xADD8E to 0xADDE6 = Omastar's Pokédex entry
+* 0xADDE7 to 0xADE4D = Jigglypuff's Pokédex entry
+* 0xADE4E to 0xADEB6 = Wigglytuff's Pokédex entry
+* 0xADEB7 to 0xADF17 = Eevee's Pokédex entry
+* 0xADF18 to 0xADF72 = Flareon's Pokédex entry
+* 0xADF73 to 0xADFCC = Jolteon's Pokédex entry
+* 0xADFCD to 0xAE02E = Vaporeon's Pokédex entry
+* 0xAE02F to 0xAE08C = Machop's Pokédex entry
+* 0xAE08D to 0xAE0F0 = Zubat's Pokédex entry
+* 0xAE0F1 to 0xAE14B = Ekans's Pokédex entry
+* 0xAE14C to 0xAE1B1 = Paras's Pokédex entry
+* 0xAE1B2 to 0xAE20D = Poliwhirl's Pokédex entry
+* 0xAE20E to 0xAE274 = Poliwrath's Pokédex entry
+* 0xAE275 to 0xAE2C9 = Weedle's Pokédex entry
+* 0xAE2CA to 0xAE32C = Kakuna's Pokédex entry
+* 0xAE32D to 0xAE389 = Beedrill's Pokédex entry
+* 0xAE38A to 0xAE3E7 = Dodrio's Pokédex entry
+* 0xAE3E8 to 0xAE449 = Primeape's Pokédex entry
+* 0xAE44A to 0xAE4A6 = Dugtrio's Pokédex entry
+* 0xAE4A7 to 0xAE507 = Venomoth's Pokédex entry
+* 0xAE508 to 0xAE564 = Dewgong's Pokédex entry
+* 0xAE565 to 0xAE5C6 = Caterpie's Pokédex entry
+* 0xAE5C7 to 0xAE625 = Metapod's Pokédex entry
+* 0xAE626 to 0xAE67D = Butterfree's Pokédex entry
+* 0xAE67E to 0xAE6E3 = Machamp's Pokédex entry
+* 0xAE6E4 to 0xAE74A = Golduck's Pokédex entry
+* 0xAE74B to 0xAE7AC = Hypno's Pokédex entry
+* 0xAE7AD to 0xAE811 = Golbat's Pokédex entry
+* 0xAE812 to 0xAE877 = Mewtwo's Pokédex entry
+* 0xAE878 to 0xAE8D7 = Snorlax's Pokédex entry
+* 0xAE8D8 to 0xAE83B = Magikarp's Pokédex entry
+* 0xAE83C to 0xAE99C = Muk's Pokédex entry
+* 0xAE99D to 0xAE9FF = Kingler's Pokédex entry
+* 0xAEA00 to 0xAEA59 = Cloyster's Pokédex entry
+* 0xAEA5A to 0xAEABF = Electrode's Pokédex entry
+* 0xAEAC0 to 0xAEB1A = Clefable's Pokédex entry
+* 0xAEB1B to 0xAEB75 = Weezing's Pokédex entry
+* 0xAEB76 to 0xAEBD8 = Persian's Pokédex entry
+* 0xAEBD9 to 0xAEC3C = Marowak's Pokédex entry
+* 0xAEC3D to 0xAEC9C = Haunter's Pokédex entry
+* 0xAEC9D to 0xAECF8 = Abra's Pokédex entry
+* 0xAECF9 to 0xAED56 = Alakazam's Pokédex entry
+* 0xAED57 to 0xAEDB8 = Pidgeotto's Pokédex entry
+* 0xAEDB9 to 0xAEE1D = Pidgeot's Pokédex entry
+* 0xAEE1E to 0xAEE80 = Starmie's Pokédex entry
+* 0xAEE81 to 0xAEEDE = Bulbasaur's Pokédex entry
+* 0xAEEDF to 0xAEF3A = Venusaur's Pokédex entry
+* 0xAEF3B to 0xAEF9E = Tentacruel's Pokédex entry
+* 0xAEF9F to 0xAEFFF = Goldeen's Pokédex entry
+* 0xAF000 to 0xAF05C = Seaking's Pokédex entry
+* 0xAF05D to 0xAF0C3 = Ponyta's Pokédex entry
+* 0xAF0C4 to 0xAF11F = Rapidash's Pokédex entry
+* 0xAF120 to 0xAF17B = Rattata's Pokédex entry
+* 0xAF17C to 0xAF1DA = Raticate's Pokédex entry
+* 0xAF1DB to 0xAF237 = Nidorino's Pokédex entry
+* 0xAF238 to 0xAF28F = Nidorina's Pokédex entry
+* 0xAF290 to 0xAF2EF = Geodude's Pokédex entry
+* 0xAF2F0 to 0xAF34B = Porygon's Pokédex entry
+* 0xAF34C to 0xAF3AE = Aerodactyl's Pokédex entry
+* 0xAF3AF to 0xAF415 = Magnemite's Pokédex entry
+* 0xAF416 to 0xAF474 = Charmander's Pokédex entry
+* 0xAF475 to 0xAF4D3 = Squirtle's Pokédex entry
+* 0xAF4D4 to 0xAF52C = Charmeleon's Pokédex entry
+* 0xAF52D to 0xAF592 = Wartortle's Pokédex entry
+* 0xAF593 to 0xAF5F0 = Charizard's Pokédex entry
+* 0xAF5F1 to 0xAF657 = Oddish's Pokédex entry
+* 0xAF658 to 0xAF6B5 = Gloom's Pokédex entry
+* 0xAF6B6 to 0xAF71B = Vileplume's Pokédex entry
+* 0xAF71C to 0xAF77B = Bellsprout's Pokédex entry
+* 0xAF77C to 0xAF7D9 = Weepinbell's Pokédex entry
+* 0xAF7DA to 0xAF837 = Victreebel's Pokédex entry
+</pre>
+===Other===
+<pre>* 0xAF838 to 0xAFFFF = Blank Data</pre>
+
+==Bank 2C==
+===Move Names===
+<pre>
+* 0xB0000 to 0xB0005 = POUND
+* 0xB0006 to 0xB0011 = KARATE CHOP
+* 0xB0012 to 0xB001C = DOUBLESLAP
+* 0xB001D to 0xB0028 = COMET PUNCH
+* 0xB0029 to 0xB0033 = MEGA PUNCH
+* 0xB0034 to 0xB003B = PAY DAY
+* 0xB003C to 0xB0046 = FIRE PUNCH
+* 0xB0047 to 0xB0050 = ICE PUNCH
+* 0xB0051 to 0xB005D = THUNDERPUNCH
+* 0xB005E to 0xB0065 = SCRATCH
+* 0xB0066 to 0xB006E = VICEGRIP
+* 0xB006F to 0xB0079 = GUILLOTINE
+* 0xB007A to 0xB0084 = RAZOR WIND
+* 0xB0085 to 0xB0091 = SWORDS DANCE
+* 0xB0092 to 0xB0095 = CUT
+* 0xB0096 to 0xB009A = GUST
+* 0xB009B to 0xB00A6 = WING ATTACK
+* 0xB00A7 to 0xB00B0 = WHIRLWIND
+* 0xB00B1 to 0xB00B4 = FLY
+* 0xB00B5 to 0xB00B9 = BIND
+* 0xB00BA to 0xB00BE = SLAM
+* 0xB00BF to 0xB00C8 = VINE WHIP
+* 0xB00C9 to 0xB00CE = STOMP
+* 0xB00CF to 0xB00DA = DOUBLE KICK
+* 0xB00DB to 0xB00E4 = MEGA KICK
+* 0xB00E5 to 0xB00EE = JUMP KICK
+* 0xB00EF to 0xB00FB = ROLLING KICK
+* 0xB00FC to 0xB0107 = SAND-ATTACK
+* 0xB0108 to 0xB0110 = HEADBUTT
+* 0xB0111 to 0xB011C = HORN ATTACK
+* 0xB011D to 0xB0128 = FURY ATTACK
+* 0xB0129 to 0xB0133 = HORN DRILL
+* 0xB0134 to 0xB013A = TACKLE
+* 0xB013B to 0xB0144 = BODY SLAM
+* 0xB0145 to 0xB0149 = WRAP
+* 0xB014A to 0xB0153 = TAKE DOWN
+* 0xB0154 to 0xB015A = THRASH
+* 0xB015B to 0xB0166 = DOUBLE-EDGE
+* 0xB0167 to 0xB0170 = TAIL WHIP
+* 0xB0171 to 0xB017D = POISON STING
+* 0xB017E to 0xB0187 = TWINEEDLE
+* 0xB0188 to 0xB0193 = PIN MISSILE
+* 0xB0194 to 0xB0198 = LEER
+* 0xB0199 to 0xB019D = BITE
+* 0xB019E to 0xB01A3 = GROWL
+* 0xB01A4 to 0xB01A8 = ROAR
+* 0xB01A9 to 0xB01AD = SING
+* 0xB01AE to 0xB01B8 = SUPERSONIC
+* 0xB01B9 to 0xB01C2 = SONICBOOM
+* 0xB01C3 to 0xB01CA = DISABLE
+* 0xB01CB to 0xB01CF = ACID
+* 0xB01D0 to 0xB01D5 = EMBER
+* 0xB01D6 to 0xB01E2 = FLAMETHROWER
+* 0xB01E3 to 0xB01E7 = MIST
+* 0xB01E8 to 0xB01F1 = WATER GUN
+* 0xB01F2 to 0xB01FC = HYDRO PUMP
+* 0xB01FD to 0xB0201 = SURF
+* 0xB0202 to 0xB020A = ICE BEAM
+* 0xB020B to 0xB0213 = BLIZZARD
+* 0xB0214 to 0xB021B = PSYBEAM
+* 0xB021C to 0xB0226 = BUBBLEBEAM
+* 0xB0227 to 0xB0232 = AURORA BEAM
+* 0xB0233 to 0xB023D = HYPER BEAM
+* 0xB023E to 0xB0242 = PECK
+* 0xB0243 to 0xB024D = DRILL PECK
+* 0xB024E to 0xB0258 = SUBMISSION
+* 0xB0259 to 0xB0261 = LOW KICK
+* 0xB0262 to 0xB0269 = COUNTER
+* 0xB026A to 0xB0276 = SEISMIC TOSS
+* 0xB0277 to 0xB027F = STRENGTH
+* 0xB0280 to 0xB0286 = ABSORB
+* 0xB0287 to 0xB0291 = MEGA DRAIN
+* 0xB0292 to 0xB029C = LEECH SEED
+* 0xB029D to 0xB02A3 = GROWTH
+* 0xB02A4 to 0xB02AE = RAZOR LEAF
+* 0xB02AF to 0xB02B8 = SOLARBEAM
+* 0xB02B9 to 0xB02C5 = POISONPOWDER
+* 0xB02C6 to 0xB02D0 = STUN SPORE
+* 0xB02D1 to 0xB02DD = SLEEP POWDER
+* 0xB02DE to 0xB02E9 = PETAL DANCE
+* 0xB02EA to 0xB02F5 = STRING SHOT
+* 0xB02F6 to 0xB0301 = DRAGON RAGE
+* 0xB0302 to 0xB030B = FIRE SPIN
+* 0xB030C to 0xB0318 = THUNDERSHOCK
+* 0xB0319 to 0xB0324 = THUNDERBOLT
+* 0xB0325 to 0xB0331 = THUNDER WAVE
+* 0xB0332 to 0xB0339 = THUNDER
+* 0xB033A to 0xB0344 = ROCK THROW
+* 0xB0345 to 0xB034F = EARTHQUAKE
+* 0xB0350 to 0xB0357 = FISSURE
+* 0xB0358 to 0xB035B = DIG
+* 0xB035C to 0xB0361 = TOXIC
+* 0xB0362 to 0xB036B = CONFUSION
+* 0xB036C to 0xB0373 = PSYCHIC
+* 0xB0374 to 0xB037C = HYPNOSIS
+* 0xB037D to 0xB0385 = MEDITATE
+* 0xB0386 to 0xB038D = AGILITY
+* 0xB038E to 0xB039A = QUICK ATTACK
+* 0xB039B to 0xB039F = RAGE
+* 0xB03A0 to 0xB03A8 = TELEPORT
+* 0xB03A9 to 0xB03B4 = NIGHT SHADE
+* 0xB03B5 to 0xB03BA = MIMIC
+* 0xB03BB to 0xB03C2 = SCREECH
+* 0xB03C3 to 0xB03CE = DOUBLE TEAM
+* 0xB03CF to 0xB03D6 = RECOVER
+* 0xB03D7 to 0xB03DD = HARDEN
+* 0xB03DE to 0xB03E6 = MINIMIZE
+* 0xB03E7 to 0xB03F2 = SMOKESCREEN
+* 0xB03F3 to 0xB03FE = CONFUSE RAY
+* 0xB03FF to 0xB0407 = WITHDRAW
+* 0xB0408 to 0xB0414 = DEFENSE CURL
+* 0xB0415 to 0xB041C = BARRIER
+* 0xB041D to 0xB0429 = LIGHT SCREEN
+* 0xB042A to 0xB042E = HAZE
+* 0xB042F to 0xB0436 = REFLECT
+* 0xB0437 to 0xB0443 = FOCUS ENERGY
+* 0xB0444 to 0xB0448 = BIDE
+* 0xB0449 to 0xB0452 = METRONOME
+* 0xB0453 to 0xB045E = MIRROR MOVE
+* 0xB045F to 0xB046B = SELFDESTRUCT
+* 0xB046C to 0xB0474 = EGG BOMB
+* 0xB0475 to 0xB0479 = LICK
+* 0xB047A to 0xB047E = SMOG
+* 0xB047F to 0xB0485 = SLUDGE
+* 0xB0486 to 0xB048F = BONE CLUB
+* 0xB0490 to 0xB049A = FIRE BLAST
+* 0xB049B to 0xB04A4 = WATERFALL
+* 0xB04A5 to 0xB04AA = CLAMP
+* 0xB04AB to 0xB04B0 = SWIFT
+* 0xB04B1 to 0xB04BB = SKULL BASH
+* 0xB04BC to 0xB04C8 = SPIKE CANNON
+* 0xB04C9 to 0xB04D2 = CONSTRICT
+* 0xB04D3 to 0xB04DA = AMNESIA
+* 0xB04DB to 0xB04E2 = KENESIS
+* 0xB04E3 to 0xB04ED = SOFTBOILED
+* 0xB04EE to 0xB04FA = HI JUMP KICK
+* 0xB04FB to 0xB0500 = GLARE
+* 0xB0501 to 0xB050C = DREAM EATER
+* 0xB050D to 0xB0517 = POISON GAS
+* 0xB0518 to 0xB051F = BARRAGE
+* 0xB0520 to 0xB052A = LEECH LIFE
+* 0xB052B to 0xB0536 = LOVELY KISS
+* 0xB0537 to 0xB0541 = SKY ATTACK
+* 0xB0542 to 0xB054B = TRANSFORM
+* 0xB054C to 0xB0552 = BUBBLE
+* 0xB0553 to 0xB055E = DIZZY PUNCH
+* 0xB055F to 0xB0564 = SPORE
+* 0xB0565 to 0xB056A = FLASH
+* 0xB056B to 0xB0572 = PSYWAVE
+* 0xB0573 to 0xB0579 = SPLASH
+* 0xB057A to 0xB0584 = ACID ARMOR
+* 0xB0585 to 0xB058F = CRABHAMMER
+* 0xB0590 to 0xB0599 = EXPLOSION
+* 0xB059A to 0xB05A5 = FURY SWIPES
+* 0xB05A6 to 0xB05B0 = BONEMERANG
+* 0xB05B1 to 0xB05B5 = REST
+* 0xB05B6 to 0xB05C0 = ROCK SLIDE
+* 0xB05C1 to 0xB05CB = HYPER FANG
+* 0xB05CC to 0xB05D3 = SHARPEN
+* 0xB05D4 to 0xB05DE = CONVERSION
+* 0xB05DF to 0xB05E9 = TRI ATTACK
+* 0xB05EA to 0xB05F4 = SUPER FANG
+* 0xB05F5 to 0xB05FA = SLASH
+* 0xB05FB to 0xB0605 = SUBSTITUTE
+* 0xB0606 to 0xB060E = STRUGGLE
+</pre>
+
+===Other===
+<pre>
+* 0xB060F to 0xB3FFF = Blank Data
+</pre>
+
+==Bank 2D to 3F==
+
+B4000-FFFFF Blank Data
+
+
+==Pokemon Image Stuff==
+
+Squirtle~
+
+*Black Layer-Column 6-0x35DB0-0x35DBF
+*Black Layer-Column 5-0x35DC0-0x35DCF
+*Black Layer-Column 4-0x35DD0-0x35DDF
+*Black Layer-Column 3-0x35DE0-0x35DEF
+*Black Layer-Column 2-0x35DF0-0x35DFF
+*Black Layer-Column 1-0x35E00-0x35E0F
+*Gray  Layer-Columns-0x35E10-(?)
+
+*When the gray pixels overlap the white background, they become light gray. If the gray pixels overlap the black layer, the gray pixels become dark gray.
+

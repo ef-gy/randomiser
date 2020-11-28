@@ -1,0 +1,9 @@
+.wiki files are wiki source code directly grabbed from:
+
+* https://datacrystal.romhacking.net/wiki/Pokémon_Red/Blue:RAM_map 
+* https://datacrystal.romhacking.net/wiki/Pokémon_Red_and_Blue:ROM_map
+* https://datacrystal.romhacking.net/wiki/Pokémon_Red_and_Blue:TBL
+
+The documents appear to be licenced under the GNU Free Doc Licence, which since this project is open source and the files are included verbatim should have no issue with bundling these docs.
+
+If you are the author of these wiki articles and would like me to stop bundling these sources, just shoot me an email or a pull request and I'll be happy to remove them from the archive!
