@@ -1,3 +1,7 @@
+-include ef.gy/base.mk include/ef.gy/base.mk
+
+NAME:=pokemon-randomiser
+
 all: pokemon-red/game.asm
 
 pokemon-red.sym: rom-map.wiki.notags Makefile wiki-to-sym.sh
