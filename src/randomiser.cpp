@@ -49,6 +49,35 @@ static uint8_t getRecodedText(char c) {
   return 0x50;
 }
 
+static const std::string listPokemon(
+    const std::map<std::string, uint8_t> &ids) {
+  std::ostringstream os;
+  os.clear();
+
+  os << ids.size() << "\n";
+  for (const auto &pk : ids) {
+    int16_t v = uint8_t(pk.second);
+    os << "0x" << std::hex << std::setw(2) << std::setfill('0') << v << " ["
+       << pk.first << "]\n";
+  }
+
+  return os.str();
+}
+
+static const std::string listPokemon(
+    const std::map<uint8_t, std::string> &ids) {
+  std::ostringstream os;
+  os.clear();
+
+  os << ids.size() << "\n";
+  for (const auto &pk : ids) {
+    int16_t v = uint8_t(pk.first);
+    os << "0x" << std::hex << std::setw(2) << std::setfill('0') << v << " ["
+       << pk.second << "]\n";
+  }
+
+  return os.str();
+}
 template <typename B = char>
 class ROM {
  public:
@@ -139,7 +168,7 @@ class ROM {
     return os.str();
   }
 
-  const std::set<uint8_t> getTitleScreenPokemon() const {
+  const std::set<uint8_t> getTitleScreenPokemon(void) const {
     std::set<uint8_t> rv;
     rv.clear();
 
@@ -197,7 +226,7 @@ class ROM {
 
     auto ids = getAllPokemonIds();
 
-    std::cerr << ids.size() << "\n";
+    std::cout << listPokemon(ids);
 
     long n = 0;
     auto sps = getStarterPointers();
@@ -235,8 +264,7 @@ class ROM {
 
   const std::map<uint8_t, std::string> getPokemonNames(
       const std::set<uint8_t> &r) const {
-    std::map<uint8_t, std::string> rv;
-    rv.clear();
+    std::map<uint8_t, std::string> rv{};
     for (uint8_t v : r) {
       rv[v] = getPokemonName(v);
     }
@@ -245,8 +273,7 @@ class ROM {
 
   const std::map<std::string, uint8_t> getPokemonIds(
       const std::set<uint8_t> &r) const {
-    std::map<std::string, uint8_t> rv;
-    rv.clear();
+    std::map<std::string, uint8_t> rv{};
     for (uint8_t v : r) {
       rv[getPokemonName(v)] = v;
     }
@@ -376,25 +403,13 @@ int main(int argc, char *argv[]) {
       rom.clearTitleScreenPokemon();
     }
 
-    if (::getTitleScreenPokemon) {
-      std::cout << "title screen Pokemon:\n";
-      const auto titleScreen = rom.getTitleScreenPokemon();
-      const auto titleScreenNames = rom.getPokemonNames(titleScreen);
-
-      for (const auto pk : titleScreenNames) {
-        int16_t v = uint8_t(pk.first);
-        std::cout << std::hex << v << " [" << pk.second << "]\n";
-      }
-    }
-
     if (::fixChecksum) {
       rom.fixChecksum();
     }
 
     if (std::string(::setStarterPokemon) != "") {
       std::string input = std::string(::setStarterPokemon);
-      std::set<std::string> pokemon;
-      pokemon.clear();
+      std::set<std::string> pokemon{};
 
       std::size_t pos = 0, prev = 0;
       static const std::string dlim = ",";
@@ -404,17 +419,18 @@ int main(int argc, char *argv[]) {
       }
 
       pokemon.insert(input.substr(prev));
-
       rom.setStarterPokemon(pokemon);
+    }
+
+    if (::getTitleScreenPokemon) {
+      std::cout << "title screen Pokemon:\n";
+      const auto titleScreen = rom.getTitleScreenPokemon();
+      std::cout << listPokemon(rom.getPokemonNames(titleScreen));
     }
 
     std::cout << "starter Pokemon:\n";
     const auto starter = rom.getStarterPokemon();
-    const auto starterNames = rom.getPokemonNames(starter);
-    for (const auto pk : starterNames) {
-      int16_t v = uint8_t(pk.first);
-      std::cout << std::hex << v << " [" << pk.second << "]\n";
-    }
+    std::cout << listPokemon(rom.getPokemonNames(starter));
 
     if (std::string(output) != "") {
       rom.save(output);
