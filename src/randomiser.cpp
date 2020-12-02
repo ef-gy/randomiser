@@ -12,13 +12,6 @@ static efgy::cli::flag<std::string> romFile("rom-file", "the ROM to load");
 static efgy::cli::flag<std::string> output(
     "output", "the name of the file to write the changed ROM to");
 
-static efgy::cli::flag<bool> getStrings("strings",
-                                        "like 'strings's for pokemon text");
-
-static efgy::cli::flag<bool> getTitleScreenPokemon(
-    "get-title-screen-pokemon",
-    "figure out which Pokemon are on the title screen");
-
 static efgy::cli::flag<bool> clearTitleScreenPokemon(
     "clear-title-screen-pokemon", "clear out the Pokemon on the title screen");
 
@@ -33,6 +26,13 @@ static efgy::cli::flag<long> minStringLength(
 
 static efgy::cli::flag<bool> fixChecksum("fix-checksum",
                                          "fix up checksum in output ROM");
+
+static efgy::cli::flag<bool> getStrings("strings",
+                                        "like 'strings's for pokemon text");
+
+static efgy::cli::flag<bool> getTitleScreenPokemon(
+    "get-title-screen-pokemon",
+    "figure out which Pokemon are on the title screen");
 
 static uint8_t getRecodedText(char c) {
   // TODO: this function needs to be modified so that the reverse of this is
@@ -157,6 +157,69 @@ class ROM {
     return rv;
   }
 
+  const std::string dump(long start, long end, int alignment) const {
+    std::ostringstream os;
+    os.clear();
+
+    for (long i = start; i <= end; i++) {
+      int16_t v = uint8_t(image[i]);
+
+      if ((i - start) % alignment == 0) {
+        os << "\n";
+      }
+
+      os << " \t0x" << std::hex << std::setw(2) << std::setfill('0') << v;
+
+      if (pokemon::randomiser::text::map::gen1.count(v) == 1) {
+        os << " " << std::setw(4) << std::setfill('.')
+           << pokemon::randomiser::text::map::gen1[v];
+      } else {
+        os << " ....";
+      }
+    }
+
+    os << "\n";
+
+    return os.str();
+  }
+
+  const uint16_t word_le(long start) const {
+    return uint16_t(uint8_t(image.data()[(start + 1)]) << 8 |
+                    uint8_t(image.data()[(start)]));
+  }
+
+  const long address(uint8_t bank, uint16_t off) const {
+    return bank * 0x4000 + off - (off > 0x4000 ? 0x4000 : 0);
+  }
+
+  const std::string getMaps(void) const {
+    static const long mapHeadersStart = 0x01ae;
+    static const long mapBanksStart = 0xc23d;
+    static const long mapHeadersEnd = 0x0390;
+
+    std::ostringstream os;
+    os.clear();
+
+    os << "maps\n";
+
+    for (long c = 0, i = mapHeadersStart, b = mapBanksStart; i <= mapHeadersEnd;
+         c++, b++, i += 2) {
+      const auto off = word_le(i);
+
+      uint16_t bank = uint8_t(image.data()[b]);
+
+      os << std::dec << " [map #" << c << "] 0x" << std::hex << std::setw(2)
+         << std::setfill('0') << bank << ":" << std::hex << std::setw(4) << off
+         << " = $" << std::setw(5) << address(bank, off) << "\n";
+    }
+
+    // os << dump(mapHeadersStart, mapHeadersEnd, 3);
+
+    os << "\n";
+
+    return os.str();
+  }
+
   std::string getPokemonName(long iid) const {
     std::ostringstream os;
     os.clear();
@@ -169,8 +232,7 @@ class ROM {
   }
 
   const std::set<uint8_t> getTitleScreenPokemon(void) const {
-    std::set<uint8_t> rv;
-    rv.clear();
+    std::set<uint8_t> rv{};
 
     for (long i = 0x4588; i < 0x4597; i++) {
       rv.insert(uint8_t(image[i]));
@@ -180,8 +242,7 @@ class ROM {
   }
 
   const std::set<uint8_t> getStarterPokemon(void) const {
-    std::set<uint8_t> rv;
-    rv.clear();
+    std::set<uint8_t> rv{};
 
     for (const auto p : getStarterPointers()) {
       for (const auto pn : p.second) {
@@ -233,8 +294,6 @@ class ROM {
     auto spt = getStarterTextPointers();
 
     for (const auto st : starter) {
-      long p = 0x0;
-
       if (sps.count(n) == 1) {
         for (const auto i : sps[n]) {
           image[i] = ids[st];
@@ -431,6 +490,8 @@ int main(int argc, char *argv[]) {
     std::cout << "starter Pokemon:\n";
     const auto starter = rom.getStarterPokemon();
     std::cout << listPokemon(rom.getPokemonNames(starter));
+
+    std::cout << rom.getMaps();
 
     if (std::string(output) != "") {
       rom.save(output);
