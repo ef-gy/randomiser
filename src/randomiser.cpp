@@ -38,7 +38,7 @@ static uint8_t getRecodedText(char c) {
   // TODO: this function needs to be modified so that the reverse of this is
   // always the same as the source text - or at the very least the shortest
   // subset, if it starts with P. :)
-  for (const auto p : pokemon::randomiser::text::map::gen1) {
+  for (const auto p : pokemon::text::bgry::english) {
     if (p.second.size() > 0) {
       if (c == p.second[0]) {
         return p.first;
@@ -123,7 +123,7 @@ class ROM {
     std::string rv = "";
 
     for (long i = start; i <= end; i++) {
-      const std::string v = pokemon::randomiser::text::map::gen1[image[i]];
+      const std::string v = pokemon::text::bgry::english[image[i]];
 
       if (v != "") {
         rv += v;
@@ -139,7 +139,7 @@ class ROM {
     unsigned long start = 0;
 
     for (unsigned long i = 0; i <= image.size(); i++) {
-      const std::string v = pokemon::randomiser::text::map::gen1[image[i]];
+      const std::string v = pokemon::text::bgry::english[image[i]];
 
       if (v != "") {
         if (line.empty()) {
@@ -170,9 +170,9 @@ class ROM {
 
       os << " \t0x" << std::hex << std::setw(2) << std::setfill('0') << v;
 
-      if (pokemon::randomiser::text::map::gen1.count(v) == 1) {
+      if (pokemon::text::bgry::english.count(v) == 1) {
         os << " " << std::setw(4) << std::setfill('.')
-           << pokemon::randomiser::text::map::gen1[v];
+           << pokemon::text::bgry::english[v];
       } else {
         os << " ....";
       }
