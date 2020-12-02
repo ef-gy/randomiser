@@ -123,9 +123,18 @@ class ROM {
     std::string rv = "";
 
     for (long i = start; i <= end; i++) {
-      const std::string v = pokemon::text::bgry::english[image[i]];
+      const int8_t b = int8_t(image[i]);
+      if (b == pokemon::text::bgry::end) {
+        // 0x50 is the string terminator symbol (it's NOT 0x00).
+        break;
 
-      if (v != "") {
+        // TODO: potentially verify invariants of text strings, such as that all
+        // characters after 0x50 ought to be blanks in a fixed-width string.
+      }
+
+      const std::string v = pokemon::text::bgry::english[b];
+
+      if (v.size() > 0) {
         rv += v;
       }
     }
@@ -137,20 +146,27 @@ class ROM {
     std::map<long, std::string> rv;
     std::string line = "";
     unsigned long start = 0;
+    unsigned long normal = 0;
 
     for (unsigned long i = 0; i <= image.size(); i++) {
-      const std::string v = pokemon::text::bgry::english[image[i]];
+      uint8_t b = uint8_t(image[i]);
+      const std::string v = pokemon::text::bgry::english[b];
 
-      if (v != "") {
+      if (v.empty() || b == pokemon::text::bgry::end) {
+        if (normal > long(minStringLength)) {
+          rv[start] = line;
+        }
+        line.clear();
+        normal = 0;
+      } else {
         if (line.empty()) {
           start = i;
         }
         line += v;
-      } else {
-        if (line.size() > long(minStringLength)) {
-          rv[start] = line;
+
+        if (0x80 <= b && b <= 0xbf) {
+          normal++;
         }
-        line.clear();
       }
     }
 
