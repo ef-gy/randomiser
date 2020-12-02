@@ -102,7 +102,7 @@ int main(int argc, char *argv[]) {
       std::cout << pokemon::listPokemon(ids);
     }
 
-    if (std::string(output) != "") {
+    if (!std::string(output).empty()) {
       rom.save(output);
     }
   }
