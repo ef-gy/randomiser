@@ -1,7 +1,7 @@
 #if !defined(POKEMON_RANDOMISER_MAP_H)
 #define POKEMON_RANDOMISER_MAP_H
 
-#include <pokemon-randomiser/rom.h>
+#include <pokemon-randomiser/tileset.h>
 
 namespace pokemon {
 namespace map {
@@ -15,54 +15,46 @@ class bgry {
    */
 
  public:
-  bgry(rom::bgry<B> &pROM, uint8_t id) : rom(pROM), id(id), ok(refresh()) {}
-
-  bool refresh(void) {
-    ok = true;
-
-    const auto h = header(id);
-    const auto base = rom.address(h);
-
-    bank = h.first;
-    offset = h.second;
-
-    tileset = rom.byte(base + 0x00);
-    height = rom.byte(base + 0x01);
-    width = rom.byte(base + 0x01);
-
-    std::cout << std::dec << " [map #" << uint16_t(id) << "] 0x" << std::hex
-              << std::setw(2) << std::setfill('0') << int64_t(bank) << ":"
-              << std::hex << std::setw(4) << offset << " = $" << std::setw(5)
-              << base << "\n";
-
-    std::cout << "   - dimensions: "
-              << "0x" << std::setw(2) << uint16_t(width) << " * 0x"
-              << std::setw(2) << uint16_t(height) << "\n"
-              << "   - tileset: 0x" << std::setw(2) << uint16_t(tileset)
-              << "\n";
-
-    return ok;
-  }
+  bgry(rom::bgry<B> &pROM, uint8_t pID)
+      : rom(pROM),
+        id(pID),
+        ptr(header(id)),
+        addr(rom.address(ptr)),
+        tileset{rom, rom.byte(addr + 0x00)},
+        height(rom.byte(addr + 0x01)),
+        width(rom.byte(addr + 0x02)),
+        dataOffset(rom.word_le(addr + 0x03)),
+        textScriptsOffset(rom.word_le(addr + 0x05)),
+        scriptOffset(rom.word_le(addr + 0x07)),
+        ok(tileset) {}
 
   static const std::pair<uint8_t, uint16_t> header(const rom::bgry<B> &rom,
                                                    uint8_t id) {
-    return {rom.byte(mapBanksStart + id),
-            rom.word_le(mapHeadersStart + 2 * id)};
+    return {rom.byte(banksStart + id), rom.word_le(headersStart + 2 * id)};
   }
 
   const std::pair<uint8_t, uint16_t> header(uint8_t id) const {
     return header(rom, id);
   }
 
-  static const std::set<uint8_t> list(const rom::bgry<B> &rom) {
+  static const std::set<uint8_t> list(rom::bgry<B> &rom) {
     std::set<uint8_t> rv{};
 
-    for (long c = 0, i = mapHeadersStart, b = mapBanksStart; i <= mapHeadersEnd;
-         c++, b++, i += 2) {
-      const auto off = rom.word_le(i);
-      const auto bank = rom.byte(b);
+    for (long c = 0; c < 0xff; c++) {
+      const auto m = bgry(rom, c);
 
-      rv.insert(c);
+      // try to load the map at the given address
+      if (m) {
+        // take a 0x0 map to mean we won't find any further maps
+        if (m.empty()) {
+          break;
+        }
+
+        rv.insert(c);
+      } else {
+        std::cout << " [ map #" << std::dec << c
+                  << " omitted because it didn't load right]\n";
+      }
     }
 
     return rv;
@@ -70,21 +62,29 @@ class bgry {
 
   const std::set<uint8_t> list(void) const { return list(rom); }
 
+  const long size(void) const { return ok ? long(height) * long(width) : 0; }
+
+  const bool empty(void) const { return tileset.id == 0 && size() == 0; }
+
+  operator bool(void) const { return ok; }
+
  protected:
   rom::bgry<B> &rom;
 
   const uint8_t id;
 
-  bool ok;
+  const std::pair<uint8_t, uint16_t> ptr;
+  const long addr;
 
-  uint8_t bank;
-  uint16_t offset;
+  const pokemon::tileset::bgry<B> tileset;
 
-  uint8_t tileset, width, height;
+  uint8_t width, height;
+  uint16_t dataOffset, textScriptsOffset, scriptOffset;
 
-  static const long mapHeadersStart = 0x01ae;
-  static const long mapBanksStart = 0xc23d;
-  static const long mapHeadersEnd = 0x0390;
+  const bool ok;
+
+  static const long headersStart = 0x01ae;
+  static const long banksStart = 0xc23d;
 };
 
 }  // namespace map
