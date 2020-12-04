@@ -88,12 +88,8 @@ int main(int argc, char *argv[]) {
 
     // os << dump(mapHeadersStart, mapHeadersEnd, 3);
 
-    {
-      auto maps = pokemon::map::bgry<>::list(rom);
-
-      for (const auto id : maps) {
-        auto m = pokemon::map::bgry<>(rom, id);
-      }
+    for (const auto id : pokemon::map::bgry<>::list(rom)) {
+      auto m = pokemon::map::bgry<>(rom, id);
     }
 
     if (::getAllPokemon) {

@@ -64,7 +64,7 @@ class bgry {
 
   const long size(void) const { return ok ? long(height) * long(width) : 0; }
 
-  const bool empty(void) const { return size() == 0 || dataOffset == 0; }
+  const bool empty(void) const { return size() == 0; }
 
   operator bool(void) const { return ok; }
 
