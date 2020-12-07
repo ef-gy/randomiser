@@ -1,6 +1,7 @@
 #define ASIO_DISABLE_THREADS
 
 #include <ef.gy/cli.h>
+#include <pokemon-randomiser/map.h>
 #include <pokemon-randomiser/rom.h>
 
 static efgy::cli::flag<std::string> romFile("rom-file", "the ROM to load");
@@ -29,6 +30,9 @@ static efgy::cli::flag<bool> getTitleScreenPokemon(
 static efgy::cli::flag<bool> getAllPokemon(
     "get-all-pokemon", "show all Pokemon in the loaded ROM");
 
+static efgy::cli::flag<long> getMap("get-map", -1,
+                                    "show this map in the loaded ROM");
+
 int main(int argc, char *argv[]) {
   efgy::cli::options opts(argc, argv);
 
@@ -42,7 +46,7 @@ int main(int argc, char *argv[]) {
 
       for (const auto str : strs) {
         std::cout << "0x" << std::hex << std::setw(6) << std::setfill('0')
-                  << str.first << " " << str.second << "\n";
+                  << str.first.linear() << " " << str.second << "\n";
       }
     }
 
@@ -83,6 +87,24 @@ int main(int argc, char *argv[]) {
       auto ids = rom.getAllPokemonIds();
 
       std::cout << pokemon::listPokemon(ids);
+    }
+
+    if (long(::getMap) >= 0) {
+      std::cout << "map #" << long(::getMap) << "\n";
+
+      auto m = pokemon::map::bgry<>(rom, long(::getMap));
+
+      if (m) {
+        std::cout << "  - size {W,H}@T: {" << uint16_t(m.width()) << ","
+                  << uint16_t(m.height()) << "}@" << m.size() << "\n";
+
+        if (m.text) {
+          std::cout << "  - text scripts at: 0x" << std::hex
+                    << m.text.resolve().linear() << "\n";
+        }
+      } else {
+        std::cerr << "invalid map data\n";
+      }
     }
 
     if (!std::string(output).empty()) {

@@ -53,7 +53,7 @@ class bgry : gameboy::rom::view<B, W> {
   }
 
   operator bool(void) const {
-    return bool(view(*this)) && view::check(subviews_) && view::check(lazies_);
+    return bool(view(*this)) && view::check(lazies_) && view::check(subviews_);
   }
 
  protected:
