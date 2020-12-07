@@ -76,7 +76,7 @@ class bgry {
   const std::pair<uint8_t, uint16_t> ptr;
   const long addr;
 
-  const pokemon::tileset::bgry<B> tileset;
+  const pokemon::tileset::bgry<> tileset;
 
   uint8_t width, height;
   uint16_t dataOffset, textScriptsOffset, scriptOffset;
