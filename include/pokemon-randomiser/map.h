@@ -1,6 +1,7 @@
 #if !defined(POKEMON_RANDOMISER_MAP_H)
 #define POKEMON_RANDOMISER_MAP_H
 
+#include <pokemon-randomiser/rom.h>
 #include <pokemon-randomiser/tileset.h>
 
 namespace pokemon {
