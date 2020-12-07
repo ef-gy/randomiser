@@ -37,13 +37,6 @@ int main(int argc, char *argv[]) {
   if (rom) {
     std::cout << rom.title() << "\n";
 
-    if (rom.checksum()) {
-      std::cout << "CHECKSUM OK\n";
-    } else {
-      std::cout << "CHECKSUM NOT OK (" << rom.romChecksum() << " vs "
-                << rom.headerChecksum() << ")\n";
-    }
-
     if (::getStrings) {
       const auto strs = rom.getStrings();
 
@@ -100,6 +93,15 @@ int main(int argc, char *argv[]) {
 
     if (!std::string(output).empty()) {
       rom.save(output);
+    }
+  } else {
+    std::cerr << "NOT LOADED\n";
+
+    if (rom.checksum()) {
+      std::cout << "CHECKSUM OK\n";
+    } else {
+      std::cout << "CHECKSUM NOT OK (" << rom.romChecksum() << " vs "
+                << rom.headerChecksum() << ")\n";
     }
   }
 
