@@ -26,9 +26,8 @@ class bgry : gameboy::rom::view<B, W> {
   static constexpr pointer end{0xc8dd};
 
  public:
-  bgry(view v, uint8_t pID)
-      : view{v.from(start + pID * headerSize).length(headerSize)},
-        id(pID),
+  bgry(view v)
+      : view{v},
         bank_{view::start().is(gameboy::rom::dt_rom_bank)},
         blocks_{view::after(bank_)
                     .is(gameboy::rom::dt_rom_offset)
@@ -49,7 +48,9 @@ class bgry : gameboy::rom::view<B, W> {
                   &talkOver_, &grass_,  &animation_},
         lazies_{&blocks, &tiles, &collision} {}
 
-  const uint8_t id;
+  static bgry byID(view v, uint8_t id) {
+    return bgry{v.from(start + id * headerSize).length(headerSize)};
+  }
 
   operator bool(void) const {
     return bool(view(*this)) && view::check(subviews_) && view::check(lazies_);

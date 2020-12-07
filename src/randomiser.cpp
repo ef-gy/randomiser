@@ -1,7 +1,7 @@
 #define ASIO_DISABLE_THREADS
 
 #include <ef.gy/cli.h>
-#include <pokemon-randomiser/map.h>
+#include <pokemon-randomiser/rom.h>
 
 static efgy::cli::flag<std::string> romFile("rom-file", "the ROM to load");
 
@@ -78,12 +78,6 @@ int main(int argc, char *argv[]) {
     std::cout << "starter Pokemon:\n";
     const auto starter = rom.getStarterPokemon();
     std::cout << pokemon::listPokemon(rom.getPokemonNames(starter));
-
-    // os << dump(mapHeadersStart, mapHeadersEnd, 3);
-
-    for (const auto id : pokemon::map::bgry<>::list(rom)) {
-      auto m = pokemon::map::bgry<>(rom, id);
-    }
 
     if (::getAllPokemon) {
       auto ids = rom.getAllPokemonIds();
