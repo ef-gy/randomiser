@@ -30,46 +30,33 @@ class bgry : gameboy::rom::view<B, W> {
 
  public:
   bgry(view v, uint8_t pID)
-      : view{v},
+      : view{v.asLittleEndian()},
         id(pID),
-        bank_{view::from(banks + pID).is(gameboy::rom::dt_rom_bank)},
-        offset_{view::from(headers + 2 * pID)
-                    .is(gameboy::rom::dt_rom_offset)
-                    .expect(gameboy::rom::e_little_endian)},
+        bank_{view::from(banks + pID).asROMBank()},
+        offset_{view::from(headers + 2 * pID).asROMOffset()},
         start_{bank_, offset_},
-        tileset_{view::from(start_).is(gameboy::rom::dt_byte)},
-        height_{view::after(tileset_).is(gameboy::rom::dt_byte)},
-        width_{view::after(height_).is(gameboy::rom::dt_byte)},
-        data_{view::after(width_)
-                  .is(gameboy::rom::dt_rom_offset)
-                  .expect(gameboy::rom::e_little_endian)},
-        text_{view::after(data_)
-                  .is(gameboy::rom::dt_rom_offset)
-                  .expect(gameboy::rom::e_little_endian)},
-        script_{view::after(text_)
-                    .is(gameboy::rom::dt_rom_offset)
-                    .expect(gameboy::rom::e_little_endian)},
-        connections_{view::after(script_).is(gameboy::rom::dt_byte)},
+        tileset_{view::from(start_).asByte()},
+        height_{view::after(tileset_).asByte()},
+        width_{view::after(height_).asByte()},
+        data_{view::after(width_).asROMOffset()},
+        text_{view::after(data_).asROMOffset()},
+        script_{view::after(text_).asROMOffset()},
+        connections_{view::after(script_).asByte()},
         north_{view::after(connections_)
-                   .is(gameboy::rom::dt_bytes)
+                   .is(gameboy::dt_bytes)
                    .length(haveNorth() ? 11 : 0)},
         south_{view::after(north_)
-                   .is(gameboy::rom::dt_bytes)
+                   .is(gameboy::dt_bytes)
                    .length(haveSouth() ? 11 : 0)},
         west_{view::after(south_)
-                  .is(gameboy::rom::dt_bytes)
+                  .is(gameboy::dt_bytes)
                   .length(haveWest() ? 11 : 0)},
         east_{view::after(west_)
-                  .is(gameboy::rom::dt_bytes)
+                  .is(gameboy::dt_bytes)
                   .length(haveEast() ? 11 : 0)},
-        object_{view::after(east_)
-                    .is(gameboy::rom::dt_rom_offset)
-                    .expect(gameboy::rom::e_little_endian)},
+        object_{view::after(east_).asROMOffset()},
         text{bank_, text_},
-        object{bank_, object_},
-        subviews_{&bank_, &offset_, &tileset_, &height_,      &width_,
-                  &data_, &text_,   &script_,  &connections_, &object_},
-        lazies_{&start_, &text, &object} {}
+        object{bank_, object_} {}
 
   bool haveNorth(void) const {
     return bool(connections_) && (connections_.byte() & 0x8);
@@ -92,12 +79,29 @@ class bgry : gameboy::rom::view<B, W> {
   const bool empty(void) const { return size() == 0; }
 
   operator bool(void) const {
-    return view(*this) && view::check(lazies_) && view::check(subviews_) &&
-           bool(tileset(*this));
+    bool r = view(*this) && view::check(lazies_()) &&
+             view::check(subviews_()) && bool(tileset(*this));
+
+    if (!r) {
+      std::cerr << "CHECK FAILED: map invalid:\n"
+                << " * idn " << std::dec << W(id) << "\n"
+                << " * vwp " << view(*this).debug() << "\n";
+      if (!view(*this)) {
+        std::cerr << " ! ERR invalid view\n";
+      }
+      if (!bool(tileset(*this))) {
+        std::cerr << " ! ERR invalid tile set\n";
+      }
+    }
+
+    return r;
   }
 
   operator tileset(void) const { return tileset::byID(*this, tileset_.byte()); }
-  operator objectData(void) const { return {view::start(object)}; }
+
+  objectData objects(void) const {
+    return objectData{view::from(pointer(object))};
+  }
 
   B width(void) const { return bool(width_) ? width_.byte() : 0; }
 
@@ -105,9 +109,7 @@ class bgry : gameboy::rom::view<B, W> {
 
   std::optional<pointer> script(uint8_t n) const {
     if (text) {
-      view v{view::from(text + 2 * n)
-                 .is(gameboy::rom::dt_rom_offset)
-                 .expect(gameboy::rom::e_little_endian)};
+      view v{view::from(text + 2 * n).asROMOffset()};
       lazy p{bank_, v};
 
       if (p) {
@@ -144,8 +146,17 @@ class bgry : gameboy::rom::view<B, W> {
   lazy object;
 
  protected:
-  subviews subviews_;
-  lazies lazies_;
+  subviews subviews_(void) const {
+    auto s = const_cast<bgry*>(this);
+    return subviews{&s->bank_,        &s->offset_, &s->tileset_, &s->height_,
+                    &s->width_,       &s->data_,   &s->text_,    &s->script_,
+                    &s->connections_, &s->object_};
+  }
+
+  lazies lazies_(void) const {
+    auto s = const_cast<bgry*>(this);
+    return lazies{&s->start_, &s->text, &s->object};
+  }
 };
 
 }  // namespace map

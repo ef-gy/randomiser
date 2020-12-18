@@ -1,0 +1,16 @@
+.*
+
+*.gb
+pokemon-red.sym
+
+pokemon-red/
+
+mgbdis.py
+
+*.frz
+dependencies.mk
+
+randomiser
+!src/randomiser.cpp
+
+*.dSYM

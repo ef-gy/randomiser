@@ -28,19 +28,19 @@ class bgry : gameboy::rom::view<B, W> {
  public:
   bgry(view v)
       : view{v},
-        bank_{view::start().is(gameboy::rom::dt_rom_bank)},
+        bank_{view::start().is(gameboy::dt_rom_bank)},
         blocks_{view::after(bank_)
-                    .is(gameboy::rom::dt_rom_offset)
-                    .expect(gameboy::rom::e_little_endian)},
+                    .is(gameboy::dt_rom_offset)
+                    .expect(gameboy::e_little_endian)},
         tiles_{view::after(blocks_)
-                   .is(gameboy::rom::dt_rom_offset)
-                   .expect(gameboy::rom::e_little_endian)},
+                   .is(gameboy::dt_rom_offset)
+                   .expect(gameboy::e_little_endian)},
         collision_{view::after(tiles_)
-                       .is(gameboy::rom::dt_rom_offset)
-                       .expect(gameboy::rom::e_little_endian)},
-        talkOver_{view::after(collision_).length(3).is(gameboy::rom::dt_bytes)},
-        grass_{view::after(talkOver_).is(gameboy::rom::dt_byte)},
-        animation_{view::after(grass_).is(gameboy::rom::dt_byte)},
+                       .is(gameboy::dt_rom_offset)
+                       .expect(gameboy::e_little_endian)},
+        talkOver_{view::after(collision_).length(3).is(gameboy::dt_bytes)},
+        grass_{view::after(talkOver_).is(gameboy::dt_byte)},
+        animation_{view::after(grass_).is(gameboy::dt_byte)},
         blocks{bank_, blocks_},
         tiles{bank_, tiles_},
         collision{bank_, tiles_},

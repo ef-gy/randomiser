@@ -44,7 +44,7 @@ int main(int argc, char *argv[]) {
     if (::getStrings) {
       const auto strs = rom.getStrings();
 
-      for (const auto str : strs) {
+      for (const auto &str : strs) {
         std::cout << "0x" << std::hex << std::setw(6) << std::setfill('0')
                   << str.first.linear() << " " << str.second << "\n";
       }
@@ -101,6 +101,20 @@ int main(int argc, char *argv[]) {
         if (m.text) {
           std::cout << "  - text scripts at: 0x" << std::hex
                     << m.text.resolve().linear() << "\n";
+        }
+
+        auto obj = m.objects();
+
+        if (obj) {
+          std::cout << "  - warps: " << std::dec << obj.warpc() << "\n";
+          std::cout << "  - signs: " << std::dec << obj.signc() << "\n";
+          std::cout << "  - sprites: " << std::dec << obj.spritec() << " vs "
+                    << obj.sprites.size() << "\n";
+          for (const auto &s : obj.sprites) {
+            if (s) {
+              std::cout << s.debug();
+            }
+          }
         }
       } else {
         std::cerr << "invalid map data\n";
