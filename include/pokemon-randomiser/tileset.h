@@ -40,12 +40,21 @@ class bgry : gameboy::rom::view<B, W> {
         collision{bank_, tiles_} {}
 
   static bgry byID(view v, uint8_t id) {
-    return bgry{v.from(start + id * headerSize).length(headerSize)};
+    return bgry{v.from(start + id * unit()).length(size())};
   }
 
   operator bool(void) const {
     return view(*this) && view::check(lazies_()) && view::check(subviews_());
   }
+
+  pointer last(void) const { return animation_.last(); }
+
+  static ssize_t unit(void) {
+    static bgry sample{view::blank()};
+    return sample.last() - sample.view::start_ + 1;
+  }
+
+  static ssize_t size(void) { return unit(); }
 
  protected:
   view bank_;
@@ -72,10 +81,6 @@ class bgry : gameboy::rom::view<B, W> {
     auto s = const_cast<bgry*>(this);
     return lazies{&s->blocks, &s->tiles, &s->collision};
   }
-
-  static const long headerSize = 12;
-
-  static const long headers(void) { return (end - start + 1) / headerSize; }
 };
 
 }  // namespace tileset
