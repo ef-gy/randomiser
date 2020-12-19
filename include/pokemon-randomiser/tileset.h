@@ -27,33 +27,24 @@ class bgry : gameboy::rom::view<B, W> {
 
  public:
   bgry(view v)
-      : view{v},
-        bank_{view::start().is(gameboy::dt_rom_bank)},
-        blocks_{view::after(bank_)
-                    .is(gameboy::dt_rom_offset)
-                    .expect(gameboy::e_little_endian)},
-        tiles_{view::after(blocks_)
-                   .is(gameboy::dt_rom_offset)
-                   .expect(gameboy::e_little_endian)},
-        collision_{view::after(tiles_)
-                       .is(gameboy::dt_rom_offset)
-                       .expect(gameboy::e_little_endian)},
+      : view{v.asLittleEndian().toBankEnd()},
+        bank_{view::start().asROMBank()},
+        blocks_{view::after(bank_).asROMOffset()},
+        tiles_{view::after(blocks_).asROMOffset()},
+        collision_{view::after(tiles_).asROMOffset()},
         talkOver_{view::after(collision_).length(3).is(gameboy::dt_bytes)},
-        grass_{view::after(talkOver_).is(gameboy::dt_byte)},
-        animation_{view::after(grass_).is(gameboy::dt_byte)},
+        grass_{view::after(talkOver_).asByte()},
+        animation_{view::after(grass_).asByte()},
         blocks{bank_, blocks_},
         tiles{bank_, tiles_},
-        collision{bank_, tiles_},
-        subviews_{&bank_,     &blocks_, &tiles_,    &collision_,
-                  &talkOver_, &grass_,  &animation_},
-        lazies_{&blocks, &tiles, &collision} {}
+        collision{bank_, tiles_} {}
 
   static bgry byID(view v, uint8_t id) {
     return bgry{v.from(start + id * headerSize).length(headerSize)};
   }
 
   operator bool(void) const {
-    return bool(view(*this)) && view::check(lazies_) && view::check(subviews_);
+    return view(*this) && view::check(lazies_()) && view::check(subviews_());
   }
 
  protected:
@@ -71,8 +62,16 @@ class bgry : gameboy::rom::view<B, W> {
   lazy collision;
 
  protected:
-  const subviews subviews_;
-  const lazies lazies_;
+  subviews subviews_(void) const {
+    auto s = const_cast<bgry*>(this);
+    return subviews{&s->bank_,     &s->blocks_, &s->tiles_,    &s->collision_,
+                    &s->talkOver_, &s->grass_,  &s->animation_};
+  }
+
+  lazies lazies_(void) const {
+    auto s = const_cast<bgry*>(this);
+    return lazies{&s->blocks, &s->tiles, &s->collision};
+  }
 
   static const long headerSize = 12;
 

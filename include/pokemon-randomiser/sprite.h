@@ -6,14 +6,14 @@
 namespace pokemon {
 namespace sprite {
 template <typename B = uint8_t, typename W = uint16_t>
-class bgry : gameboy::rom::view<B, W> {
+class bgry : public gameboy::rom::view<B, W> {
  public:
   using view = gameboy::rom::view<B, W>;
   using pointer = typename view::pointer;
   using subviews = typename view::subviews;
 
   bgry(view v)
-      : view{v.asLittleEndian()},
+      : view{v.asLittleEndian().toBankEnd()},
         sprite_{view::start().asByte()},
         positionY_{view::after(sprite_).asByte()},
         positionX_{view::after(positionY_).asByte()},
@@ -44,15 +44,8 @@ class bgry : gameboy::rom::view<B, W> {
   }
 
   operator bool(void) const {
-    bool r = view(*this) && view::check(subviews_()) &&
-             (isNPC() || isItem() || isTrainer() || isPokemon());
-
-    if (!r) {
-      std::cerr << "CHECK FAILED: invalid sprite loaded\n"
-                << debug(false) << "------ etirps ------- :DELIAF KCEHC\n";
-    }
-
-    return r;
+    return view(*this) && view::check(subviews_()) &&
+           (isNPC() || isItem() || isTrainer() || isPokemon());
   }
 
   pointer last(void) const {
@@ -83,55 +76,7 @@ class bgry : gameboy::rom::view<B, W> {
     return 0;
   }
 
-  std::string debug(bool test = true) const {
-    std::ostringstream os{};
-
-    os << "SPRITE\n"
-       << " * vwp " << view(*this).debug() << "\n";
-
-    if (!test) {
-      os << " ! ERR item is already known to be invalid, not recursing\n"
-         << " - spr " << sprite_.debug() << "\n"
-         << " - poX " << positionX_.debug() << "\n"
-         << " - poY " << positionY_.debug() << "\n"
-         << " - mob " << mobility_.debug() << "\n"
-         << " - mov " << movement_.debug() << "\n"
-         << " - flg " << flags_.debug() << "\n"
-         << " - itm " << item_.debug() << "\n"
-         << " - opn " << opponent_.debug() << "\n"
-         << " - tmi " << team_.debug() << "\n"
-         << " - lvl " << level_.debug() << "\n";
-    } else if (!bool(*this)) {
-      os << " ! ERR item is not valid\n";
-    } else {
-      os << std::hex << std::setw(2) << std::setfill('0');
-
-      os << " - spr 0x" << W(sprite_.byte()) << "\n"
-         << " - pos 0x{" << W(positionX_.byte()) << "," << W(positionY_.byte())
-         << "}\n"
-         << " - mob 0x" << W(mobility_.byte()) << "}\n"
-         << " - mov 0x" << W(movement_.byte()) << "}\n";
-
-      if (isNPC()) {
-        os << " > NPC []\n";
-      }
-      if (isItem()) {
-        os << " > ITM [0x" << W(item_.byte()) << "]\n";
-      }
-      if (isTrainer()) {
-        os << " > TRN [opponent: 0x" << W(opponent_.byte())
-           << ", team: " << W(team_.byte()) << "]\n";
-      }
-      if (isPokemon()) {
-        os << " > PKM [opponent: 0x" << W(opponent_.byte())
-           << ", level: " << W(level_.byte()) << "]\n";
-      }
-    }
-
-    return os.str();
-  }
-
- protected:
+  // protected:
   view sprite_;
   view positionY_;
   view positionX_;

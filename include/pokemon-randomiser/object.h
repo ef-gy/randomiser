@@ -6,7 +6,7 @@
 namespace pokemon {
 namespace object {
 template <typename B = uint8_t, typename W = uint16_t>
-class bgry : gameboy::rom::view<B, W> {
+class bgry : public gameboy::rom::view<B, W> {
  public:
   using view = gameboy::rom::view<B, W>;
   using pointer = typename view::pointer;
@@ -28,21 +28,7 @@ class bgry : gameboy::rom::view<B, W> {
   size_t signc(void) const { return signs_.byte(); }
   size_t spritec(void) const { return sprites_.byte(); }
 
-  operator bool(void) const {
-    bool r = view(*this) && view::check(subs());
-
-    if (!r) {
-      std::cerr << "CHECK FAILED: object map invalid:\n"
-                << " * vwp " << view(*this).debug() << "\n";
-      if (!view(*this)) {
-        std::cerr << " ! ERR invalid view\n";
-      } else {
-        std::cerr << " ! ERR invalid sub view for object map\n";
-      }
-    }
-
-    return r;
-  }
+  operator bool(void) const { return view(*this) && view::check(subs()); }
 
  protected:
   view border_;

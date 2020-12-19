@@ -1,6 +1,7 @@
 #define ASIO_DISABLE_THREADS
 
 #include <ef.gy/cli.h>
+#include <pokemon-randomiser/debug.h>
 #include <pokemon-randomiser/map.h>
 #include <pokemon-randomiser/rom.h>
 
@@ -112,7 +113,7 @@ int main(int argc, char *argv[]) {
                     << obj.sprites.size() << "\n";
           for (const auto &s : obj.sprites) {
             if (s) {
-              std::cout << s.debug();
+              std::cout << debug::dump(s);
             }
           }
         }

@@ -7,7 +7,7 @@
 namespace pokemon {
 namespace map {
 template <typename B = uint8_t, typename W = uint16_t>
-class bgry : gameboy::rom::view<B, W> {
+class bgry : public gameboy::rom::view<B, W> {
  public:
   using view = gameboy::rom::view<B, W>;
   using pointer = typename view::pointer;
@@ -79,22 +79,8 @@ class bgry : gameboy::rom::view<B, W> {
   const bool empty(void) const { return size() == 0; }
 
   operator bool(void) const {
-    bool r = view(*this) && view::check(lazies_()) &&
-             view::check(subviews_()) && bool(tileset(*this));
-
-    if (!r) {
-      std::cerr << "CHECK FAILED: map invalid:\n"
-                << " * idn " << std::dec << W(id) << "\n"
-                << " * vwp " << view(*this).debug() << "\n";
-      if (!view(*this)) {
-        std::cerr << " ! ERR invalid view\n";
-      }
-      if (!bool(tileset(*this))) {
-        std::cerr << " ! ERR invalid tile set\n";
-      }
-    }
-
-    return r;
+    return view(*this) && view::check(lazies_()) && view::check(subviews_()) &&
+           bool(tileset(*this));
   }
 
   operator tileset(void) const { return tileset::byID(*this, tileset_.byte()); }
