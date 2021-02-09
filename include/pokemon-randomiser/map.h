@@ -96,7 +96,7 @@ class bgry : public gameboy::rom::view<B, W> {
 
   std::optional<B> block(size_t line, size_t column) const {
     if (blocks) {
-      view pv{view::from(blocks + line * width() + column).asByte()};
+      view pv{view::from(pointer{blocks} + line * width() + column).asByte()};
 
       if (pv) {
         return pv.byte();
@@ -108,7 +108,7 @@ class bgry : public gameboy::rom::view<B, W> {
 
   std::optional<pointer> script(uint8_t n) const {
     if (text) {
-      view v{view::from(text + 2 * n).asROMOffset()};
+      view v{view::from(pointer{text} + 2 * n).asROMOffset()};
       lazy p{bank_, v};
 
       if (p) {
@@ -158,7 +158,7 @@ class bgry : public gameboy::rom::view<B, W> {
 
   lazies lazies_(void) const {
     auto s = const_cast<bgry*>(this);
-    return lazies{&s->start, &s->text, &s->object};
+    return lazies{&s->start, &s->blocks, &s->text, &s->object};
   }
 };
 
