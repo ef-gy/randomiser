@@ -34,8 +34,8 @@ class bgry : public gameboy::rom::view<B, W> {
         id(pID),
         bank_{view::from(banks + pID).asROMBank()},
         offset_{view::from(headers + 2 * pID).asROMOffset()},
-        start_{bank_, offset_},
-        tileset_{view::from(start_).asByte()},
+        start{bank_, offset_},
+        tileset_{view::from(start).asByte()},
         height_{view::after(tileset_).asByte()},
         width_{view::after(height_).asByte()},
         data_{view::after(width_).asROMOffset()},
@@ -55,6 +55,7 @@ class bgry : public gameboy::rom::view<B, W> {
                   .is(gameboy::dt_bytes)
                   .length(haveEast() ? 11 : 0)},
         object_{view::after(east_).asROMOffset()},
+        blocks{bank_, data_},
         text{bank_, text_},
         object{bank_, object_} {}
 
@@ -93,6 +94,18 @@ class bgry : public gameboy::rom::view<B, W> {
 
   B height(void) const { return bool(height_) ? height_.byte() : 0; }
 
+  std::optional<B> block(size_t line, size_t column) const {
+    if (blocks) {
+      view pv{view::from(blocks + line * width() + column).asByte()};
+
+      if (pv) {
+        return pv.byte();
+      }
+    }
+
+    return {};
+  }
+
   std::optional<pointer> script(uint8_t n) const {
     if (text) {
       view v{view::from(text + 2 * n).asROMOffset()};
@@ -113,8 +126,10 @@ class bgry : public gameboy::rom::view<B, W> {
   view bank_;
   view offset_;
 
-  lazy start_;
+ public:
+  lazy start;
 
+ protected:
   view tileset_;
   view height_;
   view width_;
@@ -129,6 +144,7 @@ class bgry : public gameboy::rom::view<B, W> {
   view object_;
 
  public:
+  lazy blocks;
   lazy text;
   lazy object;
 
@@ -142,7 +158,7 @@ class bgry : public gameboy::rom::view<B, W> {
 
   lazies lazies_(void) const {
     auto s = const_cast<bgry*>(this);
-    return lazies{&s->start_, &s->text, &s->object};
+    return lazies{&s->start, &s->text, &s->object};
   }
 };
 
