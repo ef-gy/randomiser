@@ -59,8 +59,8 @@ int main(int argc, char *argv[]) {
       rom.fixChecksum();
     }
 
-    if (std::string(::setStarterPokemon) != "") {
-      std::string input = std::string(::setStarterPokemon);
+    if (!std::string(::setStarterPokemon).empty()) {
+      std::string input{::setStarterPokemon};
       std::set<std::string> pokemon{};
 
       std::size_t pos = 0, prev = 0;
@@ -95,31 +95,7 @@ int main(int argc, char *argv[]) {
 
       auto m = pokemon::map::bgry<>(rom, long(::getMap));
 
-      if (m) {
-        std::cout << "  - size {W,H}@T: {" << uint16_t(m.width()) << ","
-                  << uint16_t(m.height()) << "}@" << m.size() << "\n";
-
-        if (m.text) {
-          std::cout << "  - text scripts at: 0x" << std::hex
-                    << m.text.resolve().linear() << "\n";
-        }
-
-        auto obj = m.objects();
-
-        if (obj) {
-          std::cout << "  - warps: " << std::dec << obj.warpc() << "\n";
-          std::cout << "  - signs: " << std::dec << obj.signc() << "\n";
-          std::cout << "  - sprites: " << std::dec << obj.spritec() << " vs "
-                    << obj.sprites.size() << "\n";
-          for (const auto &s : obj.sprites) {
-            if (s) {
-              std::cout << debug::dump(s);
-            }
-          }
-        }
-      } else {
-        std::cerr << "invalid map data\n";
-      }
+      std::cout << debug::dump(m);
     }
 
     if (!std::string(output).empty()) {

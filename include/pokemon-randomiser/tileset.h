@@ -22,8 +22,8 @@ class bgry : gameboy::rom::view<B, W> {
    */
 
  protected:
-  static constexpr pointer start{0xc7be};
-  static constexpr pointer end{0xc8dd};
+  static constexpr const pointer start{0xc7be};
+  static constexpr const pointer end{0xc8dd};
 
  public:
   bgry(view v)

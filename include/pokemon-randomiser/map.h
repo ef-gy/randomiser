@@ -106,9 +106,10 @@ class bgry : public gameboy::rom::view<B, W> {
     return {};
   }
 
- protected:
+ public:
   const uint8_t id;
 
+ protected:
   view bank_;
   view offset_;
 
