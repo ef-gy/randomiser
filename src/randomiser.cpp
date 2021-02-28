@@ -10,6 +10,9 @@ static efgy::cli::flag<std::string> romFile("rom-file", "the ROM to load");
 static efgy::cli::flag<std::string> output(
     "output", "the name of the file to write the changed ROM to");
 
+static efgy::cli::flag<bool> showHeader("show-header",
+                                        "dump full header information");
+
 static efgy::cli::flag<bool> clearTitleScreenPokemon(
     "clear-title-screen-pokemon", "clear out the Pokemon on the title screen");
 
@@ -40,7 +43,11 @@ int main(int argc, char *argv[]) {
   pokemon::rom::bgry<> rom(romFile);
 
   if (rom) {
-    std::cout << rom.title() << "\n";
+    if (::showHeader) {
+      std::cout << debug::dump(rom.header) << "\n";
+    } else {
+      std::cout << rom.title() << "\n";
+    }
 
     if (::getStrings) {
       const auto strs = rom.getStrings();
