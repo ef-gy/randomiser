@@ -12,8 +12,7 @@ class bgry : public gameboy::rom::view<B, W> {
   using pointer = typename view::pointer;
 
   constexpr bgry(view v)
-      : view{v.asLittleEndian().toBankEnd().limit(8).label(
-            "sprite_permitted_scope")},
+      : view{v.asLittleEndian().toBankEnd().limit(8).label("__scope")},
         sprite_{view::start().asByte().label("sprite_reference_id")},
         positionY_{view::after(sprite_).asByte().label("sprite_position_y")},
         positionX_{view::after(positionY_).asByte().label("sprite_position_x")},
