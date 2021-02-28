@@ -10,20 +10,20 @@ class bgry : public gameboy::rom::view<B, W> {
  public:
   using view = gameboy::rom::view<B, W>;
   using pointer = typename view::pointer;
-  using subviews = typename view::subviews;
 
-  bgry(view v)
-      : view{v.asLittleEndian().toBankEnd()},
-        sprite_{view::start().asByte()},
-        positionY_{view::after(sprite_).asByte()},
-        positionX_{view::after(positionY_).asByte()},
-        mobility_{view::after(positionX_).asByte()},
-        movement_{view::after(mobility_).asByte()},
-        flags_{view::after(movement_).asByte()},
-        item_{view::after(flags_).asByte()},
-        opponent_{view::after(flags_).asByte()},
-        level_{view::after(opponent_).asByte()},
-        team_{view::after(opponent_).asByte()} {}
+  constexpr bgry(view v)
+      : view{v.asLittleEndian().toBankEnd().limit(8).label(
+            "sprite_permitted_scope")},
+        sprite_{view::start().asByte().label("sprite_reference_id")},
+        positionY_{view::after(sprite_).asByte().label("sprite_position_y")},
+        positionX_{view::after(positionY_).asByte().label("sprite_position_x")},
+        mobility_{view::after(positionX_).asByte().label("sprite_mobility")},
+        movement_{view::after(mobility_).asByte().label("sprite_movement")},
+        flags_{view::after(movement_).asByte().label("sprite_type_flags")},
+        item_{view::after(flags_).asByte().label("sprite_item_code")},
+        opponent_{view::after(flags_).asByte().label("sprite_opponent")},
+        level_{view::after(opponent_).asByte().label("sprite_opponent_level")},
+        team_{view::after(opponent_).asByte().label("sprite_team_code")} {}
 
   bool isNPC(void) const {
     return flags_ && (flags_.byte() & 0x80) == 0 && (flags_.byte() & 0x40) == 0;
@@ -44,7 +44,7 @@ class bgry : public gameboy::rom::view<B, W> {
   }
 
   operator bool(void) const {
-    return view(*this) && view::check(subviews_()) &&
+    return view(*this) && view::check(fields()) &&
            (isNPC() || isItem() || isTrainer() || isPokemon());
   }
 
@@ -88,22 +88,23 @@ class bgry : public gameboy::rom::view<B, W> {
   view level_;
   view team_;
 
-  subviews subviews_(void) const {
-    auto s = const_cast<bgry*>(this);
-    subviews rv{&s->sprite_,   &s->positionY_, &s->positionX_,
-                &s->mobility_, &s->movement_,  &s->flags_};
+ public:
+  constexpr std::array<view, 8> fields(void) const {
+    view ignored{view::start().length(1).label("__ignore")};
 
     if (isItem()) {
-      rv.insert(&s->item_);
+      return {sprite_,   positionY_, positionX_, mobility_,
+              movement_, flags_,     item_,      ignored};
     } else if (isTrainer()) {
-      rv.insert(&s->opponent_);
-      rv.insert(&s->team_);
+      return {sprite_,   positionY_, positionX_, mobility_,
+              movement_, flags_,     opponent_,  team_};
     } else if (isPokemon()) {
-      rv.insert(&s->opponent_);
-      rv.insert(&s->level_);
+      return {sprite_,   positionY_, positionX_, mobility_,
+              movement_, flags_,     opponent_,  level_};
+    } else {
+      return {sprite_,   positionY_, positionX_, mobility_,
+              movement_, flags_,     ignored,    ignored};
     }
-
-    return rv;
   }
 };
 }  // namespace sprite
