@@ -11,24 +11,29 @@ class bgry : public gameboy::rom::view<B, W> {
   using view = gameboy::rom::view<B, W>;
   using pointer = typename view::pointer;
   using sprite = pokemon::sprite::bgry<B, W>;
-  using subviews = typename view::subviews;
 
-  bgry(view v)
+  constexpr bgry(view v)
       : view{v.asLittleEndian()},
-        border_{view::start().asByte()},
-        warps_{view::after(border_).asByte()},
-        warpData_{view::after(warps_).length(4 * warpc())},
-        signs_{view::after(warpData_).asByte()},
-        signsData_{view::after(signs_).length(3 * signc())},
-        sprites_{view::after(signsData_).asByte()},
+        border_{view::start().asByte().label("object_map_border")},
+        warps_{view::after(border_).asByte().label("object_map_warps")},
+        warpData_{view::after(warps_)
+                      .length(4 * warpc())
+                      .label("object_map_warp_data")},
+        signs_{view::after(warpData_).asByte().label("object_map_signs")},
+        signsData_{view::after(signs_)
+                       .length(3 * signc())
+                       .label("object_map_signs_data")},
+        sprites_{view::after(signsData_).asByte().label("object_map_sprites")},
         sprites{view::after(sprites_).template repeated<sprite>(sprites_)},
-        warpins_{view::from(view::last(sprites) + 1).length(4 * warpc())} {}
+        warpins_{view::from(view::last(sprites) + 1)
+                     .length(4 * warpc())
+                     .label("object_map_warpins")} {}
 
   size_t warpc(void) const { return warps_.byte(); }
   size_t signc(void) const { return signs_.byte(); }
   size_t spritec(void) const { return sprites_.byte(); }
 
-  operator bool(void) const { return view(*this) && view::check(subs()); }
+  operator bool(void) const { return view(*this) && view::check(fields()); }
 
  protected:
   view border_;
@@ -44,11 +49,9 @@ class bgry : public gameboy::rom::view<B, W> {
  protected:
   view warpins_;
 
-  subviews subs(void) const {
-    auto s = const_cast<bgry*>(this);
-
-    return subviews{&s->border_,    &s->warps_,   &s->warpData_, &s->signs_,
-                    &s->signsData_, &s->sprites_, &s->warpins_};
+ public:
+  constexpr std::array<view, 7> fields(void) const {
+    return {border_, warps_, warpData_, signs_, signsData_, sprites_, warpins_};
   }
 };
 }  // namespace object

@@ -101,10 +101,12 @@ class bgry : public gameboy::rom::view<B, W> {
     } else if (isPokemon()) {
       return {sprite_,   positionY_, positionX_, mobility_,
               movement_, flags_,     opponent_,  level_};
-    } else {
-      return {sprite_,   positionY_, positionX_, mobility_,
-              movement_, flags_,     ignored,    ignored};
     }
+
+    // guess the most conservative field set - this would normally be an NPC
+    // sprite
+    return {sprite_,   positionY_, positionX_, mobility_,
+            movement_, flags_,     ignored,    ignored};
   }
 };
 }  // namespace sprite
