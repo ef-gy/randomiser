@@ -13,7 +13,7 @@ class bgry : public gameboy::rom::view<B, W> {
   using sprite = pokemon::sprite::bgry<B, W>;
 
   constexpr bgry(view v)
-      : view{v.asLittleEndian()},
+      : view{v.asLittleEndian().label("__scope")},
         border_{view::start().asByte().label("object_map_border")},
         warps_{view::after(border_).asByte().label("object_map_warps")},
         warpData_{view::after(warps_)

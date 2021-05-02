@@ -62,22 +62,18 @@ int main(int argc, char *argv[]) {
       rom.clearTitleScreenPokemon();
     }
 
-    if (::fixChecksum) {
-      rom.fixChecksum();
-    }
-
     if (!std::string(::setStarterPokemon).empty()) {
       std::string input{::setStarterPokemon};
-      std::set<std::string> pokemon{};
+      std::vector<std::string> pokemon{};
 
       std::size_t pos = 0, prev = 0;
-      static const std::string dlim = ",";
+      static const std::string_view dlim = ",";
       while ((pos = input.find(dlim, prev)) != std::string::npos) {
-        pokemon.insert(input.substr(prev, pos - prev));
+        pokemon.push_back(input.substr(prev, pos - prev));
         prev = pos + 1;
       }
 
-      pokemon.insert(input.substr(prev));
+      pokemon.push_back(input.substr(prev));
       rom.setStarterPokemon(pokemon);
     }
 
@@ -103,6 +99,10 @@ int main(int argc, char *argv[]) {
       auto m = pokemon::map::bgry<>(rom, long(::getMap));
 
       std::cout << debug::dump(m);
+    }
+
+    if (::fixChecksum) {
+      rom.fixChecksum();
     }
 
     if (!std::string(output).empty()) {
